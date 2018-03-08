@@ -259,7 +259,7 @@ Wikipedia\footnote{https://en.wikipedia.org/wiki/List\_of\_most\_downloaded\_And
 The downloads of these apps are all over 500 million. Our experiment shows that
 service usage efficiency bugs are surprisingly pervasive in the most popular
 real-world apps: 42 (93.33\%) apps involve at least one kind of service usage
-efficiency bugs; each app has on average 6.5 service usage efficiency bugs.
+efficiency bugs; each app has on average 9.6 service usage efficiency bugs.
 Our empirical evaluation indicates that service usage inefficiencies are
 severe in practice, but the developers have not yet realized their severity.
 
@@ -295,12 +295,6 @@ Along with \textit{activities} (user interfaces),
 
 To define an app service, one should inherit the \hytt{Service} class provided by Android, and overwrite corresponding methods of \hytt{Service}, e.g., \hytt{onStartCommand(Intent, int, int)}, \hytt{onBind()}, etc. A service is started in the app by an asynchronous message object which referred to as \textit{intent}. Accordingly, a service declared by a <service> tag in the AndroidManifest XML file of the app ought to have the attribute <intent-filter> which indicates the intents that can start it.  The attribute <exported> indicates the components of other apps can invoke or interact with it. The attribute <isolatedProcess> indicates whether the service is executed in an isolated process. Services can be used in three manners, corresponding to three types of app services: \textit{started service}, \textit{bound service}, and \textit{hybrid service}.
 
-\textbf{Started service}. The lifecycle of a started service is shown in Figure~\ref{fig_lifecycle}a, which is explained as  follows. A started service is started via \hytt{Context.startService()} which triggers the system to retrieve the service or to create it via the \hytt{onCreate()} method of the service if the service has not been created before, and then to invoke the \hytt{onStartCommand(Intent, int, int)} method of the service. The service keeps running until \hytt{Context.stopService()} or the \hytt{stopSelf()} method of the service is invoked. It is worth mentioning that if the service is not stopped, multiple invocations to \hytt{Context.startService()} result in multiple corresponding invocations to \hytt{onStartCommand()}, but do not create more service instances, that is, the service (instance) is shared by different callers. Once \hytt{Context.stopService()} or \hytt{stopSelf()} is invoked, the service is stopped and destroyed by the system via calling the \hytt{onDestroy()} method of the service, no matter how many times it was started.  However, if the \hytt{stopSelf(int)} method of the service is used, the service will not be stopped until all started intents are processed. Note that the started service and the components which start it are loosely-coupled, i.e., the service can still keep running when the components are destroyed.
-
-\textbf{Bound service}. The lifecycle of a bound service is shown in Figure~\ref{fig_lifecycle}b, which is explained in the following. Since started services cannot interact with the components which start them, bound services are presented, which can send data to the launching components (clients). The client component can invoke \hytt{Context.bindService()} to obtain a connection to a service. Similarly, this creates the service by calling  \hytt{onCreate()} without \hytt{onStartCommand()} if it has not been created yet. The client component receives the \hytt{IBinder} object (a client-server interface) which is returned by the \hytt{onBind(Intent)} method of the service, allowing the two to communicate. Although multiple client components can bind to the service, the system invokes \hytt{onBind()} only once. The binding is terminated either through the \hytt{Context.unbindService()} method (the system invokes \hytt{onUnbind()}), or the client component's lifecycle ends. A bound service is destroyed when no client component binds to it.
-
-\textbf{Hybrid service}. A service can be both started and have connections bound to it. This kind of services is referred to as started and bound service, or hybrid service for short. The hybrid services can be started first and then bound, or vice versa. The components that start and bind a hybrid service can be different.
-
 \begin{figure}
   \centering
   \subfigure[]{
@@ -310,6 +304,14 @@ To define an app service, one should inherit the \hytt{Service} class provided b
   \caption{Service lifecycle of Android apps: (a) started service, (b) bound service.}
 \label{fig_lifecycle}
 \end{figure}
+
+\textbf{Started service}. The lifecycle of a started service is shown in Figure~\ref{fig_lifecycle}a, which is explained as  follows. A started service is started via \hytt{Context.startService()} which triggers the system to retrieve the service or to create it via the \hytt{onCreate()} method of the service if the service has not been created before, and then to invoke the \hytt{onStartCommand(Intent, int, int)} method of the service. The service keeps running until \hytt{Context.stopService()} or the \hytt{stopSelf()} method of the service is invoked. It is worth mentioning that if the service is not stopped, multiple invocations to \hytt{Context.startService()} result in multiple corresponding invocations to \hytt{onStartCommand()}, but do not create more service instances, that is, the service (instance) is shared by different callers. Once \hytt{Context.stopService()} or \hytt{stopSelf()} is invoked, the service is stopped and destroyed by the system via calling the \hytt{onDestroy()} method of the service, no matter how many times it was started.  However, if the \hytt{stopSelf(int)} method of the service is used, the service will not be stopped until all started intents are processed. Note that the started service and the components which start it are loosely-coupled, i.e., the service can still keep running when the components are destroyed.
+
+\textbf{Bound service}. The lifecycle of a bound service is shown in Figure~\ref{fig_lifecycle}b, which is explained in the following. Since started services cannot interact with the components which start them, bound services are presented, which can send data to the launching components (clients). The client component can invoke \hytt{Context.bindService()} to obtain a connection to a service. Similarly, this creates the service by calling  \hytt{onCreate()} without \hytt{onStartCommand()} if it has not been created yet. The client component receives the \hytt{IBinder} object (a client-server interface) which is returned by the \hytt{onBind(Intent)} method of the service, allowing the two to communicate. Although multiple client components can bind to the service, the system invokes \hytt{onBind()} only once. The binding is terminated either through the \hytt{Context.unbindService()} method (the system invokes \hytt{onUnbind()}), or the client component's lifecycle ends. A bound service is destroyed when no client component binds to it.
+
+\textbf{Hybrid service}. A service can be both started and have connections bound to it. This kind of services is referred to as started and bound service, or hybrid service for short. The hybrid services can be started first and then bound, or vice versa. The components that start and bind a hybrid service can be different.
+
+
 
 \section{Service Usage Anti-Patterns}\label{antipatterns}
 We first formulate four anti-patterns that lead to service usage inefficiencies. It is worth mentioning that these four kinds of service usage inefficiencies may occur to both local services (implemented by the app itself) and remote services (implemented by other apps).
@@ -711,14 +713,15 @@ Compared to the other three kinds of service usage efficiency bugs, the negative
 {\setlength{\parindent}{0 em}
 \fbox{\begin{minipage}{3.23 in}
 {\bf Finding~6:}
-A total of 272 service usage efficiency bugs are relevant to the usage of 578 started services, 80 service usage efficiency bugs happen to the usage of 167 bound services, and 84 service usage efficiency bugs occur on the usage of 99 hybrid services.  \\
+272 service usage efficiency bugs are relevant to the usage of 578 started services, 80 service usage efficiency bugs happen to the usage of 167 bound services, and 84 service usage efficiency bugs occur on the usage of 99 hybrid services.  \\
 {\bf Implication:}
 Among the three types of services, the usage of hybrid services has the highest possibility to involve efficiency bugs, whereas the usage of started services and bound services has the lower possibilities to involve efficiency bugs.
 \end{minipage}}
 }\\
 \medskip
 
-We also applied \textsf{ServDroid} to other 60 real-world but not so popular Android apps, and found that those apps involve even more service usage efficiency bugs. In summary, Findings~1-6 of our empirical study indicate that service usage efficiency bugs are pervasive in Android apps, and the developers have not yet been aware of the severity of service usage efficiency bugs.
+%We also applied \textsf{ServDroid} to other 60 real-world but not so popular Android apps, and found that those apps involve even more service usage efficiency bugs. 
+We have also applied \textsf{ServDroid} to different versions of some apps, and find that, the numbers of service usage efficiency bugs decrease with the increasing app versions (cf. Figure~\ref{fig_bugsvsversions}). This implies that some developers fixed such bugs, though not completely. In summary, our empirical study indicate that service usage efficiency bugs are pervasive in Android apps, and most developers have not yet been aware of the severity.
 
 \begin{table*} [htbp]
 \centering
@@ -784,6 +787,23 @@ We also applied \textsf{ServDroid} to other 60 real-world but not so popular And
 \end{tabular}\label{tab_result}
 \end{table*}
 
+%\begin{figure}
+%  \centering
+%  \subfigure[]{
+%    \includegraphics[scale=0.5]{bugs_vs_versions.eps}}
+%  \subfigure[]{
+%    \includegraphics[scale=0.5]{bound.eps}}
+%  \caption{The number of services usage efficiency bugs decreases with increasing app versions.}
+%\label{fig_lifecycle}
+%\end{figure}
+
+ \begin{figure}
+ \centering
+  \includegraphics[scale=0.4]{bugs-vs-versions.eps}
+ \caption{The number of services usage efficiency bugs decreases with the increasing app version, where concrete version numbers are abstracted away.}
+\label{fig_bugsvsversions}
+\end{figure}
+
 \subsection{Case Studies}
 In this part, we reports on some service usage efficiency bugs detected from three Android apps.
 
@@ -828,7 +848,7 @@ In this part, we reports on some service usage efficiency bugs detected from thr
 
 \textbf{Twitter} is an app designed to reduce busywork, which allows users to focus on the things that matter. For its version 7.0.0, the number of started, bound, and hybrid services implemented or used in \textit{Twitter} is nine, two, and two, respectively. Although the number of services is not large, four service usage efficiency bugs are detected by our tool \textsf{ServDroid}, including one late destroy bug and three service leak bugs. The code snippet in Figure~\ref{Twitter}a reports the late destroy bug, where the \hytt{a()} method starts a service \hytt{OverlayService}. Despite the fact that the \hytt{stopService()} method is called in the \hytt{b()} method, the time to stop the \hytt{OverlayService} is too late. To address this problem, the \hytt{stopSelf()} method should be invoked in the \hytt{onStartCommand()} method of \hytt{OverlayService}. The code snippet in Figure~\ref{Twitter}b shows a service leak bug found from \textit{Twitter}: The \hytt{startService()} method that starts the service \hytt{OemHelperService} is called in the \hytt{a()} method of the class \hytt{OemIntentReceiver}, but,  surprisingly, there is no \hytt{stopSelf()} or \hytt{stopService()} available in the app code to stop \hytt{OemHelperService}.
 
-Similar service usage efficiency bugs are found in other 42 Android apps used in our study. The reason why service usage efficiency bugs are so prevalent is that their effects are not so severe as those of the functional bugs, that is, they do not cause app crashes, and thus developers do not regard them as a tricky problem.
+%Similar service usage efficiency bugs are found in other 42 Android apps used in our study. The reason why service usage efficiency bugs are so prevalent is that their effects are not so severe as those of the functional bugs, that is, they do not cause app crashes, and thus developers do not regard them as a tricky problem.
 
 
 
