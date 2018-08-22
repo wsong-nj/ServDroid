@@ -1,0 +1,823 @@
+%\documentclass[10pt,conference]{IEEEtran}
+\documentclass[conference]{IEEEtran}
+
+\usepackage{graphicx}
+%\usepackage{algorithm}
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{rotating}
+\usepackage{enumerate}
+%\usepackage{amsthm}
+%for huati
+\usepackage{amsmath}
+\usepackage{epstopdf}
+%\usepackage[font=small]{caption}
+\usepackage{subfigure}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{url}
+%\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{slashbox,multirow}
+\usepackage{flushend}
+%\reference alignment
+\definecolor{keywordcolor}{rgb}{0,0,0.9}
+\definecolor{lightgreen}{rgb}{0,0.8,0}
+\definecolor{webgreen}{rgb}{0,.5,0}
+
+
+\newtheorem{definition}{Definition}
+\newtheorem{pattern}{Pattern}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\newcommand{\ehb}{\textsf{EHB}}
+\newcommand{\ehbdroid}{\textsf{EHBDroid}}
+\newcommand{\monkey}{\textsf{Monkey}}
+\newcommand{\dynodroid}{\textsf{Dynodroid}}
+\newcommand{\emma}{\texttt{Emma}}
+\newcommand{\am}{\texttt{am}}
+\newcommand{\moct}{\texttt{MOCT}}
+\newcommand{\hytt}[1]{\texttt{\hyphenchar\font=\defaulthyphenchar #1}}
+
+\lstset{
+  language=Java,
+  alsolanguage= XML,
+  tabsize=4, %
+  frame=, %把代码用带有阴影的框圈起来
+  %rulesepcolor=\color{red!20!green!20!blue!20},%代码块边框为淡青色
+  keywordstyle=\color{red!20!green!20!blue!20}, %代码关键字的颜色为蓝色，粗体
+  showstringspaces=false,%不显示代码字符串中间的空格标记
+  stringstyle=\ttfamily, % 代码字符串的特殊格式
+  keepspaces=true, %
+  breakindent=22pt, %
+  %frame=single,
+  numbers=left,%左侧显示行号 往左靠,还可以为right，或none，即不加行号
+  stepnumber=1,%若设置为2，则显示行号为1,3,5，即stepnumber为公差,默认stepnumber=1
+  %numberstyle=\tiny, %行号字体用小号
+  numberstyle={\color[RGB]{0,204,0}\tiny} ,%设置行号的大小，大小有tiny,scriptsize,footnotesize,small,normalsize,large等
+  numbersep=8pt,  %设置行号与代码的距离，默认是5pt
+  commentstyle={\color{green}\tiny},%浅灰色的注释
+  basicstyle=\footnotesize, % 这句设置代码的大小
+  showspaces=false, %
+  flexiblecolumns=true, %
+  breaklines=true, %对过长的代码自动换行
+  breakautoindent=true,%
+  breakindent=4em, %
+  %aboveskip=1em, %代码块边框
+  tabsize=2,
+  showstringspaces=false, %不显示字符串中的空格
+  fontadjust,
+  framextopmargin=2pt,framexbottommargin=2pt,abovecaptionskip=-3pt,belowcaptionskip=3pt,
+  xleftmargin=1em,xrightmargin=1em, % 设定listing左右的空白
+}
+
+\lstset{language=[AspectJ]Java,
+basicstyle=\footnotesize,
+keywordstyle=\color{keywordcolor}, %\underbar,
+identifierstyle=,
+commentstyle=\color{lightgreen} \textit,
+stringstyle=\ttfamily,
+showstringspaces=false,
+captionpos=b
+}
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\ifCLASSOPTIONcompsoc
+  % IEEE Computer Society needs nocompress option
+  % requires cite.sty v4.0 or later (November 2003)
+  \usepackage[nocompress]{cite}
+\else
+  % normal IEEE
+  \usepackage{cite}
+\fi
+
+\ifCLASSINFOpdf
+
+\else
+
+\fi
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{ServDroid: Detecting Service Usage Inefficiencies in Android Applications}
+
+\iffalse
+\author{
+\IEEEauthorblockN{Wei~Song}
+\IEEEauthorblockA{School of Computer Sci. \& Eng. \\
+Nanjing University of Sci. \& Tech.\\
+Nanjing, China \\
+wsong@njust.edu.cn}
+\and
+\IEEEauthorblockN{Jing~Zhang}
+\IEEEauthorblockA{School of Computer Sci. \& Eng. \\
+Nanjing University of Sci. \& Tech.\\
+Nanjing, China \\
+xiangxingqian@gmail.com}
+\and
+\IEEEauthorblockN{Jeff~Huang}
+\IEEEauthorblockA{Parasol Laboratory \\
+Texas A\&M University\\
+College Station, TX, USA \\
+jeff@cse.tamu.edu}
+}
+\fi
+
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+Services in Android applications are frequently-used components that are responsible for performing time-consuming operations in the background. While services play a crucial role in app performance, our study finds that service usages in practice are not as efficient as expected, e.g., they tend to cause unnecessary resource occupation and energy consumption. In this paper, we present four anti-patterns that result in service usage inefficiencies, including premature create, late destroy, premature destroy, and service leak. Since these service usage efficiency bugs do not cause application crashes, it is difficult for existing testing approaches to find them. To this end, we develop a static analysis tool, \textsf{ServDroid}, which can automatically detect such bugs and also provide calling context to help debugging them. We apply \textsf{ServDroid} to 45 popular real-world Android apps. Surprisingly, we find that service usage inefficiencies are pervasive.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+Android app, background service, usage inefficiency, service leak, static analysis
+\end{IEEEkeywords}}
+
+\maketitle
+
+
+
+\IEEEdisplaynontitleabstractindextext
+%s.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+Mobile applications (apps) are now eating the world. Millions of apps are available on Google Play Store and Apple App Store, and many apps have millions or even billions of downloads. The improvement of computation and memory capacity of mobile devices allows developers to design increasingly powerful and complex apps. On the other hand, more complex apps usually involve more bugs and vulnerabilities, which significantly impact the release and adoption of the apps. Therefore, the quality of mobile apps receives an increasing attention~\cite{ReavesBGABCDHKS16,AnandNHY12,MachiryTN13,ChoiNS13,LiuXC14,BanerjeeC0R14,LiuXCL14,HechtBRMD15,BehrouzSBM16,MirzaeiGBSM16,SuMCWYYPLS17,FanSCMLXPS18}.
+
+Testing is an effective means to find bugs and to help improve the quality of apps. Since Android is popular and open-source, many testing approaches are presented for Android apps. Nonetheless, they mostly focus on GUI testing of foreground activities~\cite{monkey,AnandNHY12,MachiryTN13,ChoiNS13,MirzaeiGBSM16,BaekB16,SuMCWYYPLS17,SongQH17},
+whereas background services have received few research
+attention~\cite{ZhangLLC17,ma2018}. Services are Android components, performing long-running tasks that involve few or no user interactions, e.g., file I/O, music playing, network transaction~\cite{Androidservice}. A service executes on the main thread of the calling component's process, and thus a new thread is often created to perform the long-running operations. Services in Android fall into two  categories: system services and app services. We focus on the
+latter which are further divided into three types: \textit{started services}, \textit{bound services}, and \textit{hybrid services} according to how they are used in the code.
+% kinds: local services and remote services. Local services are defined by the app itself whereas remote services are from other apps running on the same device.
+
+Although app services usually do not have user interface, they can keep running
+even when the device screen is shut down. As a consequence, if an app involves
+service-related bugs, not only the functionalities of the app but its
+performance (e.g., resource utilization, energy consumption) can be affected.
+In this paper, we focus on service usage inefficiencies (a type of
+non-functional bugs) that do not immediately lead to app crashes, but
+have a significant impact on the performance of the app.
+%This problem has received little attention~\cite{ZhangLLC17} in the literature.
+Since such bugs do not cause app crashes, existing testing methods do
+not work well in detecting them. Although there exists work on non-functional
+testing (mainly energy testing) of apps~\cite{LiuXC14,BanerjeeC0R14,LiuXCL14,BehrouzSBM16,JabbarvandM17}, it generally more expensive and more labour-intensive than functional testing~\cite{BehrouzSBM16}, because its oracle is usually based on performance indicators.
+
+%Therefore, a large proportion of app energy consumption is caused by background services~\cite{}.
+
+To address this problem, instead of using testing, we first propose four
+anti-patterns to facilitate the analysis of service usage
+efficiency bugs. These anti-patterns are all defined based on the lifecycle
+of services~\cite{Androidservice} and are distilled from our manual analysis
+of real-world Android apps. The anti-patterns are described below:
+\begin{itemize}
+  \item {\bf Premature create} refers to the situation that a
+service is created too early before it is really used. Hence, the service is in
+an idle state beginning from its create to its real use, occupying unnecessary
+memory and consuming unnecessary energy.
+\item  {\bf Late destroy} refers to the situation
+that a service is destroyed too late after its use. Similarly, the service is in
+an idle state beginning from the end of its final use to the moment it is destroyed.
+\item {\bf Premature destroy} refers to the situation that a service is initiated by a
+component (caller) but it is destroyed before another component begins to use
+it. Consequently, the service should be created again to fulfil the new request.
+\item {\bf Service leak} refers to the situation that a service is never destroyed
+after its use, even when the apps which initiate the service terminate.
+\end{itemize}
+
+% We observe from real-world apps that these four kinds of efficiency bugs are
+% common.
+For each of the four service usage anti-patterns, we then propose a static
+analysis technique to automatically detect its instances (concrete efficiency
+bugs matching the anti-pattern) in an app.
+% The analysis is based on
+% \textsf{Soot}~\cite{sootpaper}\footnote{https://github.com/Sable/soot}, a
+% framework for transforming and analyzing Java and Android applications.
+Our approach takes an app (APK file) as input and transforms the APK files into
+Jimple based on Soot~\cite{sootpaper}. It then constructs a
+context-insensitive inter-procedural control flow graph of the app and uses
+dominator analysis and successor analysis to find the service usage efficiency
+bugs.
+Finally, it reports all the
+detected service usage efficiency bugs as well as the components (callers) that
+initiate the services to facilitate debugging.
+
+We implemented our approach in an open-source tool \textsf{ServDroid}. The tool
+is written in Java and is publicly available (links are omitted due to double-blind review).
+To investigate the service usage efficiency bugs in real-world apps, we conduct an empirical analysis of 45 the most popular free Android apps listed on
+Wikipedia\footnote{https://en.wikipedia.org/wiki/List\_of\_most\_downloaded\_Android\_applications (accessed in Jan 2018)}.
+Our empirical study shows that
+service usage efficiency bugs are surprisingly pervasive in these real-world apps: 42 (93.33\%) apps involve at least one kind of service usage
+efficiency bugs; each app has on average 9.9 service usage efficiency bugs.
+This indicates that service usage inefficiencies are
+severe in practice, but the developers have not yet realized their severity.
+
+%The identified bugs are validated through manual analysis or real phone testing, and some of the bugs are confirmed by developers. Our study takes the first step to address these problems, which can inspire the follow-up research on debugging and repairing such bugs.
+
+In summary, the key contributions of this paper are:
+\begin{enumerate}
+\item According to the service lifecycle, we formulate four service usage
+anti-patterns that may lead to unnecessary resource occupation and energy consumption.
+%To our best knowledge, our work is among the first to detect service usage inefficiencies in mobile apps.
+\item We conduct an empirical study on 45 most downloaded free Android apps, the results of which demonstrate that the service usage inefficiencies are pervasive in practice and they indeed have a significant negative impact on the energy consumption.
+\item Based on the anti-patterns, we present a static analysis approach and an open-source tool, \textsf{ServDroid}, to efficiently detect service usage efficiency bugs and also help debugging them. Both precision and recall of \textsf{ServDroid} on the 45 apps are 100\%.
+\end{enumerate}
+
+The rest of the paper is organized as follows. Section~\ref{background} gives an
+introduction to the three types of app services.
+Section~\ref{antipatterns} formulates the four anti-patterns that lead to
+service usage efficiency bugs.
+Section~\ref{approach} presents our static analysis for detecting instances
+of such anti-patterns.
+Section~\ref{evaluation} reports the results of our empirical study.
+Section~\ref{relatedwork} reviews the related work, and
+Section~\ref{conclusion} concludes the paper.
+
+\section{Background}\label{background}
+Along with \textit{activities} (user interfaces),
+\textit{broadcast receivers} (mailboxes for broadcast), and \textit{content providers} (local database servers), services (background tasks) are fundamental components in Android apps. To ease the understanding of service usage anti-patterns, we introduce the lifecycle of app services and how they are used~\cite{Androidservice}.
+
+To define an app service, one should inherit the \hytt{Service} class provided by Android, and overwrite corresponding methods of \hytt{Service}, e.g., \hytt{onStartCommand(Intent, int, int)}, \hytt{onBind()}, etc. A service is started in the app by an asynchronous message object which referred to as \textit{intent}. Accordingly, a service declared by a $<$service$>$ tag in the AndroidManifest XML file of the app ought to have the attribute $<$intent-filter$>$ which indicates the intents that can start it.  The attribute $<$exported$>$ indicates the components of other apps can invoke or interact with it. The attribute $<$isolatedProcess$>$ indicates whether the service is executed in an isolated process. Services can be used in three manners, corresponding to three types of app services: \textit{started service}, \textit{bound service}, and \textit{hybrid service}.
+
+\begin{figure}
+  \centering
+  \subfigure[]{
+    \includegraphics[scale=0.48]{started.eps}}
+  \subfigure[]{
+    \includegraphics[scale=0.48]{bound.eps}}
+  \caption{App service lifecycle: (a) started service, (b) bound service.}
+\label{fig_lifecycle}
+\end{figure}
+
+\textbf{Started service}. The lifecycle of a started service is shown in Fig.~\ref{fig_lifecycle}a, which is explained as  follows. A started service is started via \hytt{Context.startService()} which triggers the system to retrieve the service or to create it via the \hytt{onCreate()} method of the service if the service has not been created yet, and then to invoke the \hytt{onStartCommand(Intent, int, int)} method of the service. The service keeps running until \hytt{Context.stopService()} or the \hytt{stopSelf()} method of the service is invoked. It is worth mentioning that if the service is not stopped, multiple invocations to \hytt{Context.startService()} result in multiple corresponding invocations to \hytt{onStartCommand()}, but do not create more service instances, that is, the service (instance) is shared by different callers. Once \hytt{Context.stopService()} or \hytt{stopSelf()} is invoked, the service is stopped and destroyed by the system via calling the \hytt{onDestroy()} method of the service, no matter how many times it was started.  However, if the \hytt{stopSelf(int)} method of the service is used, the service will not be stopped until all started intents are processed. Note that the started service and the components which start it are loosely-coupled, i.e., the service can still keep running when the components are destroyed.
+
+\textbf{Bound service}. The lifecycle of a bound service is shown in Fig.~\ref{fig_lifecycle}b, which is explained in the following. Since started services cannot interact with the components which start them, bound services are presented, which can send data to the launching components (clients). The client component can invoke \hytt{Context.bindService()} to obtain a connection to a service. Similarly, this creates the service by calling  \hytt{onCreate()} without \hytt{onStartCommand()} if it has not been created yet. The client component receives the \hytt{IBinder} object (a client-server interface) which is returned by the \hytt{onBind(Intent)} method of the service, allowing the two to communicate. Although multiple client components can bind to the service, the system invokes \hytt{onBind()} only once. The binding is terminated either through the \hytt{Context.unbindService()} method (the system invokes \hytt{onUnbind()}), or the client component's lifecycle ends. Thus, a bound service is destroyed when no client component binds to it.
+
+\textbf{Hybrid service}. A service can be both started and have connections bound to it. This kind of services is referred to as started and bound service, or hybrid service for short. The hybrid services can be started first and then bound, or vice versa. The components that start and bind a hybrid service can be different.
+
+
+
+\section{Service Usage Anti-Patterns}\label{antipatterns}
+We first formulate four anti-patterns that lead to service usage inefficiencies. It is worth mentioning that these four kinds of service usage inefficiencies may occur to both local services (implemented by the app itself) and remote services (implemented by other apps).
+
+\begin{pattern} [\textbf{Premature Create}] A service is created too early before it is really used, and thus the service is in an idle state beginning from its create to its real use.
+\label{p_prematurecreate}
+\end{pattern}
+
+Note that the premature create bugs can only exist in the hybrid services (i.e., started and bound services). Specifically, if \hytt{bindService()} is called after \hytt{startService()} but  not immediately, and the \hytt{onStartCommand()} method of the service is not overwritten, the service will be in an idle state until \hytt{bindService()} is called. A service in an idle state occupies unnecessary resource (e.g., memory) and consumes unnecessary energy, which reduces the performance of the app.
+
+\begin{pattern} [\textbf{Late Destroy}] A service is destroyed too late after its use, and thus the service is in an idle state beginning from the end of its final use to the moment it is destroyed.
+\label{p_latedestroy}
+\end{pattern}
+
+
+Let us explain why bugs of late destroy may exist. App services can be stopped (unbound) by end users via user-input events. Nevertheless, it only makes sense when end users want to stop (unbind) the services in advance. If end users want the services to complete the respective long-running tasks, they usually do not know the best moment to stop (unbind) the services. Besides, many services are non-interactive, i.e., they do not need user interaction at all~\cite{ZhangLLC17}. Therefore, the right time to stop (unbind) a service should be determined by the app itself.
+More specifically,
+\begin{enumerate}
+\item The right time to stop a started service is to call \hytt{stopSelf()} or \hytt{stopSelf(int)} at the end of its \hytt{onStartCommand()} method, because the end represents that the service's task is finished. Otherwise, the service is  destroyed too late (stopped elsewhere), or not destroyed at all (cf. Anti-pattern~\ref{p_serviceleak}).
+\item The right time to unbind a bound service is  at the moment when the communication between the client component  and the service is completed (i.e., the client component will not call the methods of the service any longer).
+\item The right time to stop and to unbind a hybrid service is the same as that to stop a started service and to unbind a bound service, respectively.
+\end{enumerate}
+
+
+\begin{pattern} [\textbf{Premature Destroy}] Suppose that a service is used simultaneously by several components. The service is destroyed too early if one component destroys it before another component begins to use it, and thus it has to be recreated.
+\label{p_prematuredestroy}
+\end{pattern}
+
+Anti-pattern~\ref{p_prematuredestroy} can occur in started services and hybrid services. If there are several components that can start a service simultaneously, \hytt{stopSelf(int startID)} should be called in \hytt{onStartCommand()}. This guarantees that the service is not destroyed if the argument \hytt{startID} is not the same as that generated by the last start of the service. However, if \hytt{stopSelf()} is used instead, the created service may be destroyed too early before other components' use. Consequently, in this situation, the service should be created again to respond to other components. The premature destroy bugs lead to many unnecessary destroy and recreate of the same services, reducing the performance of the apps significantly.
+%To determine whether an app involves the bugs of premature destroy, the crux is to check whether there are two or more components that share the same services.
+
+Bound services are destroyed once they become unbounded.
+If a service becomes unbounded, it indicates that all client components which bound it have finished using it.
+In other word, currently, there is no other client component which is using it or ready to use it. Therefore, bound services are free of the premature destroy bugs by nature.
+
+%Similar to started services, the use of hybrid services may also involves the bugs of premature destroy, when \hytt{stopSelf()} instead of \hytt{stopSelf(int)} is used in \hytt{onStartCommand()} and no component .
+%
+
+\begin{pattern} [\textbf{Service Leak}] A service is never destroyed after its use, even when the apps which use the service terminate.
+\label{p_serviceleak}
+\end{pattern}
+
+
+
+Anti-pattern~\ref{p_serviceleak} refers to the bugs that the services are never destroyed except for the situation that they are stopped (unbound) by end users. However, as aforementioned, the programmers should not rely on end users to stop (unbind) the app services, and, instead, the services ought to be stopped (unbound) by the app itself. If a service is started (bound) but is not stopped (unbound), the service is leaked. Since started services may be executed in an isolated process, the leaked service will keep running even when the app process terminates, which occupies unnecessary resources and reduces the performance of the app. %The service leak bugs are more severe than the late destroy bugs.
+
+Despite the fact that the leaked services and the services destroyed too late (but not destroyed yet) can be automatically killed by the system when the system resource (e.g., memory) becomes low, the started services which was killed can be rebooted later, if the return value of their \hytt{onStartCommand()} method is ``START\_ST-ICKY'' or ``START\_REDELIVER\_INTENT''. In addition, since the leaked services occupy much memory, normal services may be unexpectedly killed by the system. Note that Android 8.0 has taken actions on limiting background services: when the app is not in the foreground, the app's background services are stopped by the system. This may alleviate the impact of late destroy and service leak, but cannot avoid them. Moreover, this cannot reduce premature create and premature destroy.
+
+Table~\ref{tab_correlation} summarizes the possible usage efficiency anti-patterns of different types of services.
+
+
+\begin{table}
+\centering
+\caption{The Correlation Between Service Types and Service Usage Efficiency Anti-patterns}
+\small
+\begin{tabular}{|c|c|c|c|c|}\hline
+\multicolumn{2}{|c|}{\backslashbox{Anti-pattern}{Service type}}&Started &Bound&Hybrid
+\\\hline
+\multicolumn{2}{|c|}{Premature create} &   &    &$\surd$
+\\\hline
+\multicolumn{2}{|c|}{Late destroy} & $\surd$& $\surd$&$\surd$
+\\\hline
+\multicolumn{2}{|c|}{Premature destroy} & $\surd$ & &$\surd$
+\\\hline
+\multicolumn{2}{|c|}{Service Leak}& $\surd$& $\surd$& $\surd$
+\\\hline
+\end{tabular}
+\label{tab_correlation}
+\end{table}
+
+\section{Detecting Service Usage Bugs}\label{approach}
+Based on the four anti-patterns, we use
+static analysis to detect service usage efficiency bugs in apps.
+
+Since some services declared in the AndroidManifest XML file of the app may not
+be implemented or used in the code, and our analysis aims to discover all usages
+of each service, we begin the static analysis by first obtaining the services
+that are actually implemented or used in the code. Note that the service types cannot be determined directly from the AndroidManifest XML file or the service definition (i.e., the class that defines the service). We have to determine the service type according to all uses of the service from the app code. If a service is only initiated through \hytt{startService()} (\hytt{bindService()}), it is a started (bound) service; otherwise, it is a hybrid service. 
+
+According to the statements
+that initiate services (i.e., \hytt{startService()} and \hytt{bindService()})
+and the service types, we then determine whether there are use cases of the
+services that may lead to corresponding service usage inefficiencies based on
+the context-insensitive inter-procedural control flow graph of the app.
+Fig.~\ref{fig_framework} illustrates the framework of our approach, which
+includes two main components: \textit{Service Identifier} and \textit{Bug
+Detector}. The former is to identify from the code three list of
+services according to the service types. The latter is to find
+concrete service usage efficiency bugs for each service.
+We next present our analysis for detecting each of the four kinds
+of bugs in more detail.
+
+\subsection{Detecting Premature Create Bugs}
+The method of determining whether the use of a hybrid service $s$ involves premature create bugs proceeds as follows. We first check whether the \hytt{onStartCommand()} method of the service $s$ is overwritten. If it is overwritten, the service usage does not involve premature create bugs. Otherwise, we construct the context-insensitive inter-procedural control flow graph of the app. Based on the control flow graph, we check whether there is a path such that the following two conditions are satisfied (If both conditions are satisfied, the service $s$ involves premature create bugs.):
+\begin{enumerate}
+\item No component binds to service $s$ when the \hytt{startService()} statement is executed.
+\item There is a \hytt{bindService()} statement which follows (but not immediately) the \hytt{startService()} statement.
+\end{enumerate}
+
+To check the first condition, we first obtain the dominators (cf. Definition~\ref{def_dom}) of the \hytt{startService()} statement $stm_s$. If the list of dominators does not include a \hytt{bindService()} statement $stm_b$, the first condition is satisfied. Otherwise, we further check whether the corresponding \hytt{unbindService()} statement follows $stm_b$ in the list, or the component that binds $s$ is destroyed before $stm_s$ (the corresponding \hytt{onDestroy()} statement follows $stm_b$ in the list). If either is met, the first condition is satisfied.
+
+For the second condition, we check whether there is a  \hytt{bindService()} statement $stm_{b_1}$ follows the \hytt{startService()} statement $stm_s$. If yes, we further determine in the path from $stm_s$ to $stm_{b_1}$ whether there is another \hytt{bindService()} statement that directly follows $stm_s$. If not, the second condition is satisfied.
+
+\begin{definition}[\textbf{Dominance and Dominator}]
+  In a control flow graph, a node (statement) $s_j$ is dominated by another node $s_i$ if each directed path from the entry of the control flow graph to $s_j$ contains $s_i$. $s_i$ is called a dominator of $s_j$.
+\label{def_dom}
+\end{definition}
+
+
+\subsection{Detecting Late Destroy and Premature Destroy Bugs}
+
+
+The following method is used to detect late destroy bugs. The usage of a started
+service may result in late destroy bugs, if \hytt{stopSelf()} or
+\hytt{stopSelf(int)} is not called in the \hytt{onStartCommand()} method of the
+service. The usage of a bound service may contain late destroy bugs, if the
+client component does not call \hytt{unbindService()} immediately after the last
+invocation of the method $m$ of the service in the control flow graph of the app
+(i.e., the \hytt{unbindService()} statement is not the direct successor of the statement which invokes $m$).
+The usage of a hybrid service may lead to late destroy bugs, if
+\hytt{stopSelf()} (\hytt{stopSelf(int)}) is not called in
+\hytt{onStartCommand()}, or \hytt{unbindService()} is not called immediately
+after the last invocation of the method of the service in the control flow graph.
+
+The use of a started or a hybrid service may involve premature destroy bugs, if
+the service is shared by two or more components (callers), and \hytt{stopSelf()}
+instead of \hytt{stopSelf(int)} is called in the \hytt{onStartCommand()} method
+of the service.
+
+
+ \begin{figure}
+ \centering
+  \includegraphics[scale=1.15]{framework.eps}
+ \caption{Approach framework of \textsf{ServDroid}.}
+\label{fig_framework}
+\end{figure}
+
+\subsection{Detecting Service Leak Bugs}
+Normally, to bind a service, each bind statement should have a corresponding
+unbind statement such that the callers (client components) of the two statements
+are the same; however, to start a service, multiple start statements may
+correspond to the same (only one) stop statement. If a start (bind) statement is not always
+followed by a stop (unbind) statement, the service may leak. As aforesaid, no
+matter whether end users can destroy a service or not, the app itself should
+have the mechanism to destroy the created service.  With this in mind, we have
+the following steps to determine whether a service may leak or not:
+
+
+
+\begin{enumerate}
+\item We first find all statements that start (bind) the service, i.e., \hytt{startService()} (\hytt{bindService()}). All the  statements are summarized in a set $S_1$.
+\item We then find all statements that stop (unbind) the service, i.e., \hytt{stopService()} (\hytt{unbindService()}). All the  statements are summarized in a set $S_2$.
+\item We next remove from $S_2$ the statements that are triggered by end users, i.e., the statements that are in the event handlers (callbacks) of the UI events (e.g., user click).
+\item For each start (bind) statement in $S_1$, i.e., \hytt{startService()} (\hytt{bindService()}), we check whether or not the corresponding stop (unbind) statement, i.e., \hytt{startService()} (\hytt{unbind-Service()}) exists in $S_2$. If not, the use of the service will lead to service leak. If yes, we further determine whether or not the stop (unbind) statement can be always reached from the corresponding start (bind) statement.  If not, the use of the service will also lead to service leak.
+\end{enumerate}
+
+In the last step above, it is challenging to determine whether a stop (unbind)
+statement $stm_2$ can always be reached from the corresponding start (bind)
+statement $stm_1$. Symbolic analysis can be used to precisely solve this
+problem, but it is difficult to scale. To balance precision and scalability, our
+method of determining service leak is based on the concept of
+\textit{post-dominator} (cf. Definition~\ref{def_postdom}): if $stm_2$ is a
+post-dominator of $stm_1$ in the
+context-insensitive inter-procedure control flow graph of the app, then the
+service does not leak. Otherwise, it may leak.
+
+\begin{definition}[\textbf{Post-dominance and Post-dominator}]
+  In a control flow graph, a node (statement) $s_i$ is post-dominated by another
+  node $s_j$ if each directed path from $s_i$ to the exit (return
+  statement) of the control flow graph contains $s_j$. $s_j$ is called a
+  post-dominator of $s_i$.
+\label{def_postdom}
+\end{definition}
+
+
+
+\section{Empirical Evaluation}\label{evaluation}
+In this section, we study service usage inefficiencies in real-world popular Android apps, aiming at answering the following seven research questions:
+
+\begin{itemize}
+\item {\bf RQ1} - {\it Service usage frequency}: Are background services widely used in Android apps? Which type of services is the most frequently-used?
+\item {\bf RQ2} - {\it Pervasiveness of efficiency bugs}: Are service usage efficiency bugs common in practice?
+\item {\bf RQ3} - {\it Distribution of efficiency bugs}: How are the four kinds of service usage efficiency bugs distributed in the three types of services?
+\item {\bf RQ4} - {\it Dominating efficiency bugs}: Among the four kinds of service usage efficiency bugs, which kind is the most prevalent?
+\item {\bf RQ5} - {\it Most vulnerable service type}: Among the three types of services, the usage of which type is more prone to efficiency bugs?
+\item {\bf RQ6} - {\it Performance of \textsf{ServDroid}}: What are the precision, recall, and time overhead of \textsf{ServDroid}?
+\item {\bf RQ7} - {\it Energy savings}: How much energy can be saved if these services usage efficiency bugs are fixed?
+\end{itemize}
+
+In the evaluation, we use both a manual inspection and a software tool (i.e., our prototype \textsf{ServDroid}) to analyze the service usage efficiency bugs in these apps.
+
+
+\subsection{Experimental Setup}
+\textbf{Data set}. Our empirical evaluation is based on 45 the most downloaded free Android apps according to Wikipedia. The first 25 apps are all with over one billion downloads and the rest 20 apps all have over 500 million downloads. The first two columns of Table~\ref{tab_resultsum} summarize the names of these 45 apps and the app versions we use, respectively. It is worth mentioning that all the app versions were the latest in the early January, 2018.
+
+\textbf{Oracle}. We conduct an empirical study on these 45 apps by manual inspection. Specifically, we decompile the apps into Java source code, and ask three graduate
+students in our group (not the authors of this paper) to manually and independently inspect the source code to identify all service efficiency bugs. The inconsistencies among them are solved through double check and coordination. The code inspection takes half month. We use the code inspection results as the oracle (ground truth) to evaluate the effectiveness of our approach.
+
+\textbf{Implementation}. We implement our approach in an open-source prototype tool {\sf ServDroid} based on {\sf Soot}~\cite{sootpaper}. The input of {\sf ServDroid} is an app (APK file), and its output is the detected service usage efficiency bugs in the app. {\sf ServDroid} also returns the calling context to help developers debug these inefficiencies. We also use {\sf ServDroid} to detect the service usage efficiency bugs in the 45 apps, and compare the detected results with those of the manual inspection.
+
+\subsection{Experimental Results}
+In this subsection, we report on the results and findings of our empirical evaluation. The third column of Table~\ref{tab_resultsum} summarizes the numbers of different types of services used in the 45 Android apps.
+
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ1:}
+All 45 apps use background services. The total numbers (proportions) of started, bound, and hybrid services in these apps are 601 (67.38\%), 186 (20.85\%), and 105 (11.77\%), respectively. Each app uses 19.8 services on average. The average numbers of started, bound, and hybrid services used in an app are 13.4, 4.1, and 2.3, respectively.\\
+{\bf Implication:}
+Services are widely used in Android apps, and started services are the most frequently-used type of services.
+\end{minipage}}
+}\\
+\medskip
+
+The reason why started services are the most-frequently used type of services lies in that they require less user interaction, and are thus particularly suitable for time-consuming tasks running on the background.
+
+
+The first five sub-columns of the fourth column of Table~\ref{tab_resultsum} summarize the numbers of premature create bugs (PCBs), late destroy bugs (LDBs), premature destroy bugs (PDBs), service leak bugs (SLBs), and all service usage efficiency bugs detected by \textsf{ServDroid} from the 45 apps. According to the code inspection results, the numbers of false positives (FPs) and false negatives (FNs) of \textsf{ServDroid} are also listed in the last two sub-columns, respectively. According to the code inspection results, we have the following findings:
+
+
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ2:}
+Surprisingly, service usage efficiency bugs are common in the 45 Android apps. 42 (93.33\%) of them are infected by at least one kind of efficiency bugs; 34 (75.56\%) of them involve at least two kinds of efficiency bugs; 16 (35.56\%) of them have no less than three kinds of efficiency bugs; and 8 (17.78\%) of them are found to have all the four kinds of efficiency bugs. Each app has 9.9 bugs on average.\\
+{\bf Implication:}
+Service usage efficiency bugs are common in real-world popular Android apps.
+\end{minipage}}
+}\\
+\medskip
+
+
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ3:}
+The numbers (proportions) of premature create bugs occurring on the started services, bound services, and hybrid services are 0 (0\%), 0 (0\%), and 18 (100\%), respectively. The numbers (proportions) of late destroy bugs occurring on the started services, bound services, and hybrid services are 28 (31.11\%), 46 (51.11\%), and 16 (17.78\%), respectively. The numbers (proportions) of premature destroy bugs occurring on the started services, bound services, and hybrid services are 14 (73.68\%), 0 (0\%), and 5 (26.32\%), respectively. The numbers (proportions) of service leak bugs occurring on the started services, bound services, and hybrid services are 237 (74.53\%), 33 (10.38\%), and 48(15.09\%), respectively.\\
+{\bf Implication:}
+This confirms the conclusion in Table~\ref{tab_correlation} that the premature create bugs only happen to the usage of hybrid services; premature destroy bugs do not occur on the usage of bound services; late destroy bugs and service leak bugs can happen to all the three types of services.
+\end{minipage}}
+}\\
+\medskip
+
+\iffalse
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ4:}
+Among the 45 apps, 10 (22.22\%) apps have premature create bugs,  35 (77.78\%) apps are infected by late destroy bugs; 14 (31.11\%) apps are found to have premature destroy bugs; and 41 (91.11\%) apps involve service leak bugs. \\
+{\bf Implication:}
+Service leak bugs and premature create bugs are the most and least prevalent kinds of service usage inefficiencies, respectively.
+\end{minipage}}
+}\\
+\medskip
+\fi
+
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ4:}
+The total numbers of premature create bugs,
+late destroy bugs, premature destroy bugs, and service leak bugs in the 45 apps are 18, 90, 19, and 318, respectively. The proportions of the four kinds of service usage efficiency bugs are  4.04\%, 20.22\%, 4.27\%, and 71.47\%, respectively.  The average numbers of premature create bugs,
+late destroy bugs, premature destroy bugs, and service leak bugs in an app are 0.4, 2.0, 0.4, and 7.0, respectively.\\
+{\bf Implication:}
+The number of service leak bugs is much larger than the total number of the other three kinds of service usage efficiency bugs. Service leak bugs are the dominant kind of service usage inefficiencies.
+\end{minipage}}
+}\\
+\medskip
+
+Among the 45 apps, 10 (22.22\%) apps have premature create bugs,  35 (77.78\%) apps are infected by late destroy bugs; 14 (31.11\%) apps are found to have premature destroy bugs; and 41 (91.11\%) apps involve service leak bugs. Therefore, service leak bugs and premature create bugs are the most and least prevalent kinds of service usage inefficiencies, respectively. Compared to the other three kinds of service usage efficiency bugs, the negative effects of service leak bugs are the biggest, because service leak bugs lead to more unnecessary memory occupation and energy consumption.
+
+%Compared to the other three kinds of service usage efficiency bugs, the negative effects of service leak bugs are the biggest, because service leak bugs lead to more unnecessary memory occupation and energy consumption. The conclusion of Findings~4 and~5 indicate that service leak bugs are the most severe kind of service usage inefficiencies in apps.
+
+\begin{table*}
+\centering
+\footnotesize
+\caption{Total Number of Services and Service Usage Efficiency Bugs}
+\begin{tabular}{|l|c|cccc|ccccc|}\hline
+{\bf App name}&\multicolumn{1}{|c|}{\textbf{\#  Version}}&\multicolumn{4}{|c|}{\textbf{\#  Services}} &\multicolumn{5}{|c|}{\textbf{\# Service usage inefficiency bugs}}\\
+&{\bf }&{\bf Started}&{\bf Bound}&{\bf Hybrid} &{\bf Total} & {\bf PCBs}&{\bf LDBs}&{\bf PDBs} &{\bf SLBs}&{\bf Total}\\
+\hline
+\hline
+{\it Google Play services}&11.0.55 (436-156917137)&{\bf 130}&{\bf 17}&6&{\bf 153}&2&4&0&{\bf 95}&{\bf 101}\\
+{\it Gmail}&7.6.4.158567011.release&18&2&4&24&0&1&0&5&6\\
+{\it Maps}&9.54.1&12&9&4&25&1&1&1&9&12\\
+{\it YouTube}&12.23.60&10&2&3&15&0&2&0&3&5\\
+{\it Facebook}&10.2.0&22&8&4&34&0&4&0&5&9\\
+{\it Google}&7.3.25.21.arm&21&10&6&37&0&3&0&1&4\\
+{\it Google+}&9.14.0.158314320&23&1&4&28&0&1&0&7&8\\
+{\it GoogleText-to-Speech}&3.11.12&4&1&0&5&0&0&0&2&2\\
+{\it WhatsApp Messenger}&2.17.231&9&5&5&19&{\bf 4}&2&{\bf 2}&10&18\\
+{\it Google Play Books}&3.13.17&8&2&1&11&0&0&0&1&1\\
+{\it Messenger}&123.0.0.11.70&40&1&0&41&0&1&0&9&10\\
+{\it Hangouts}&20.0.156935076&11&9&2&22&0&1&1&4&6\\
+{\it Google Chrome}&58.0.3029.83&16&9&2&27&0&0&0&0&0\\
+{\it Google Play Games}&3.9.08(3448271-036)&4&0&0&4&0&0&0&3&3\\
+{\it Google TalkBack}&5.2.0&2&1&0&3&0&0&0&1&1\\
+{\it Google Play Music}&7.8.4818-1.R.4063206&15&3&4&22&0&3&1&10&14\\
+{\it Google Play Newsstand}&4.5.0&8&1&1&10&0&1&1&3&5\\
+{\it Google Play Movies \& TV}&3.26.5&6&4&2&12&0&0&0&4&4\\
+{\it Google Drive}&2.7.153.14.34&6&6&3&15&0&2&0&3&5\\
+{\it Samsung Push Service}&1.8.02&11&0&0&11&0&3&0&1&4\\
+{\it Instagram}&10.26.0&14&4&2&20&0&1&0&7&8\\
+{\it Android System WebView}&58.0.3029.83&8&2&1&11&0&0&0&0&0\\
+{\it Google Photos}&2.16.0.157775819&17&8&6&31&1&2&1&4&8\\
+{\it Google Street View}&2.0.0.157538376&6&5&2&13&0&4&0&8&12\\
+{\it Skype}&8.0.0.44736&10&1&0&11&0&0&0&0&0\\
+{\it Clean Master}&5.17.4&20&16&3&39&0&{\bf 10}&2&26&38\\
+{\it Subway Surfers}&1.72.1&2&1&0&3&0&0&0&1&1\\
+{\it Dropbox}&50.2.2&8&3&1&12&1&1&1&4&7\\
+{\it Candy Crush Saga}&1.101.0.2&2&1&1&4&0&1&0&0&1\\
+{\it Viber Messenger}&8.0.0.3&8&6&3&17&1&3&0&5&9\\
+{\it Twitter}&7.0.0&9&2&2&13&0&1&0&3&4\\
+{\it LINE}&7.5.2&11&5&3&19&2&1&1&12&16\\
+{\it HP Print Service Plugin}&3.4-2.3.0&4&3&2&9&0&1&0&5&6\\
+{\it Flipboard}&4.0.13&4&3&3&10&0&1&0&3&4\\
+{\it Samsung Print Service Plugin}&3.02.170302&7&3&0&10&0&2&0&6&8\\
+{\it Super-Bright LED Flashlight}&1.1.7&5&0&4&9&0&2&0&7&9\\
+{\it Gboard}&6.3.28.159021150&6&4&2&12&0&0&0&2&2\\
+{\it Cloud Print}&1.36b&8&1&1&10&0&2&0&1&3\\
+{\it Snapchat}&10.10.5.0&6&3&0&9&0&5&1&2&8\\
+{\it Pou}&1.4.73&4&0&0&4&0&2&0&2&4\\
+{\it Google Translate}&5.9.0.RC07.155715800&6&0&1&7&0&4&0&3&7\\
+{\it My Talking Tom}&4.2.1.50&17&6&2&25&0&3&2&13&18\\
+{\it Security Master}&3.4.1&7&3&4&14&3&2&2&7&14\\
+{\it Facebook Lite}&20.0.15&20&9&4&33&1&9&2&7&19 \\
+{\it imo messenger}&11.3.2&16&6&{\bf 7}&29&2&4&1&14&21\\
+\hline
+{\bf Sum}&-& 601 &186 & 105 & 892&18&90&19&318&445\\
+\hline
+%{\bf Average}&0.4&2.0&0.4&6.8&9.6&$\_$&$\_$ \\
+{\bf Average}&-&13.4 &  4.1 &  2.3 &  19.8&0.4&2.0&0.4&7.0&9.8\\
+\hline
+\end{tabular}
+\label{tab_resultsum}
+\end{table*}
+
+
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ5:}
+279 service usage efficiency bugs are relevant to the usage of 601 started services, 79 service usage efficiency bugs happen to the usage of 186 bound services, and 87 service usage efficiency bugs occur on the usage of 105 hybrid services.  \\
+{\bf Implication:}
+Among the three types of services, the usage of hybrid services has the highest possibility to involve efficiency bugs, whereas the usage of started services and bound services has the lower possibilities to involve efficiency bugs.
+\end{minipage}}
+}\\
+\medskip
+
+The 45 apps are analyzed with \textsf{ServDroid} on a computer with an Intel Core i7 3.6GHz CPU and 16 GB of memory, running Windows 8, JDK 1.7, and Android 7.0, 7.1.1, and 8.0. Taking the manual inspection results as ground truth, the accuracy of \textsf{ServDroid} is reported as follows.
+
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ6:}
+The overall precision and recall of the results returned by  \textsf{ServDroid} are both 100\%. The total runtime overhead of {\sf ServDroid} on analyzing the 45 apps is 4,512 seconds, with about 100 seconds on average to analyze one app.\\
+{\bf Implication:}
+The lightweight analysis of \textsf{ServDroid} has a high accuracy, and is scalable.
+\end{minipage}}
+}\\
+\medskip
+
+The high accuracy of \textsf{ServDroid} indicates that its ability to detect service usage efficiency bugs is not undermined by the context-insensitive inter-procedural control flow graph of the app or the dominator analysis. \textsf{ServDroid} takes the following two measures to improve the analysis accuracy for real-world apps:
+\begin{enumerate}
+\item Since a service is used by another component through the \textit{intent} object (e.g., via \hytt{Intent intent = new Intent (Context, Class$<$?$>$ Service)}), the definition (i.e., class) of the service needs to be found according to the \textit{intent}. Besides \textit{Service.class}, app programmers also use the reflection mechanism \hytt{Class.forName(Service)} to get the service class object. Thus, \textsf{ServDroid} considers both manners to find the service class. 
+\item Since the \textit{intent} object that is used to initiate a service (e.g., via \hytt{startService(Intent intent)}) can be created in the innermost method of a nested method whose nesting depth may be large (e.g., bigger than 10), \textsf{ServDroid} sets a large threshold ($depth$ = 50) for the search loop to make sure that the innermost method can be found. 
+\end{enumerate}
+
+To investigate the energy impact of the efficiency bugs, we first use \textsf{Soot} to instrument the infected apps to fix the efficiency bugs, and repackage them. Then, we run the original and repackaged apps independently on a phone with the same setting (OPPO R9m with a 2.0GHz 8-core CPU and 4GB of memory, running Android 8.0) for 15 minutes, and use the tool (also an app) \textsf{Trepn Profiler} to measure the battery cost of them, respectively. The results are summarized in Table~\ref{tab_energy}, where seven apps are not measured because they are either free of the efficiency bugs or cannot run independently. Based on the results in Table~\ref{tab_energy}, we have the following finding:
+
+\medskip
+%\setlength{\fboxrule}{0.7 pt}
+%\setlength{\fboxsep}{0.2 cm}
+{\setlength{\parindent}{0 em}
+\fbox{\begin{minipage}{3.39 in}
+{\bf Answer to RQ7:}
+The average energy consumptions (15 minutes) of an app before and after the service usage efficiency bugs are fixed are 579.32 mW and 475.14 mW, respectively. That is, an app can save on average 104.18 mW in 15 minutes if the bugs are fixed.\\
+{\bf Implication:}
+The energy consumption is reduced after the bugs are fixed, and thus the efficiency bugs have a significant impact on energy consumption.
+\end{minipage}}
+}\\
+\medskip
+
+%We also applied \textsf{ServDroid} to other 60 real-world but not so popular Android apps, and found that those apps involve even more service usage efficiency bugs.
+We have also applied \textsf{ServDroid} to different versions of some apps, and find that, the numbers of service usage efficiency bugs decrease in newer versions (see Fig.~\ref{fig_bugsvsversions}, where concrete version numbers are abstracted away for simplicity.). This implies that some developers fixed such bugs, though not completely. In summary, our empirical study indicate that service usage efficiency bugs are pervasive in Android apps, but most developers have not yet been aware of the severity of the problem.
+
+
+
+\begin{table}
+\centering
+%\scriptsize
+\footnotesize
+\caption{Energy Consumption Before and After the Bugs Are Fixed}
+\begin{tabular}{|l|cc|}\hline
+{\bf App name}&\multicolumn{2}{|c|}{\textbf{Energy consumption}}\\
+& {\bf Original (mW)}&{\bf Repaired (mW)}\\
+\hline
+\hline
+{\it Google Play services}&586.29&383.6\\
+{\it Gmail}&473.39&420.94\\
+{\it Maps}&670.91&503.92\\
+{\it YouTube}&859.51&747.76\\
+{\it Facebook}&605.51&557.39\\
+{\it Google}&506.82&446.85\\
+{\it Google+}&482.57&470.16\\
+{\it GoogleText-to-Speech}&435.06&384.02\\
+{\it WhatsApp Messenger}&451.96&357.27\\
+{\it Google Play Books}&521.09&432.18\\
+{\it Messenger}&580.37&473.29\\
+{\it Hangouts}&396.16&362.58\\
+%{\it Google Chrome}&492.35&492.35\\
+{\it Google Play Games}&613.26&491.57\\
+{\it Google TalkBack}&529.34&402.96\\
+{\it Google Play Music}&502.18&421.69\\
+{\it Google Play Newsstand}&506.2&457.06\\
+{\it Google Play Movies \& TV}&381.62&349.27\\
+{\it Google Drive}&375.36&312.28\\
+%{\it Samsung Push Service}&597.97&529.01\\
+{\it Instagram}&513.61&500.39\\
+%{\it Android System WebView}&573.29&493.72\\
+{\it Google Photos}&481.95&345.28\\
+{\it Google Street View}&452.96&390.17\\
+%{\it Skype}&479.15&479.15\\
+{\it Clean Master}&498.26&432.87\\
+{\it Subway Surfers}&1037.81&903.29\\
+{\it Dropbox}&486.87&351.27\\
+{\it Candy Crush Saga}&705.18&403.92\\
+{\it Viber Messenger}&497.31&409.31\\
+{\it Twitter}&651.92&610.47\\
+{\it LINE}&479.61&357.19\\
+%{\it HP Print Service Plugin}&471.62&420.18\\
+{\it Flipboard}&529.27&470.62\\
+%{\it Samsung Print Service Plugin}&508.62&459.3\\
+{\it Super-Bright LED Flashlight}&498.68&426.83\\
+{\it Gboard}&538.92&460.39\\
+%{\it Cloud Print}&602.51&517.13\\
+{\it Snapchat}&652.21&503.8\\
+{\it Pou}&1106.85&672.31\\
+{\it Google Translate}&436.75&365.75\\
+{\it My Talking Tom}&1637.91&1457.3\\
+{\it Security Master}&481.37&400.72\\
+{\it Facebook Lite}&371.06&313.28\\
+{\it imo messenger}&478.15&319.75\\
+\hline
+%{\bf Sum}&25752.2&21674.15\\
+{\bf Sum}&22014.25&18055.50\\
+\hline
+%{\bf Average}&572.27&481.64\\
+{\bf Average}&579.32&475.14\\
+\hline
+\end{tabular}
+\label{tab_energy}
+\end{table}
+
+
+
+ \begin{figure}
+ \centering
+  \includegraphics[scale=1.0]{bugs-vs-versions.eps}
+ \caption{The number of services usage efficiency bugs decreases in newer versions.}
+\label{fig_bugsvsversions}
+\end{figure}
+
+\subsection{Case Studies}
+In this subsection, we elaborate on some service usage efficiency bugs in three popular Android apps.
+
+\textbf{YouTube} is a well-known video-sharing platform all over the world. Here, we show two service usage efficiency bugs in its Android app of version 12.23.60. The code snippet in Fig.~\ref{YouTube}a presents a late destroy bug found in this app, where the class \hytt{ahx} binds a service from a third party. The \hytt{bindService()} method is called in the \hytt{d()} method of \hytt{ahx}, but the corresponding \hytt{unbindService()} method is not called immediately after the last invocation of the method (i.e.,~\hytt{post()}) of the service in \hytt{f()}. The service remains idle until the \hytt{e()} method of \hytt{ahx} is called. The code snippet in Fig.~\ref{YouTube}b exhibits a service leak bug found from \textit{YoutTube}: The \hytt{startService()} method that starts \hytt{AnalyticsService} is called in the \hytt{onReceive} method of \hytt{jth}, but no \hytt{stopSelf()} or \hytt{stopService()} exists to stop \hytt{AnalyticsService}.
+
+\begin{figure}
+  \centering
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{YouTube_LDB.java}}
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{YouTube_SLB.java}}
+  \caption{Service usage efficiency bugs in \textit{YouTube} (version 12.23.60): (a) A late destroy bug, (b) A service leak bug.}
+\label{YouTube}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{WhatsAppMessenger_PCB.java}}
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{WhatsAppMessenger_LDB.java}}
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{WhatsAppMessenger_PDB.java}}
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{WhatsAppMessenger_SLB.java}}
+  \caption{Service usage efficiency bugs in \textit{WhatsApp Messenger} (version 2.17.231): (a) A premature create bug, (b) A late destroy bug, (c) A premature destroy bug, (d) A service leak bug.}
+\label{WhatsAppMessenger}
+\end{figure}
+
+\textbf{WhatsApp Messenger} is a popular mobile messaging app that allows people to exchange messages using the devices' Internet connections. For its version 2.17.231, the number of started, bound, and hybrid services implemented or used in \textit{WhatsApp Messenger} is nine, five, and five, respectively. Although the service quantity is not large, several service usage efficiency bugs are found. The code snippet in Fig.~\ref{WhatsAppMessenger}a reports a premature create bug in this app: The \hytt{onStartCommand()} method of the \hytt{GoogleDriveService} is not overwritten, and the \hytt{bindService()} method is called after (but not immediately) the \hytt{startService()} method. The code snippet in Fig.~\ref{WhatsAppMessenger}b shows a late destroy bug, where \hytt{SearchActionVerificationClientService} binds a remote service from Google. The \hytt{bindService()} method is called in the \hytt{onCreate()} method of \hytt{SearchActionVerificationClientService}, but the corresponding \hytt{unbindService()} method is not called immediately after the last invocation of the method \hytt{isSearchAction()} of the Google service in \hytt{onHandleIntent()}. The Google service remains idle until the \hytt{onDestroy()} method of the \hytt{SearchActionVerificationClientService} is called. The code snippet in Fig.~\ref{WhatsAppMessenger}c corresponds to a premature destroy bug: The \hytt{startService()} method of  \hytt{MessageService} is called three times, but the \hytt{stopSelf()} (instead of \hytt{stopSelf(int)}) method is used in the \hytt{onStartCommand()} method of \hytt{MessageService}. The code snippet in Fig.~\ref{WhatsAppMessenger}d exhibits a service leak bug: The \hytt{startService()} method that starts \hytt{ExternalMediaManager} is called in the \hytt{onReceive()} method of \hytt{ExternalMediaStateReceiver}, but no \hytt{stopSelf()} or \hytt{stopService()} exists to stop \hytt{ExternalMediaManager}.
+
+\begin{figure}
+  \centering
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{Twitter_LDB.java}}
+  \subfigure[]{
+    \lstinputlisting[language={Java}]{Twitter_SLB.java}}
+  \caption{Service usage efficiency bugs in \textit{Twitter} (version 7.0.0): (a) A late destroy bug, (b) A service leak bug.}
+\label{Twitter}
+\end{figure}
+
+
+\textbf{Twitter} is an app designed to reduce busywork, which allows users to focus on the things that matter. For its version 7.0.0, there are four service usage efficiency bugs, including one late destroy bug and three service leak bugs. The code snippet in Fig.~\ref{Twitter}a reports the late destroy bug, where the \hytt{a()} method starts a service \hytt{OverlayService}. Despite the fact that the \hytt{stopService()} method is called in the \hytt{b()} method, the time to stop the \hytt{OverlayService} is too late. To address this problem, the \hytt{stopSelf()} method should be invoked in the \hytt{onStartCommand()} method of \hytt{OverlayService}. The code snippet in Fig.~\ref{Twitter}b shows a service leak bug: The \hytt{startService()} method that starts the service \hytt{OemHelperService} is called in the \hytt{a()} method of the class \hytt{OemIntentReceiver}, but, surprisingly, there is no \hytt{stopSelf()} or \hytt{stopService()} available in the app code to stop \hytt{OemHelperService}.
+
+Similar service usage efficiency bugs are found in other 42 Android apps studied in our empirical evaluation. The reason why service usage efficiency bugs are so prevalent is that their effects are not so severe as those of the functional bugs, that is, they do not cause app crashes, and thus developers do not regard them as a tricky problem.
+
+
+
+\section{Related Work}\label{relatedwork}
+Our research is related to the work on GUI testing, service  analysis and testing, and performance (energy) testing of Android apps. In the following, we review the state-of-the-art of these three aspects.
+
+\textbf{GUI testing}. Most existing testing approaches for Android apps focus on GUI testing. According to the exploration strategies employed, Choudhary et al.~\cite{ChoudharyGO15} summarize three main categories of testing approaches: \textit{random testing}~\cite{monkey,HuN11,MachiryTN13,SongQH17}, \textit{model-based testing}~\cite{GUIRipping,grey-box,ChoiNS13,a3e,SuMCWYYPLS17}, and \textit{advanced testing}~\cite{AnandNHY12,JensenPM13,EvoDroid,MaoHJ16}. Although \textsf{Monkey}~\cite{monkey} is among the first generation techniques for Android testing, compared with many follow-up approaches, it still shows good performance and advantages in app testing~\cite{ChoudharyGO15}. \textsf{Dynodroid}~\cite{MachiryTN13} improves \textsf{Monkey} by reducing the possibility of generating redundant events. It achieves this by monitoring the reaction of an app upon each event and basing on the reaction to generate the next event. Recently, \textsf{EHBDroid}~\cite{SongQH17} is presented to first instrument the invocations of event callbacks in each activity and then directly trigger the callbacks in a random order. This approach is more efficient as it bypasses the GUI for test input generation. Since random testing may generate redundant events, several model-based testing approaches are proposed~\cite{AmalfitanoFT11,GUIRipping,grey-box,ChoiNS13,a3e,BaekB16,SuMCWYYPLS17}. These approaches first obtain a model of the app GUI, and then generate test input according to the model. While most of them utilize program analysis techniques to obtain the model, machine learning is used in~\cite{ChoiNS13} to learn the model. The third category approaches leverage advanced techniques to efficiently generate effective event sequences for app testing\cite{AnandNHY12,JensenPM13,EvoDroid,MaoHJ16}. For example,  \textsf{ACTEve}~\cite{AnandNHY12} uses symbolic execution and \textsf{EvoDroid}~\cite{EvoDroid} employs evolutionary algorithm to generate event sequences. \textsf{Sapienz}~\cite{MaoHJ16} formulates the event sequence generation as a multiple-objective optimization problem and employs search-based algorithm to generate the shortest event sequences that can maximize the code coverage and bug exposure.
+
+\textbf{Service analysis and testing}. A deal of work concentrates on the security vulnerabilities (e.g., denial of service, single point failure) of Android system services~\cite{ReavesBGABCDHKS16,HuangZ0015,WangZL16,FengS16,AbualolaAKOM16,LuoZCCLLGYXL17}.
+In terms of app services, Khanmohammadi et al. find that malware may use background services to perform malicious operations with no communication with the other components of the app~\cite{KhRH15}. They propose to use classification algorithms to differentiate normal and malicious apps based on the service features related to their lifecycle. In contrast to GUI testing for activities, background service testing gain little attention. \textsf{Snowdrop}~\cite{ZhangLLC17} is among the first to automatically and systematically testing background services in apps. Since not all \textit{Intent} messages can be directly derived from the app bytecode, \textsf{Snowdrop} infers field values based on a heuristic that leverages the similarity in how developers name variables. This approach can find general bugs (functional bugs that lead to app crashes) in services, but may meet difficulties in detecting service usage efficiency bugs targeted in this paper. A dynamic analysis tool~\textsf{LESDroid}~\cite{ma2018} is presented to find exported service leaks, whereas \textsf{ServDroid} is a static analysis tool and is more general, which can not only find both private and exported service leaks but also detect the other three kinds of service usage efficiency bugs.
+
+\textbf{Performance testing}. Non-functional or performance bugs in apps are also important for user experience. Liu et al.~\cite{LiuXC14} conduct an empirical study on 29 popular Android apps and find three types of performance bugs: GUI lagging, energy leak, and memory bloat. They also summarize common performance bug patterns (including lengthy operations in main threads, wasted computation for invisible GUI, and frequently invoked heavy-weight callbacks) and propose method to detect them. Since energy is a major concern in app performance and green software engineering~\cite{PangHAH16,HoqueSKXT16,MBZSJSPC16,0036990}, energy bugs and the corresponding testing solutions draw increasing attention~\cite{GuoZYZZ13,BanerjeeC0R14,LiuXCL14,BehrouzSBM16,WuYR16,JabbarvandM17}.   It is worth mentioning that energy bugs are highly relevant to resource leak~\cite{GuoZYZZ13,BanerjeeC0R14,LiuXCL14,WuYR16}. Banerjee et al. present a testing framework to detect energy bugs and energy hotspots in apps based on the measurement of the power consumption through a power meter. Although the framework also considers service leak bugs, the test oracle based on the power consumption is expensive and time-consuming. To reduce the cost of the test, Jabbarvand et al. propose an approach to minimize the energy-aware test-suite~\cite{BehrouzSBM16}. Wu et al. present a static analysis approach to detecting GUI-related energy-drain bugs~\cite{WuYR16}, whereas our approach aims to detect service usage efficiency bugs.
+
+\section{Conclusions}\label{conclusion}
+It is of great difficulty for testing techniques to reveal service usage efficiency bugs in Android apps, because such bugs do not cause apps to crash immediately. In this paper, we propose to use static analysis to address this problem. To this end, we first formulate four anti-patterns that lead to service usage efficiency bugs. Based on {\sf Soot}, we present the approach to detecting all such bugs in Android apps. To the best of our knowledge, our work is among the first to detect service performance bugs using static analysis. We implement our approach in an open-source tool {\sf ServDroid} and conduct an empirical evaluation on 45 real-world Android apps. The empirical results demonstrate that service usage efficiency bugs are severe in practice and they have a significant negative impact on the energy consumption.
+
+%\section*{Acknowledgments}
+%This work was supported in part by the National Key R\&D Program of China under Grant No. 2017YFB1001801, the Natural Science Foundation of Jiangsu Province under Grant No. BK20171427, and the Fundamental Research Funds for the Central Universities under Grant No. 30917011322.
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+
+
+\end{document}
+
+
