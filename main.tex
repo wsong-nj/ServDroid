@@ -138,7 +138,21 @@ jeff@cse.tamu.edu}
 
 \IEEEtitleabstractindextext{%
 \begin{abstract}
-Services in Android applications are frequently-used components that are responsible for performing time-consuming operations in the background. While services play a crucial role in app performance, our study finds that service usages in practice are not as efficient as expected, e.g., they tend to cause unnecessary resource occupation and energy consumption. In this paper, we present four anti-patterns that result in service usage inefficiencies, including premature create, late destroy, premature destroy, and service leak. Since these service usage efficiency bugs do not cause application crashes, it is difficult for existing testing approaches to find them. To this end, we develop a static analysis tool, \textsf{ServDroid}, which can automatically detect such bugs and also provide calling context to help debugging them. We apply \textsf{ServDroid} to 45 popular real-world Android apps. Surprisingly, we find that service usage inefficiencies are pervasive.
+Services in Android applications are frequently-used components that are
+responsible for performing time-consuming operations in the background. While
+services play a crucial role in app performance, our study finds that service
+usages in practice are not as efficient as expected, e.g., they tend to cause
+unnecessary resource occupation and energy consumption. In this paper, we
+present four anti-patterns that result in service usage inefficiencies,
+including premature create, late destroy, premature destroy, and service leak.
+Since these service usage efficiency bugs do not cause application crashes, it
+is difficult for existing testing approaches to find them.
+To this end, we develop a static analysis tool, \textsf{ServDroid}, which can
+automatically detect such bugs and also provide calling context to help
+debug them. We apply \textsf{ServDroid} to 45 popular real-world Android
+apps. Surprisingly, we find that service usage inefficiencies are pervasive,
+and they have a significant impact on the app's energy
+consumption.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -154,28 +168,48 @@ Android app, background service, usage inefficiency, service leak, static analys
 %s.
 \IEEEpeerreviewmaketitle
 
-
-
 \section{Introduction}
-Mobile applications (apps) are now eating the world. Millions of apps are available on Google Play Store and Apple App Store, and many apps have millions or even billions of downloads. The improvement of computation and memory capacity of mobile devices allows developers to design increasingly powerful and complex apps. On the other hand, more complex apps usually involve more bugs and vulnerabilities, which significantly impact the release and adoption of the apps. Therefore, the quality of mobile apps receives an increasing attention~\cite{ReavesBGABCDHKS16,AnandNHY12,MachiryTN13,ChoiNS13,LiuXC14,BanerjeeC0R14,LiuXCL14,HechtBRMD15,BehrouzSBM16,MirzaeiGBSM16,SuMCWYYPLS17,FanSCMLXPS18}.
+Mobile is eating the world. Millions of mobile apps are available on Google Play
+and Apple App stores, and many apps have millions or even billions of downloads.
+The improvement of computation and memory capacity of mobile devices allows
+developers to design increasingly powerful and complex apps. On the other hand,
+more complex apps usually involve more bugs and vulnerabilities, which
+significantly impact the release and adoption of the apps.
+As a result, the quality of mobile apps receives an increasing
+attention~\cite{ReavesBGABCDHKS16,AnandNHY12,MachiryTN13,ChoiNS13,LiuXC14,BanerjeeC0R14,LiuXCL14,HechtBRMD15,BehrouzSBM16,MirzaeiGBSM16,SuMCWYYPLS17,FanSCMLXPS18}.
 
-Testing is an effective means to find bugs and to help improve the quality of apps. Since Android is popular and open-source, many testing approaches are presented for Android apps. Nonetheless, they mostly focus on GUI testing of foreground activities~\cite{monkey,AnandNHY12,MachiryTN13,ChoiNS13,MirzaeiGBSM16,BaekB16,SuMCWYYPLS17,SongQH17},
+Testing is an effective means to find bugs and to help assure the quality of
+apps.
+Since Android is popular and open source, many testing approaches have
+been developed for Android apps. Nonetheless, they mostly focus on GUI testing
+of foreground activities~\cite{monkey,AnandNHY12,MachiryTN13,ChoiNS13,MirzaeiGBSM16,BaekB16,SuMCWYYPLS17,SongQH17},
 whereas background services have received few research
-attention~\cite{ZhangLLC17,ma2018}. Services are Android components, performing long-running tasks that involve few or no user interactions, e.g., file I/O, music playing, network transaction~\cite{Androidservice}. A service executes on the main thread of the calling component's process, and thus a new thread is often created to perform the long-running operations. Services in Android fall into two  categories: system services and app services. We focus on the
-latter which are further divided into three types: \textit{started services}, \textit{bound services}, and \textit{hybrid services} according to how they are used in the code.
+attention~\cite{ZhangLLC17,ma2018}. Services are Android components that perform
+long-running tasks involving few or no user interactions, e.g., file I/O, music
+playing, or network transactions~\cite{Androidservice}. A service executes on
+the main thread of the calling component's process, and thus a new thread is
+often created to perform the long-running operations. Services in Android fall
+into two categories: system services and app services.
+According to how they are used in the code, app services can
+be further divided into three types:
+\textit{started services}, \textit{bound services} and \textit{hybrid services}.
 % kinds: local services and remote services. Local services are defined by the app itself whereas remote services are from other apps running on the same device.
 
 Although app services usually do not have user interface, they can keep running
 even when the device screen is shut down. As a consequence, if an app involves
 service-related bugs, not only the functionalities of the app but its
-performance (e.g., resource utilization, energy consumption) can be affected.
-In this paper, we focus on service usage inefficiencies (a type of
+performance (e.g., resource utilization and energy consumption) can be affected.
+In this paper, we focus on app services usage inefficiencies (a type of
 non-functional bugs) that do not immediately lead to app crashes, but
 have a significant impact on the performance of the app.
 %This problem has received little attention~\cite{ZhangLLC17} in the literature.
 Since such bugs do not cause app crashes, existing testing methods do
-not work well in detecting them. Although there exists work on non-functional
-testing (mainly energy testing) of apps~\cite{LiuXC14,BanerjeeC0R14,LiuXCL14,BehrouzSBM16,JabbarvandM17}, it generally more expensive and more labour-intensive than functional testing~\cite{BehrouzSBM16}, because its oracle is usually based on performance indicators.
+not work well in detecting them.
+Although there exists work on non-functional testing (mainly energy testing) of
+apps~\cite{LiuXC14,BanerjeeC0R14,LiuXCL14,BehrouzSBM16,JabbarvandM17},
+non-functional testing is generally more expensive and more labour-intensive than functional
+testing~\cite{BehrouzSBM16}, because its oracle is usually based on performance
+indicators.
 
 %Therefore, a large proportion of app energy consumption is caused by background services~\cite{}.
 
@@ -187,7 +221,7 @@ of real-world Android apps. The anti-patterns are described below:
 \begin{itemize}
   \item {\bf Premature create} refers to the situation that a
 service is created too early before it is really used. Hence, the service is in
-an idle state beginning from its create to its real use, occupying unnecessary
+an idle state beginning from its creation to its real use, occupying unnecessary
 memory and consuming unnecessary energy.
 \item  {\bf Late destroy} refers to the situation
 that a service is destroyed too late after its use. Similarly, the service is in
@@ -196,45 +230,54 @@ an idle state beginning from the end of its final use to the moment it is destro
 component (caller) but it is destroyed before another component begins to use
 it. Consequently, the service should be created again to fulfil the new request.
 \item {\bf Service leak} refers to the situation that a service is never destroyed
-after its use, even when the apps which initiate the service terminate.
+after its use, not even when the app which initiated the service terminates.
 \end{itemize}
 
 % We observe from real-world apps that these four kinds of efficiency bugs are
 % common.
-For each of the four service usage anti-patterns, we then propose a static
-analysis technique to automatically detect its instances (concrete efficiency
-bugs matching the anti-pattern) in an app.
+For each of the four service usage anti-patterns, we then propose a scalable
+static analysis to automatically detect its instances (concrete efficiency
+bugs matching the anti-pattern) in apps.
 % The analysis is based on
 % \textsf{Soot}~\cite{sootpaper}\footnote{https://github.com/Sable/soot}, a
 % framework for transforming and analyzing Java and Android applications.
-Our approach takes an app (APK file) as input and transforms the APK files into
-Jimple based on Soot~\cite{sootpaper}. It then constructs a
-context-insensitive inter-procedural control flow graph of the app and uses
+Our approach takes an app (APK file) as input and performs a context-insensitive
+inter-procedural control flow analysis based on Soot~\cite{sootpaper}. It uses
 dominator analysis and successor analysis to find the service usage efficiency
-bugs.
-Finally, it reports all the
-detected service usage efficiency bugs as well as the components (callers) that
+bugs, and also locate the components (callers) that
 initiate the services to facilitate debugging.
 
 We implemented our approach in an open-source tool \textsf{ServDroid}. The tool
 is written in Java and is publicly available (links are omitted due to double-blind review).
-To investigate the service usage efficiency bugs in real-world apps, we conduct an empirical analysis of 45 the most popular free Android apps listed on
-Wikipedia\footnote{https://en.wikipedia.org/wiki/List\_of\_most\_downloaded\_Android\_applications (accessed in Jan 2018)}.
-Our empirical study shows that
-service usage efficiency bugs are surprisingly pervasive in these real-world apps: 42 (93.33\%) apps involve at least one kind of service usage
-efficiency bugs; each app has on average 9.9 service usage efficiency bugs.
+To investigate service usages in real-world apps, we
+conducted an empirical analysis of the top 45 most popular free Android apps
+listed on Wikipedia\footnote{https://en.wikipedia.org/wiki/List\_of\_most\_downloaded\_Android\_applications
+(accessed in Jan 2018)} by applying \textsf{ServDroid} on them.
+Our study shows that
+service usage efficiency bugs are surprisingly pervasive in these real-world
+apps: 42 (93.33\%) apps involve at least one kind of service usage efficiency
+bugs; each app has on average 9.9 service usage efficiency bugs.
+Moreover, our measurement with Trepn Profiler shows that by fixing these bugs an
+app can save on average 104.18 mW of battery in 15 minutes (as much as 22\%
+energy reduction).
 This indicates that service usage inefficiencies are
-severe in practice, but the developers have not yet realized their severity.
+severe in practice, but the developers have not (yet) realized their severity.
 
 %The identified bugs are validated through manual analysis or real phone testing, and some of the bugs are confirmed by developers. Our study takes the first step to address these problems, which can inspire the follow-up research on debugging and repairing such bugs.
 
 In summary, the key contributions of this paper are:
 \begin{enumerate}
-\item According to the service lifecycle, we formulate four service usage
-anti-patterns that may lead to unnecessary resource occupation and energy consumption.
+\item According to the service lifecycle, we propose four novel service usage
+anti-patterns that may lead to unnecessary resource occupation and energy
+consumption.
 %To our best knowledge, our work is among the first to detect service usage inefficiencies in mobile apps.
-\item We conduct an empirical study on 45 most downloaded free Android apps, the results of which demonstrate that the service usage inefficiencies are pervasive in practice and they indeed have a significant negative impact on the energy consumption.
-\item Based on the anti-patterns, we present a static analysis approach and an open-source tool, \textsf{ServDroid}, to efficiently detect service usage efficiency bugs and also help debugging them. Both precision and recall of \textsf{ServDroid} on the 45 apps are 100\%.
+\item We conduct an empirical study on 45 most downloaded free Android apps, the
+results of which demonstrate that the service usage inefficiencies are pervasive
+in practice and they indeed have a significant negative impact on the energy consumption.
+\item Based on the anti-patterns, we present a static analysis approach and an
+open-source tool, \textsf{ServDroid}, to efficiently detect service usage
+efficiency bugs and also help debugging them. Both precision and recall of
+\textsf{ServDroid} on the 45 apps are 100\% based on our manual study.
 \end{enumerate}
 
 The rest of the paper is organized as follows. Section~\ref{background} gives an
@@ -347,7 +390,7 @@ static analysis to detect service usage efficiency bugs in apps.
 Since some services declared in the AndroidManifest XML file of the app may not
 be implemented or used in the code, and our analysis aims to discover all usages
 of each service, we begin the static analysis by first obtaining the services
-that are actually implemented or used in the code. Note that the service types cannot be determined directly from the AndroidManifest XML file or the service definition (i.e., the class that defines the service). We have to determine the service type according to all uses of the service from the app code. If a service is only initiated through \hytt{startService()} (\hytt{bindService()}), it is a started (bound) service; otherwise, it is a hybrid service. 
+that are actually implemented or used in the code. Note that the service types cannot be determined directly from the AndroidManifest XML file or the service definition (i.e., the class that defines the service). We have to determine the service type according to all uses of the service from the app code. If a service is only initiated through \hytt{startService()} (\hytt{bindService()}), it is a started (bound) service; otherwise, it is a hybrid service.
 
 According to the statements
 that initiate services (i.e., \hytt{startService()} and \hytt{bindService()})
@@ -648,8 +691,8 @@ The lightweight analysis of \textsf{ServDroid} has a high accuracy, and is scala
 
 The high accuracy of \textsf{ServDroid} indicates that its ability to detect service usage efficiency bugs is not undermined by the context-insensitive inter-procedural control flow graph of the app or the dominator analysis. \textsf{ServDroid} takes the following two measures to improve the analysis accuracy for real-world apps:
 \begin{enumerate}
-\item Since a service is used by another component through the \textit{intent} object (e.g., via \hytt{Intent intent = new Intent (Context, Class$<$?$>$ Service)}), the definition (i.e., class) of the service needs to be found according to the \textit{intent}. Besides \textit{Service.class}, app programmers also use the reflection mechanism \hytt{Class.forName(Service)} to get the service class object. Thus, \textsf{ServDroid} considers both manners to find the service class. 
-\item Since the \textit{intent} object that is used to initiate a service (e.g., via \hytt{startService(Intent intent)}) can be created in the innermost method of a nested method whose nesting depth may be large (e.g., bigger than 10), \textsf{ServDroid} sets a large threshold ($depth$ = 50) for the search loop to make sure that the innermost method can be found. 
+\item Since a service is used by another component through the \textit{intent} object (e.g., via \hytt{Intent intent = new Intent (Context, Class$<$?$>$ Service)}), the definition (i.e., class) of the service needs to be found according to the \textit{intent}. Besides \textit{Service.class}, app programmers also use the reflection mechanism \hytt{Class.forName(Service)} to get the service class object. Thus, \textsf{ServDroid} considers both manners to find the service class.
+\item Since the \textit{intent} object that is used to initiate a service (e.g., via \hytt{startService(Intent intent)}) can be created in the innermost method of a nested method whose nesting depth may be large (e.g., bigger than 10), \textsf{ServDroid} sets a large threshold ($depth$ = 50) for the search loop to make sure that the innermost method can be found.
 \end{enumerate}
 
 To investigate the energy impact of the efficiency bugs, we first use \textsf{Soot} to instrument the infected apps to fix the efficiency bugs, and repackage them. Then, we run the original and repackaged apps independently on a phone with the same setting (OPPO R9m with a 2.0GHz 8-core CPU and 4GB of memory, running Android 8.0) for 15 minutes, and use the tool (also an app) \textsf{Trepn Profiler} to measure the battery cost of them, respectively. The results are summarized in Table~\ref{tab_energy}, where seven apps are not measured because they are either free of the efficiency bugs or cannot run independently. Based on the results in Table~\ref{tab_energy}, we have the following finding:
