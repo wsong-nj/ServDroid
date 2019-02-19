@@ -311,10 +311,9 @@ consumption in Android apps.
 %To our best knowledge, our work is among the first to detect service usage inefficiencies in mobile apps.
 \item We present \textsf{ServDroid}, a static analysis approach and an
 open-source tool to effectively detect service usage
-inefficiency bugs based on these anti-patterns. Surprisingly, the precision and
-recall of \textsf{ServDroid} on the top 45 most popular free Android apps listed on
-Wikipedia~\footnote{https://en.wikipedia.org/wiki/List\_of\_most\_downloaded\_Android\_applica\\tions
-(accessed in Jan 2018)} are 100\% based on our manual inspection.
+inefficiency bugs based on these anti-patterns.
+Surprisingly, the precision and
+recall of \textsf{ServDroid} on the top 45 most popular free Android apps are 100\% based on our manual inspection.
 \item We present an empirical study on 1,000 real-world Android apps. The
 results indicate that service usage inefficiencies are severe
 in practice and have a significant negative impact on the app's energy
@@ -336,10 +335,9 @@ Section~\ref{conclusion} concludes the paper.
 Along with \textit{activities} (user interfaces),
 \textit{broadcast receivers} (mailboxes for broadcast), and \textit{content providers} (local database servers), services (background tasks) are fundamental components in Android apps. To ease the understanding of service usage anti-patterns, we introduce the lifecycle of app services and how they are used~\cite{Androidservice}.
 
-To define an app service, one should extends the \hytt{Service} class provided
-by Android, and overwrite the corresponding methods of \hytt{Service}, e.g.,
-\hytt{onStartCommand(Intent, int, int)}, \hytt{onBind()}, etc. A service is
-started in the app by an asynchronous message object which is  referred to as
+An app service can be defined by extending the Android \hytt{Service} class and
+overwriting the corresponding methods of \hytt{Service}, e.g., \hytt{onStartCommand(Intent, int, int)}, \hytt{onBind()}, etc. A service is
+started in the app by an asynchronous message object which is referred to as
 \textit{intent}. Accordingly, a service declared by a \hytt{$<$service$>$} tag
 in the AndroidManifest XML file of the app must have the
 \hytt{$<$intent-filter$>$} attribute, which indicates the intents that can start
@@ -407,12 +405,12 @@ components that start and bind a hybrid service can be different.
 
 \section{Service Usage Anti-Patterns}\label{antipatterns}
 Based on the service lifecycle and our manual analysis of
-real-world apps, we first present four anti-patterns that can lead to service usage
-inefficiencies. It is worth mentioning that these four kinds of service usage
+real-world apps, we identify four anti-patterns with
+respect to different types of services that can lead to service
+usage inefficiencies, as summarized in Table~\ref{tab_correlation}.
+It is worth mentioning that these four kinds of service usage
 inefficiencies may occur to both local services (implemented by the app itself)
-and remote services (implemented by other apps). We do not claim completeness of the four anti-patterns (there may exist other service usage inefficiencies, though we have not found any in our empirical study).
-Table~\ref{tab_correlation} summarizes the four anti-patterns with respect to
-different types of services.
+and remote services (implemented by other apps).
 
 \vspace{1ex}
 \begin{pattern} [\textbf{Premature Create}] A service is created too early
@@ -549,25 +547,20 @@ Fig.~\ref{ex_leak} reports two service leak bugs in real-world apps. The code sn
 \end{figure}
 
 
+ \begin{figure}[!t]
+ \centering
+  \includegraphics[scale=0.95]{framework.eps}
+ \caption{An overview of \textsf{ServDroid}.}
+\label{fig_framework}
+\end{figure}
+
 \section{Detecting Service Usage Bugs}\label{approach}
-Based on the four anti-patterns, we present a
-static analysis to detect service usage inefficiency bugs in Android apps.
-To scale to large real-world apps, we use a context-insensitive,
-but path-sensitive inter-procedural control flow analysis.
-
-Since some services declared in the AndroidManifest file may not
-be implemented or used in the app code, we only consider the services
-that are actually implemented or used. Note that the service types
-cannot be determined directly from the AndroidManifest file or the service
-definition (i.e., the class that defines the service). We have to determine the
-service type according to all uses of the service from the app code. If a
-service is only initiated through \hytt{startService()} (\hytt{bindService()}),
-it is a started (bound) service; otherwise, it is a hybrid service.
-According to the service types, we then determine whether there
-are use cases of the services that may lead to corresponding service usage
-inefficiencies. Our analysis covers all usage of each service.
-
-Fig.~\ref{fig_framework} illustrates the framework of our approach, which
+\textsf{ServDroid} automatically detects service usage inefficiency bugs by
+matching the anti-patterns.
+To scale to large real-world apps, we start from a context-insensitive call
+graph and use each anti-pattern to guide a path-sensitive
+inter-procedural analysis.
+Fig.~\ref{fig_framework} illustrates the framework of \textsf{ServDroid}, which
 includes three main modules:
 \begin{enumerate}
 \item \textit{Service Identifier}: For each statement of service use (e.g., \hytt{startService(intent)},  \hytt{bindService(intent)}, \hytt{stopService(intent)}), this module identifies the corresponding service $s$ according to the argument $intent$. If $intent$ is explicit, $s$ is obtained from $intent$'s API invocations, e.g., \hytt{intent.setClass(context, cls)}, \hytt{intent.setClassName(context, cls)}, or \hytt{intent.setComponent(comp)}~\cite{Androidintentfilter}. If $intent$ is implicit, $s$ is obtained from the matched $<$intent-filter/$>$ defined in the AndroidManifest XML file~\cite{Androidintentfilter}.
@@ -575,20 +568,53 @@ includes three main modules:
 \item \textit{Bug Detector}: The app control flow graph (CFG) can be generated by \textsf{Soot}. For each service use, since the component $c$ and the service $s$ are known, according to the CFG, \textit{Bug Detector} determine whether or not this service use may lead to service usage inefficiency bugs. Since this is the crucial module of \textsf{ServDroid}, we next present our analysis for detecting each of the four kinds of bugs in more detail.
 \end{enumerate}
 
+Since some services declared in the AndroidManifest file may not
+be implemented or used in the app code, we only consider the services
+that are actually implemented or used. Note that the service types
+cannot be determined directly from the AndroidManifest file or the service
+definition (i.e., the class that defines the service). We thus determine the
+service type according to the uses of the service in the app code. If a
+service is only initiated through \hytt{startService()} (\hytt{bindService()}),
+it is a started (bound) service; otherwise, it is a hybrid service.
+According to the service types, we then determine whether there
+are use cases of the services that may lead to corresponding service usage
+inefficiencies. Our analysis covers all usage of each service.
 
- \begin{figure}
- \centering
-  \includegraphics[scale=0.95]{framework.eps}
- \caption{Approach framework of \textsf{ServDroid}.}
-\label{fig_framework}
-\end{figure}
+A key analysis used in \textsf{ServDroid} is the dominator analysis based on the
+intra-procedural CFG, defined below:
+\begin{definition}[\textbf{Dominator}]
+  In a CFG, a node (statement) $s_j$ is dominated by another node
+  $s_i$ if every path from the entry of the CFG to $s_j$
+  contains $s_i$. $s_i$ is called a dominator of $s_j$.
+\label{def_dom}
+\end{definition}
+\begin{definition}[\textbf{Post-dominator}]
+  In a CFG, a node (statement) $s_i$ is post-dominated by another
+  node $s_j$ if every path from $s_i$ to the exit (return
+  statement) of the CFG contains $s_j$. $s_j$ is called a
+  post-dominator of $s_i$.
+\label{def_postdom}
+\end{definition}
+We next present our algorithm for each anti-pattern in detail.
+
 
 \subsection{Detecting Premature Create Bugs}
 As mentioned in Section~\ref{antipatterns}, there are two kinds of premature create bugs. The first kind can occur to the usage of bound services and hybrid services, whereas the second kind can only occur to the usage of hybrid services.
 
-We first discuss how to detect the first kind of premature create bugs. We search in the CFG of the app for all the \hytt{bindService()} statements. For each \hytt{bindService()} statement $stm_b$ in the CFG, we first determine the client component $c$ and the bound service $s$ such that $c$ binds $s$ through $stm_b$. Then, from the CFG, we find a successor $stm_u$ of $stm_b$ such that $stm_u$ is the first statement that $c$ invokes a method of $s$. If there is no statements between $stm_b$ and $stm_u$ that are relevant to $c$ (invoked by $c$), $c$'s use of $s$ is free of premature create bugs. Otherwise, there is a premature create bug, i.e., $c$ binds $s$ too early.
+We first discuss how to detect the first kind of premature create bugs. We
+search in each method of the app for all the
+\hytt{bindService()} statements. For each \hytt{bindService()} statement $stm_b$
+in the CFG, we first determine the client component $c$ and the bound service
+$s$ such that $c$ binds $s$ through $stm_b$. Then, from the CFG of the method,
+we find a post-dominator $stm_u$ of $stm_b$ such that $stm_u$ is the first
+statement that $c$ invokes a method of $s$.
+If there exists no statements between $stm_b$ and $stm_u$ that are relevant to
+$c$ (invoked by $c$), $c$'s use of $s$ is free of premature create bugs.
+Otherwise, there is a premature create bug, i.e., $c$ binds $s$ too early.
 
-Let us return to the example in Figure~\ref{ex_precreate}a. Since \hytt{dZm.aqC()} is the first statement that $c$ uses $s$, and there are other operations invoked by $c$ (e.g., \hytt{oj()}, \hytt{arF()}) between \hytt{context.bindService()} and \hytt{dZm.aqC()} in the CFG, a premature create bug is found.
+Let us return to the example in Figure~\ref{ex_precreate}a.
+Since \hytt{dZm.aqC()} is the first statement that $c$ uses $s$, and there are
+other operations invoked by $c$ (e.g., \hytt{oj()}, \hytt{arF()}) between \hytt{context.bindService()} and \hytt{dZm.aqC()} in the CFG, a premature create bug is found.
 
 We then discuss how to detect the second kind of premature create bugs.  We first check whether the
 \hytt{onStartCommand()} method of the service $s$ is overwritten. If it is
@@ -598,8 +624,9 @@ the following two conditions are satisfied (if both conditions are satisfied,
 the service $s$ involves premature create bugs):
 \begin{enumerate}
 \item No component binds to service $s$ when the \hytt{startService()} statement is executed.
-\item There is a \hytt{bindService()} statement which follows but not
-immediately follows the \hytt{startService()} statement (i.e., \hytt{bindService()} is a successor but not a direct successor of \hytt{startService()} in the CFG) and there is no corresponding \hytt{stopService()} between \hytt{startService()} and \hytt{bindService()}.
+\item There is a \hytt{bindService()} statement following the
+\hytt{startService()} statement, but \hytt{bindService()} is not an immediate
+post-dominator of \hytt{startService()}, and there is no corresponding \hytt{stopService()} between \hytt{startService()} and \hytt{bindService()}.
 \end{enumerate}
 
 To check the first condition, we first obtain the dominators (cf.
@@ -607,15 +634,13 @@ Definition~\ref{def_dom}) of the \hytt{startService()} statement $stm_s$. If the
 list of dominators does not include a \hytt{bindService()} statement $stm_b$ that binds the same service $s$,
 the first condition is satisfied. Otherwise, we further check whether the
 corresponding \hytt{unbindService()} statement follows $stm_b$ in the CFG, or
-the component that binds $s$ is destroyed before $stm_s$. If either is met, the first condition is satisfied. For the second condition, we check whether there is a  \hytt{bindService()} statement $stm_{b_1}$ that is the transitive successor of $stm_s$. If yes, we further check each path from $stm_s$ to $stm_{b_1}$. If there is no \hytt{bindService()} statement that is the direct successor of $stm_s$, and there is no  \hytt{stopService()} statement that stops $s$, the second condition is satisfied.
+the component that binds $s$ is destroyed before $stm_s$. If either is met, the
+first condition is satisfied. For the second condition, we check whether there
+is a  \hytt{bindService()} statement $stm_{b_1}$ that is the transitive
+post-dominator of $stm_s$. If yes, we further check each path from $stm_s$ to
+$stm_{b_1}$. If there is no \hytt{bindService()} statement that is the
+immediate post-dominator of $stm_s$, and there is no \hytt{stopService()} statement that stops $s$, the second condition is satisfied.
 
-
-\begin{definition}[\textbf{Dominator}]
-  In a CFG, a node (statement) $s_j$ is dominated by another node
-  $s_i$ if every path from the entry of the CFG to $s_j$
-  contains $s_i$. $s_i$ is called a dominator of $s_j$.
-\label{def_dom}
-\end{definition}
 
 Let us return to the example in Figure~\ref{ex_precreate}b. Since \hytt{onStartCommand()} is not overwritten, and the component has other operations (e.g., \hytt{q()}) between \hytt{startService()} and \hytt{bindService()} in the CFG, a premature create bug is found.
 
@@ -669,13 +694,7 @@ statement $stm_1$. To balance precision and efficiency, our
 method is based on \textit{post-dominator} (cf. Definition~\ref{def_postdom}):
 if $stm_2$ is a post-dominator of $stm_1$ in the (context-insensitive) CFG of the app, then the service does not leak. Otherwise, it may leak.
 
-\begin{definition}[\textbf{Post-dominator}]
-  In a CFG, a node (statement) $s_i$ is post-dominated by another
-  node $s_j$ if each directed path from $s_i$ to the exit (return
-  statement) of the CFG contains $s_j$. $s_j$ is called a
-  post-dominator of $s_i$.
-\label{def_postdom}
-\end{definition}
+
 
 Let us return to the example in Figure~\ref{ex_leak}a. In the CFG of \textsf{Messenger}, since the \hytt{startService()} method is not post-dominated by the \hytt{stopService()} method, a service leak bug is found.
 
@@ -698,8 +717,7 @@ innermost method can be found while the efficiency is guaranteed.
 \end{enumerate}
 
 \section{Empirical Evaluation}\label{evaluation}
-In this section, we study service usage inefficiencies in real-world popular
-Android apps, aiming to answer the following research questions:
+Our evaluation aims to answer the following research questions:
 
 \begin{itemize}
 \item {\bf RQ1} - {\it Performance of \textsf{ServDroid}}: What are the
@@ -714,30 +732,36 @@ used in Android apps? Which type of services are used most frequently?
 \item {\bf RQ7} - {\it Most vulnerable service type}: Among the three types of services, the usage of which type is more prone to inefficiency bugs?
 \end{itemize}
 
-All apps are analyzed with \textsf{ServDroid} on a computer with an Intel Core i7 3.6GHz CPU and 16 GB of memory, running Windows 8, JDK 1.7, and Android 7.0, 7.1.1, and 8.0.
+All apps are analyzed with \textsf{ServDroid} on a computer with an Intel Core
+i7 3.6GHz CPU and 16 GB of memory, running Windows 8, JDK 1.7, and Android 7.0, 7.1.1, and 8.0.
+{\sf ServDroid} is implemented based on {\sf
+Soot}~\cite{sootpaper}. The input of {\sf ServDroid} is an app (APK file), and
+its output is the detected service usage inefficiency bugs in the app.
 
 %In the evaluation, we use both a manual inspection and a software tool (i.e., our prototype \textsf{ServDroid}) to analyze the service usage inefficiency bugs in these apps.
-\subsection{Experiments on 45 Apps}
+\subsection{Empirical Study on 45 Apps}
 
 \subsubsection{Experimental Setup}
 We first conduct an experimental evaluation on the top 45 most
-downloaded free Android apps according to Wikipedia. The first 25 apps have
+downloaded free Android apps according to Wikipedia~\footnote{https://en.wikipedia.org/wiki/List\_of\_most\_downloaded\_Android\_applica\\tions
+(accessed in Jan 2018)}. The first 25 apps have
 over one billion downloads and the rest 20 apps all have over 500 million
 downloads. The first two columns of Table~\ref{tab_resultsum} respectively
 report the names of these 45 apps and their versions we use. It is worth
 mentioning that all the app versions were the latest in early January, 2018.
 
-\textbf{Oracle}. We conducted an empirical study on these 45 apps by manual
-inspection. Using the reverse engineering tools (\textsf{dex2jar}\footnote{https://sourceforge.net/projects/dex2jar} and \textsf{jd-gui}\footnote{http://jd.benow.ca}), each APK file was transformed into Java code, and three graduate students who mastered the four anti-patterns manually and independently searched the bugs in the source code. The inconsistencies among them were solved through iterative checking and coordination. The inspection took them about two weeks. We use the code inspection
-results as the oracle (ground truth) to evaluate the effectiveness of our approach.
-
-\textbf{Implementation}. We implemented our approach in an open-source prototype
-tool {\sf ServDroid} based on {\sf Soot}~\cite{sootpaper}. The input of {\sf
-ServDroid} is an app (APK file), and its output is the detected service usage
-inefficiency bugs in the app. {\sf ServDroid} also returns the calling context to
-help debug these inefficiencies. We also use {\sf ServDroid} to
-detect the service usage inefficiency bugs in these 45 apps, and compare the
-detected results with those of the manual inspection.
+\textbf{Oracle}. In this experiment, our oracle is constructed based on a
+substantial manual inspection. Using the reverse engineering tools
+(\textsf{dex2jar}\footnote{https://sourceforge.net/projects/dex2jar} and
+\textsf{jd-gui}\footnote{http://jd.benow.ca}), each APK file is transformed
+into Java code, and three graduate students who are instructed with the four
+anti-patterns independently search the bugs in the Java code. The
+inconsistencies among them were solved through iterative checking and
+coordination. The inspection took them about two weeks. We use the code
+inspection results as the oracle (ground truth) to evaluate the effectiveness of our approach.
+We also use {\sf ServDroid} to detect the service usage inefficiency bugs in
+these 45 apps, and compare the detected results with those of the manual
+inspection.
 
 \begin{table*}
 \centering
@@ -823,7 +847,7 @@ accuracy of \textsf{ServDroid} is reported as follows.
 {\bf Answer to RQ1:}
 The overall precision and recall of the results returned by \textsf{ServDroid}
 are both 100\%. The total runtime overhead of {\sf ServDroid} on analyzing the
-45 apps is 4,325 seconds, with about 96 seconds on average to analyze one app.\\
+45 apps is 4,325 seconds, with about 96 seconds to analyze one app on average.\\
 {\bf Implication:}
 The lightweight analysis of \textsf{ServDroid} for detecting such particular
 anti-patterns has a high accuracy, and is scalable.
@@ -840,11 +864,11 @@ To investigate the energy impact of the inefficiency bugs, we first use
 \textsf{Soot} to instrument the infected apps to fix the inefficiency bugs (the details are beyond the scope of this paper), and
 repackage them. Then, we run the original and repackaged apps independently on a
 phone (Google Nexus 6P, running Android 8.0) with the same setting (e.g., user operations) for 15 minutes\footnote{It is sufficient to see the difference of battery cost.}, and use the tool (also an app)
-\textsf{Trepn Profiler} to measure the battery cost of them, respectively. Based on the static analysis result of \textsf{servDroid}, we make sure that the behavior of the app related to the service inefficiency bugs is exercised. The above measurement is repeated three times. The
-average battery cost is summarized in Table~\ref{tab_energy}, including the data of 38 apps (the other seven
+\textsf{Trepn Profiler} to measure the battery cost of them, respectively. Based
+on the static analysis result of \textsf{ServDroid}, we make sure that the behavior of the app related to the service inefficiency bugs is exercised. The above measurement is repeated three times. The average battery cost is summarized in Table~\ref{tab_energy}, including the data of 38 apps (the other seven
 apps are not measured because they are either free of the inefficiency bugs or cannot run
 independently).
-Based on the results in Table~\ref{tab_energy}, we have the following finding:
+The results in Table~\ref{tab_energy} lead to the following summary:
 
 \medskip
 %\setlength{\fboxrule}{0.7 pt}
@@ -926,10 +950,12 @@ inefficiency bugs have a significant impact on energy consumption.
 \end{table}
 
 
-\subsection{Empirical Study}
+\subsection{Experiments on 1,000 Apps}
 
-Since the precision and recall of \textsf{servDroid} are both 100\%, using \textsf{servDroid}, we conduct an empirical
-study on 1,000 Android apps randomly selected from Google play (accessed in Dec 2018), to extensively study the service usage and the relevant inefficiency bugs in practice. From the 1,000 Android apps, we have the following findings.
+To assess the service usage and the relevant inefficiency bugs more
+extensively in practice, we further conducted an empirical study on 1,000
+real-world apps using \textsf{ServDroid}. These 1,000 apps were randomly
+selected from Google play (accessed in Dec 2018). We summarize the results below.
 
 %\begin{table*}
 %\centering
@@ -1059,28 +1085,26 @@ still significant.
 \medskip
 
 
-
-
-
-%We also applied \textsf{ServDroid} to other 60 real-world but not so popular Android apps, and found that those apps involve even more service usage inefficiency bugs.
-We have also applied \textsf{ServDroid} to different versions of some apps, and
-found that, the numbers of service usage inefficiency bugs decrease in newer
-versions (see Fig.~\ref{fig_bugsvsversions}). This implies that developers
-fixed some of these bugs, though not completely. In summary, our empirical study
-indicates that service usage inefficiency bugs are pervasive in Android apps.
-
- \begin{figure}
+ \begin{figure}[!h]
  \centering
   \includegraphics[scale=0.35]{bugs-vs-versions.eps}
  \caption{The number of services usage inefficiency bugs decreases in newer versions.}
 \label{fig_bugsvsversions}
 \end{figure}
 
+%We also applied \textsf{ServDroid} to other 60 real-world but not so popular Android apps, and found that those apps involve even more service usage inefficiency bugs.
+We have also applied \textsf{ServDroid} to different versions of some apps, and
+found that the numbers of service usage inefficiency bugs decrease in newer
+versions (see Fig.~\ref{fig_bugsvsversions}). This implies that developers
+fixed some of these bugs, though not completely. Overall, our empirical study
+indicates that service usage inefficiency bugs are prevalent in Android apps.
+
+
 
 \section{Related Work}\label{relatedwork}
-Our research is related to work on GUI testing, service analysis and testing,
-and performance (energy) testing of Android apps. In the following, we review
-some existing work on these topics.
+Our research is related to GUI testing, service analysis and
+testing, and performance (energy) testing of Android apps. In the following, we review
+representative existing work on these topics.
 
 \textbf{GUI testing}. Most existing testing approaches for Android apps focus on GUI testing. According to the exploration strategies employed, Choudhary et al.~\cite{ChoudharyGO15} summarize three main categories of testing approaches: \textit{random testing}~\cite{monkey,HuN11,MachiryTN13,SongQH17}, \textit{model-based testing}~\cite{GUIRipping,grey-box,ChoiNS13,a3e,SuMCWYYPLS17}, and \textit{advanced testing}~\cite{AnandNHY12,JensenPM13,EvoDroid,MaoHJ16}. Although \textsf{Monkey}~\cite{monkey} is among the first generation techniques for Android testing, compared with many follow-up approaches, it still shows good performance and advantages in app testing~\cite{ChoudharyGO15}. \textsf{Dynodroid}~\cite{MachiryTN13} improves \textsf{Monkey} by reducing the possibility of generating redundant events. It achieves this by monitoring the reaction of an app upon each event and basing on the reaction to generate the next event. Recently, \textsf{EHBDroid}~\cite{SongQH17} is presented to first instrument the invocations of event callbacks in each activity and then directly trigger the callbacks in a random order. This approach is more efficient as it bypasses the GUI for test input generation. Since random testing may generate redundant events, several model-based testing approaches are proposed~\cite{AmalfitanoFT11,GUIRipping,grey-box,ChoiNS13,a3e,BaekB16,SuMCWYYPLS17}. These approaches first obtain a model of the app GUI, and then generate test input according to the model. While most of them utilize program analysis techniques to obtain the model, machine learning is used in~\cite{ChoiNS13} to learn the model. The third category approaches leverage advanced techniques to efficiently generate effective event sequences for app testing\cite{AnandNHY12,JensenPM13,EvoDroid,MaoHJ16}. For example,  \textsf{ACTEve}~\cite{AnandNHY12} uses symbolic execution and \textsf{EvoDroid}~\cite{EvoDroid} employs evolutionary algorithm to generate event sequences. \textsf{Sapienz}~\cite{MaoHJ16} formulates the event sequence generation as a multiple-objective optimization problem and employs search-based algorithm to generate the shortest event sequences that can maximize the code coverage and bug exposure.
 
@@ -1129,18 +1153,22 @@ bugs, whereas our approach aims to detect service usage inefficiency bugs.
 
 \section{Conclusions}\label{conclusion}
 It is extremely challenging for testing techniques to reveal service usage
-inefficiencies in apps, because such latent bugs do not exhibit
+inefficiencies in mobile apps, because such latent bugs do not exhibit
 immediate bug symptoms such as crashes.
 We have conducted an in-depth study of Android services, and presented four
-anti-patterns that lead to service usage inefficiency bugs and a static
-analysis approach to automatically detect all them. To our knowledge,
-this work is among the first to detect service performance bugs using static
-analysis. We also implemented an open-source tool {\sf ServDroid} and conducted
-an empirical evaluation on 45 real-world Android apps. The empirical results
-demonstrate that service usage inefficiency bugs are severe in practice and they
-have a significant negative impact on energy consumption.
+anti-patterns that lead to service usage inefficiency bugs in real-world apps.
+We have also presented {\sf ServDroid}, a scalable static
+analysis approach to automatically detect such bugs based on
+these anti-patterns.
+To our knowledge, {\sf ServDroid} is among the first to
+detect service performance bugs using static analysis.
+Our empirical evaluation on a large collection of real-world Android
+apps indicates that {\sf ServDroid} is highly effective and service usage
+inefficiency bugs are prevalent in practice, which severely impact the apps
+on energy consumption.
 
-To complement the static analysis, we plan to present dynamic analysis techniques to detect service usage inefficiency bugs.
+% To complement the static analysis, we plan to present dynamic analysis
+% techniques to detect service usage inefficiency bugs.
 
 %\section*{Acknowledgments}
 %This work was supported in part by the National Key R\&D Program of China under Grant No. 2017YFB1001801, the National Natural Science Foundation of China under Grant No. 61761136003, the Natural Science Foundation of Jiangsu Province under Grant No. BK20171427.
