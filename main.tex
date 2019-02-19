@@ -1,7 +1,10 @@
 \documentclass[sigconf,review, anonymous]{acmart}
-\acmConference[ESEC/FSE 2019]{The 27th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}{26--30 August, 2019}{Tallinn, Estonia}
+%\acmConference[ESEC/FSE 2019]{The 27th ACM Joint European Software Engineering
+% Conference and Symposium on the Foundations of Software Engineering}{26--30 August, 2019}{Tallinn, Estonia}
 
 \usepackage[norelsize,linesnumbered,ruled,vlined]{algorithm2e}
+
+\pagestyle{plain}
 
 %\usepackage[latin1]{inputenc}
 \usepackage{graphicx}
@@ -89,19 +92,19 @@ captionpos=b
 
 
 % DOI
-\acmDOI{10.475/123_4}
-
-% ISBN
-\acmISBN{123-4567-24-567/08/06}
-
-%Conference
-\acmConference[]{ESEC/FSE'19}{26--30 August, 2019}{Tallinn, Estonia}
-\acmYear{2018}
-\copyrightyear{2018}
-
-
-%\acmArticle{4}
-\acmPrice{15.00}
+% \acmDOI{10.475/123_4}
+%
+% % ISBN
+% \acmISBN{123-4567-24-567/08/06}
+%
+% %Conference
+% \acmConference[]{ESEC/FSE'19}{26--30 August, 2019}{Tallinn, Estonia}
+% \acmYear{2018}
+% \copyrightyear{2018}
+%
+%
+% %\acmArticle{4}
+% \acmPrice{15.00}
 
 
 % These commands are optional
@@ -110,8 +113,7 @@ captionpos=b
 %\editor{Theo D'Hondt}
 %\editor{Wolfgang De Meuter}
 
-
-
+\setcopyright{none}
 \begin{document}
 \title{ServDroid: Detecting Service Usage Inefficiencies in\\  Android Applications}
 %\titlenote{Produces the permission block, and copyright information}
@@ -147,21 +149,21 @@ captionpos=b
 \fi
 
 \begin{abstract}
-Services in Android applications are frequently-used components that are
-responsible for performing time-consuming operations in the background. While
-services play a crucial role in app performance, our study finds that service
-usages in practice are not as efficient as expected, e.g., they tend to cause
-unnecessary resource occupation and energy consumption. In this paper, we
-present four anti-patterns that result in service usage inefficiencies,
-including premature create, late destroy, premature destroy, and service leak.
-Since these service usage inefficiency bugs do not cause application crashes, it
-is difficult for existing testing approaches to find them.
-To this end, we develop a static analysis tool, \textsf{ServDroid}, which can
-automatically detect such bugs and also provide calling context to help
-debug them. We apply \textsf{ServDroid} to popular real-world Android
-apps. Surprisingly, we find that service usage inefficiencies are pervasive,
-and they have a significant impact on the app's energy
-consumption.
+Services in Android applications are frequently-used components for performing
+time-consuming operations in the background. While services play a crucial role
+in the app performance, our study shows that service usages in practice are not
+as efficient as expected, e.g., they tend to cause unnecessary resource occupation
+and/or energy consumption.
+Moreover, as service usage inefficiencies do not manifest
+with immediate app failures, e.g., crashes, existing testing-based approaches
+fall short in finding them.
+In this paper, we identify four anti-patterns of such service usage
+inefficiency bugs, including premature create, late destroy, premature destroy,
+and service leak, and present a static analysis technique, \textsf{ServDroid},
+to automatically and effectively detect them based on the anti-patterns.
+We have applied \textsf{ServDroid} to a large collection of popular real-world
+Android apps and, surprisingly, we find that service usage inefficiencies are
+pervalent and can severely impact apps' energy consumption.
 \end{abstract}
 
 %
@@ -169,25 +171,25 @@ consumption.
 % http://dl.acm.org/ccs.cfm
 % Please copy and paste the code instead of the example below.
 %
-\begin{CCSXML}
-<ccs2012>
-<concept>
-<concept_id>10011007.10011074.10011099.10011102</concept_id>
-<concept_desc>Software and its engineering~Software defect analysis</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-<concept>
-<concept_id>10011007.10011074.10011099.10011102.10011103</concept_id>
-<concept_desc>Software and its engineering~Software testing and debugging</concept_desc>
-<concept_significance>500</concept_significance>
-</concept>
-</ccs2012>
-\end{CCSXML}
-
-\ccsdesc[500]{Software and its engineering~Software defect analysis}
-\ccsdesc[500]{Software and its engineering~Software testing and debugging}
-
-\keywords{Android app, background service, usage inefficiency, service leak, static analysis}
+% \begin{CCSXML}
+% <ccs2012>
+% <concept>
+% <concept_id>10011007.10011074.10011099.10011102</concept_id>
+% <concept_desc>Software and its engineering~Software defect analysis</concept_desc>
+% <concept_significance>500</concept_significance>
+% </concept>
+% <concept>
+% <concept_id>10011007.10011074.10011099.10011102.10011103</concept_id>
+% <concept_desc>Software and its engineering~Software testing and debugging</concept_desc>
+% <concept_significance>500</concept_significance>
+% </concept>
+% </ccs2012>
+% \end{CCSXML}
+%
+% \ccsdesc[500]{Software and its engineering~Software defect analysis}
+% \ccsdesc[500]{Software and its engineering~Software testing and debugging}
+%
+% \keywords{Android app, background service, usage inefficiency, service leak, static analysis}
 
 
 \maketitle
@@ -298,7 +300,7 @@ open-source tool, \textsf{ServDroid}, to efficiently detect service usage
 inefficiency bugs and also help debug them. The precision and recall of
 \textsf{ServDroid} on the top 45 most popular free Android apps listed on
 Wikipedia~\footnote{https://en.wikipedia.org/wiki/List\_of\_most\_downloaded\_Android\_applica\\tions
-(accessed in Jan 2018)} are 100\% based on our manual study.  
+(accessed in Jan 2018)} are 100\% based on our manual study.
 \item We conduct an empirical study on 1,000 real-world Android apps, the
 results of which demonstrate that the service usage inefficiencies are pervasive
 in practice. The experiment on the 45 apps show that service usage inefficiencies indeed have a significant negative impact on energy consumption.
@@ -568,7 +570,7 @@ includes three main modules:
 \subsection{Detecting Premature Create Bugs}
 As mentioned in Section~\ref{antipatterns}, there are two kinds of premature create bugs. The first kind can occur to the usage of bound services and hybrid services, whereas the second kind can only occur to the usage of hybrid services.
 
-We first discuss how to detect the first kind of premature create bugs. We search in the CFG of the app for all the \hytt{bindService()} statements. For each \hytt{bindService()} statement $stm_b$ in the CFG, we first determine the client component $c$ and the bound service $s$ such that $c$ binds $s$ through $stm_b$. Then, from the CFG, we find a successor $stm_u$ of $stm_b$ such that $stm_u$ is the first statement that $c$ invokes a method of $s$. If there is no statements between $stm_b$ and $stm_u$ that are relevant to $c$ (invoked by $c$), $c$'s use of $s$ is free of premature create bugs. Otherwise, there is a premature create bug, i.e., $c$ binds $s$ too early. 
+We first discuss how to detect the first kind of premature create bugs. We search in the CFG of the app for all the \hytt{bindService()} statements. For each \hytt{bindService()} statement $stm_b$ in the CFG, we first determine the client component $c$ and the bound service $s$ such that $c$ binds $s$ through $stm_b$. Then, from the CFG, we find a successor $stm_u$ of $stm_b$ such that $stm_u$ is the first statement that $c$ invokes a method of $s$. If there is no statements between $stm_b$ and $stm_u$ that are relevant to $c$ (invoked by $c$), $c$'s use of $s$ is free of premature create bugs. Otherwise, there is a premature create bug, i.e., $c$ binds $s$ too early.
 
 Let us return to the example in Figure~\ref{ex_precreate}a. Since \hytt{dZm.aqC()} is the first statement that $c$ uses $s$, and there are other operations invoked by $c$ (e.g., \hytt{oj()}, \hytt{arF()}) between \hytt{context.bindService()} and \hytt{dZm.aqC()} in the CFG, a premature create bug is found.
 
@@ -659,7 +661,7 @@ if $stm_2$ is a post-dominator of $stm_1$ in the (context-insensitive) CFG of th
 \label{def_postdom}
 \end{definition}
 
-Let us return to the example in Figure~\ref{ex_leak}a. In the CFG of \textsf{Messenger}, since the \hytt{startService()} method is not post-dominated by the \hytt{stopService()} method, a service leak bug is found. 
+Let us return to the example in Figure~\ref{ex_leak}a. In the CFG of \textsf{Messenger}, since the \hytt{startService()} method is not post-dominated by the \hytt{stopService()} method, a service leak bug is found.
 
 \vspace{1ex}
 Our detection for each anti-pattern is complete. For each service, \textsf{ServDroid} examines its uses along all potential paths, and all uses of all services are examined statically. To improve the analysis accuracy for real-world apps, we also take the following
