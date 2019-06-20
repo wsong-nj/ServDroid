@@ -1,0 +1,27 @@
+<com.termux.filepicker.TermuxFileReceiverActivity$3: void a(java.lang.String)>
+path1
+targetActivity: com.termux.filepicker.TermuxFileReceiverActivity
+targetMethod: <com.termux.filepicker.TermuxFileReceiverActivity$3: void a(java.lang.String)>
+src: com.termux.app.TermuxActivity
+tgt: com.termux.filepicker.TermuxFileReceiverActivity
+eventSeq: 
+	<com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.termux.app.TermuxActivity: void startActivity(android.content.Intent)>($r5)in<com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null
+	<com.termux.app.TermuxActivity$7: void onShow(android.content.DialogInterface)>->virtualinvoke $r11.<android.app.AlertDialog: void setOnShowListener(android.content.DialogInterface$OnShowListener)>($r12)in<com.termux.app.TermuxActivity: void h()>:null<com.termux.app.TermuxActivity$7$1: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r2.<android.widget.ListView: void setOnItemLongClickListener(android.widget.AdapterView$OnItemLongClickListener)>($r1)in<com.termux.app.TermuxActivity$7: void onShow(android.content.DialogInterface)>:null
+	<com.termux.app.TermuxActivity$9: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131427366, $r7)in<com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null
+
+eventHandlers: 
+	<com.termux.app.b$1: boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent)>->virtualinvoke $r6.<android.widget.EditText: void setOnEditorActionListener(android.widget.TextView$OnEditorActionListener)>($r10)in<com.termux.app.b: void a(android.app.Activity,int,java.lang.String,int,com.termux.app.b$a,int,com.termux.app.b$a,int,com.termux.app.b$a,android.content.DialogInterface$OnDismissListener)>:null
+=================================
+path2
+targetActivity: com.termux.filepicker.TermuxFileReceiverActivity
+targetMethod: <com.termux.filepicker.TermuxFileReceiverActivity$3: void a(java.lang.String)>
+src: com.termux.app.TermuxActivity
+tgt: com.termux.filepicker.TermuxFileReceiverActivity
+eventSeq: 
+	<com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.termux.app.TermuxActivity: void startActivity(android.content.Intent)>($r5)in<com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null
+	<com.termux.app.TermuxActivity$7: void onShow(android.content.DialogInterface)>->virtualinvoke $r11.<android.app.AlertDialog: void setOnShowListener(android.content.DialogInterface$OnShowListener)>($r12)in<com.termux.app.TermuxActivity: void h()>:null<com.termux.app.TermuxActivity$7$1: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r2.<android.widget.ListView: void setOnItemLongClickListener(android.widget.AdapterView$OnItemLongClickListener)>($r1)in<com.termux.app.TermuxActivity$7: void onShow(android.content.DialogInterface)>:null
+	<com.termux.app.TermuxActivity$9: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131427366, $r7)in<com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null
+
+eventHandlers: 
+	<com.termux.app.b$2: void onClick(android.content.DialogInterface,int)>->$r14 = virtualinvoke $r14.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>($i1, $r15)in<com.termux.app.b: void a(android.app.Activity,int,java.lang.String,int,com.termux.app.b$a,int,com.termux.app.b$a,int,com.termux.app.b$a,android.content.DialogInterface$OnDismissListener)>:null
+=================================

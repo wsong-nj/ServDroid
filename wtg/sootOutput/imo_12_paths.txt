@@ -1,0 +1,13 @@
+<com.imo.android.imoim.activities.SignupActivity2: void onCreate(android.os.Bundle)>
+path1
+targetActivity: com.imo.android.imoim.activities.SignupActivity2
+targetMethod: <com.imo.android.imoim.activities.SignupActivity2: void onCreate(android.os.Bundle)>
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.activities.SignupActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->$z0 = specialinvoke $r0.<com.imo.android.imoim.activities.Home: boolean b()>()in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->$z0 = specialinvoke $r0.<com.imo.android.imoim.activities.Home: boolean b()>()in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+
+eventHandlers: 
+	<com.imo.android.imoim.activities.SignupActivity2: void onCreate(android.os.Bundle)>->nullin<com.imo.android.imoim.activities.SignupActivity2: void onCreate(android.os.Bundle)>:null
+=================================

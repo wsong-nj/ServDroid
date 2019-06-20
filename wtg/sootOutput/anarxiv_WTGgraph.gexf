@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:viz="http://www.gexf.net/1.2draft/viz" version="1.2">
+ <meta>
+  <creator>liu3237</creator>
+  <description>App method invoke graph</description>
+ </meta>
+ <graph defaultedgetype="directed" idtype="string" mode="static">
+  <attributes class="node" mode="static">
+   <attribute id="0" title="codeArray" type="string"/>
+  </attributes>
+  <nodes count="5">
+   <node id="com.nephoapp.anarxiv.anarxiv" label="com.nephoapp.anarxiv.anarxiv">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+   <node id="com.nephoapp.anarxiv.PaperListWnd" label="com.nephoapp.anarxiv.PaperListWnd">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+   <node id="com.nephoapp.anarxiv.SubCategoryWnd" label="com.nephoapp.anarxiv.SubCategoryWnd">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+   <node id="com.nephoapp.anarxiv.PaperDetailWnd" label="com.nephoapp.anarxiv.PaperDetailWnd">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+   <node id="com.nephoapp.anarxiv.PaperDetailWnd_2" label="com.nephoapp.anarxiv.PaperDetailWnd_2">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+  </nodes>
+  <edges count="5">
+   <edge id="com.nephoapp.anarxiv.anarxiv-->[&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650][&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651][&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649]-->com.nephoapp.anarxiv.PaperListWnd" source="com.nephoapp.anarxiv.anarxiv" target="com.nephoapp.anarxiv.PaperListWnd" type="directed" label=""/>
+   <edge id="com.nephoapp.anarxiv.anarxiv-->[&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650][&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651][&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649]-->com.nephoapp.anarxiv.SubCategoryWnd" source="com.nephoapp.anarxiv.anarxiv" target="com.nephoapp.anarxiv.SubCategoryWnd" type="directed" label=""/>
+   <edge id="com.nephoapp.anarxiv.anarxiv-->[&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650][&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651][&lt;com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649]-->com.nephoapp.anarxiv.PaperDetailWnd_2" source="com.nephoapp.anarxiv.anarxiv" target="com.nephoapp.anarxiv.PaperDetailWnd_2" type="directed" label=""/>
+   <edge id="com.nephoapp.anarxiv.PaperListWnd-->[&lt;com.nephoapp.anarxiv.PaperListWnd: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.PaperListWnd: void onCreate(android.os.Bundle)>:2131099659]-->com.nephoapp.anarxiv.PaperDetailWnd" source="com.nephoapp.anarxiv.PaperListWnd" target="com.nephoapp.anarxiv.PaperDetailWnd" type="directed" label=""/>
+   <edge id="com.nephoapp.anarxiv.SubCategoryWnd-->[&lt;com.nephoapp.anarxiv.SubCategoryWnd: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.&lt;android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in&lt;com.nephoapp.anarxiv.SubCategoryWnd: void onCreate(android.os.Bundle)>:2131099666]-->com.nephoapp.anarxiv.PaperListWnd" source="com.nephoapp.anarxiv.SubCategoryWnd" target="com.nephoapp.anarxiv.PaperListWnd" type="directed" label=""/>
+  </edges>
+ </graph>
+</gexf>

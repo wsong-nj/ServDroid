@@ -1,0 +1,238 @@
+launcherActivity: com.ted.android.view.activity.SplashScreenActivity
+current Node: com.ted.android.view.activity.SplashScreenActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.ted.android.view.activity.TalkDetailActivity
+Number of in edges: 6
+Number of out edges: 6
+current Node: com.ted.android.view.activity.BucketListInfoActivity
+Number of in edges: 2
+Number of out edges: 4
+current Node: com.ted.android.view.activity.VideoActivity
+Number of in edges: 2
+Number of out edges: 0
+current Node: com.ted.android.view.activity.MainActivity
+Number of in edges: 6
+Number of out edges: 7
+current Node: com.ted.android.view.activity.PlaylistDetailActivity
+Number of in edges: 2
+Number of out edges: 3
+current Node: com.ted.android.view.activity.SearchActivity
+Number of in edges: 5
+Number of out edges: 4
+current Node: com.ted.android.view.activity.SettingsFragmentActivity
+Number of in edges: 3
+Number of out edges: 0
+current Node: com.ted.android.view.activity.InspireMeActivity
+Number of in edges: 1
+Number of out edges: 2
+current Node: com.pushio.manager.PushIOActivityLauncher
+Number of in edges: 0
+Number of out edges: 1
+src: com.ted.android.view.activity.TalkDetailActivity
+tgt: com.ted.android.view.activity.BucketListInfoActivity
+eventSeq: 
+	<com.ted.android.view.fragment.TalkDetailFragment$14$1: void onClick(android.view.View)>->virtualinvoke $r5.<com.ted.android.core.view.widget.RemoteImageView: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.TalkDetailFragment$14: void run()>:2131362041
+	<com.ted.android.view.fragment.TalkDetailFragment$5: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r20.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r21)in<com.ted.android.view.fragment.TalkDetailFragment: void setupTabbedSwitch()>:2131362043
+	<com.ted.android.view.fragment.TalkDetailFragment$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<com.ted.android.view.widget.ExpandedListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r12)in<com.ted.android.view.fragment.TalkDetailFragment: void setupTabbedSwitch()>:2131362043
+
+
+src: com.ted.android.view.activity.BucketListInfoActivity
+tgt: com.ted.android.view.activity.TalkDetailActivity
+eventSeq: 
+	<com.ted.android.cast.MiniControllerActivityDelegate$2: void onClick(android.view.View)>->virtualinvoke $r3.<com.ted.android.view.widget.CastMiniController: void setOnClickListener(android.view.View$OnClickListener)>($r5)in<com.ted.android.cast.MiniControllerActivityDelegate: void onCreate()>:2131361883
+	<com.ted.android.view.activity.BucketListInfoActivity$1$1$2: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r4.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r12)in<com.ted.android.view.activity.BucketListInfoActivity$1$1: void run()>:2131361884
+
+
+src: com.ted.android.view.activity.TalkDetailActivity
+tgt: com.ted.android.view.activity.VideoActivity
+eventSeq: 
+	<com.ted.android.view.activity.TalkDetailActivity: void startVideoActivity(com.ted.android.core.data.model.Talk,boolean,com.ted.android.core.data.model.TedVastAd)>->virtualinvoke $r0.<com.ted.android.view.activity.TalkDetailActivity: void startActivityForResult(android.content.Intent,int)>($r3, 2)in<com.ted.android.view.activity.TalkDetailActivity: void startVideoActivity(com.ted.android.core.data.model.Talk,boolean,com.ted.android.core.data.model.TedVastAd)>:null
+
+
+src: com.ted.android.view.activity.MainActivity
+tgt: com.ted.android.view.activity.TalkDetailActivity
+eventSeq: 
+	<com.ted.android.view.fragment.FeaturedFragment$1: void onClick(android.view.View)>->virtualinvoke $r11.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r15)in<com.ted.android.view.fragment.FeaturedFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361928<com.ted.android.view.fragment.FeaturedFragment$FeaturedTalkTask$1: void onClick(android.view.View)>->virtualinvoke $r10.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.FeaturedFragment$FeaturedTalkTask: void onPostExecute(java.util.List)>:null
+	<com.ted.android.view.fragment.MyTalksFragment$3: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361971<com.ted.android.view.fragment.MyTalksFragment$BucketTask$11: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r17.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r34)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361979
+	<com.ted.android.view.fragment.MyTalksFragment$3: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361971<com.ted.android.view.fragment.MyTalksFragment$BucketTask$3: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r10.<com.ted.android.view.widget.ExpandedGridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r25)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361986
+	<com.ted.android.view.fragment.MyTalksFragment$2: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361972<com.ted.android.view.fragment.MyTalksFragment$BucketTask$3: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r10.<com.ted.android.view.widget.ExpandedGridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r25)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361986
+	<com.ted.android.view.fragment.FeaturedFragment: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.app.Activity: void startActivity(android.content.Intent)>($r3)in<com.ted.android.view.fragment.FeaturedFragment: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>:null
+	<com.ted.android.view.fragment.MyTalksFragment$1: void onClick(android.view.View)>->virtualinvoke $r7.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r11)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361978<com.ted.android.view.fragment.MyTalksFragment$BucketTask$5: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r11.<com.ted.android.view.widget.ExpandedGridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r27)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361984
+	<com.ted.android.view.fragment.MyTalksFragment$2: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361972<com.ted.android.view.fragment.MyTalksFragment$BucketTask$8: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r17.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r31)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361979
+	<com.ted.android.view.fragment.MyTalksFragment$3: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361971<com.ted.android.view.fragment.MyTalksFragment$BucketTask$1: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.GridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r19)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361981
+	<com.ted.android.view.fragment.MyTalksFragment$1: void onClick(android.view.View)>->virtualinvoke $r7.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r11)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361978<com.ted.android.view.fragment.MyTalksFragment$BucketTask$1: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.GridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r19)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361981
+	<com.ted.android.view.fragment.FeaturedFragment$2: void onClick(android.view.View)>->virtualinvoke $r11.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r16)in<com.ted.android.view.fragment.FeaturedFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361929<com.ted.android.view.fragment.FeaturedFragment$FeaturedTalkTask$1: void onClick(android.view.View)>->virtualinvoke $r10.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.FeaturedFragment$FeaturedTalkTask: void onPostExecute(java.util.List)>:null
+	<com.ted.android.view.fragment.MyTalksFragment$2: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361972<com.ted.android.view.fragment.MyTalksFragment$BucketTask$11: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r17.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r34)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361979
+	<com.ted.android.view.activity.MainActivity: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.ted.android.view.activity.MainActivity: void startActivity(android.content.Intent)>($r13)in<com.ted.android.view.activity.MainActivity: void onCreate(android.os.Bundle)>:null
+	<com.ted.android.view.fragment.MyTalksFragment$3: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361971<com.ted.android.view.fragment.MyTalksFragment$BucketTask$5: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r11.<com.ted.android.view.widget.ExpandedGridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r27)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361984
+	<com.ted.android.view.fragment.MyTalksFragment$2: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361972<com.ted.android.view.fragment.MyTalksFragment$BucketTask$5: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r11.<com.ted.android.view.widget.ExpandedGridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r27)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361984
+	<com.ted.android.view.fragment.ArchivesFragment$2: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r11)in<com.ted.android.view.fragment.ArchivesFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361872
+	<com.ted.android.cast.MiniControllerActivityDelegate$2: void onClick(android.view.View)>->virtualinvoke $r3.<com.ted.android.view.widget.CastMiniController: void setOnClickListener(android.view.View$OnClickListener)>($r5)in<com.ted.android.cast.MiniControllerActivityDelegate: void onCreate()>:2131361883
+	<com.ted.android.view.fragment.FeaturedFragment$3: void onClick(android.view.View)>->virtualinvoke $r11.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r17)in<com.ted.android.view.fragment.FeaturedFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361927<com.ted.android.view.fragment.FeaturedFragment$FeaturedTalkTask$1: void onClick(android.view.View)>->virtualinvoke $r10.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.FeaturedFragment$FeaturedTalkTask: void onPostExecute(java.util.List)>:null
+	<com.ted.android.view.fragment.MyTalksFragment$3: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361971<com.ted.android.view.fragment.MyTalksFragment$BucketTask$8: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r17.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r31)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361979
+	<com.ted.android.view.fragment.MyTalksFragment$1: void onClick(android.view.View)>->virtualinvoke $r7.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r11)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361978<com.ted.android.view.fragment.MyTalksFragment$BucketTask$8: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r17.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r31)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361979
+	<com.ted.android.view.fragment.MyTalksFragment$1: void onClick(android.view.View)>->virtualinvoke $r7.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r11)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361978<com.ted.android.view.fragment.MyTalksFragment$BucketTask$11: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r17.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r34)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361979
+	<com.ted.android.view.fragment.MyTalksFragment$1: void onClick(android.view.View)>->virtualinvoke $r7.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r11)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361978<com.ted.android.view.fragment.MyTalksFragment$BucketTask$3: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r10.<com.ted.android.view.widget.ExpandedGridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r25)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361986
+	<com.ted.android.view.fragment.MyTalksFragment$2: void onClick(android.view.View)>->virtualinvoke $r12.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.ted.android.view.fragment.MyTalksFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361972<com.ted.android.view.fragment.MyTalksFragment$BucketTask$1: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.GridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r19)in<com.ted.android.view.fragment.MyTalksFragment$BucketTask: void onPostExecute(java.util.List)>:2131361981
+
+
+src: com.ted.android.view.activity.PlaylistDetailActivity
+tgt: com.ted.android.view.activity.MainActivity
+eventSeq: 
+	<com.ted.android.view.activity.PlaylistDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.PlaylistDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:16908332
+	<com.ted.android.view.activity.PlaylistDetailActivity: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.ted.android.view.activity.PlaylistDetailActivity: void startActivity(android.content.Intent)>($r3)in<com.ted.android.view.activity.PlaylistDetailActivity: void onCreate(android.os.Bundle)>:null
+
+
+src: com.ted.android.view.activity.SearchActivity
+tgt: com.ted.android.view.activity.SearchActivity
+eventSeq: 
+	<com.ted.android.view.activity.SearchActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.SearchActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362089
+
+
+src: com.ted.android.view.activity.PlaylistDetailActivity
+tgt: com.ted.android.view.activity.SearchActivity
+eventSeq: 
+	<com.ted.android.view.activity.PlaylistDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.PlaylistDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362089
+
+
+src: com.ted.android.view.activity.TalkDetailActivity
+tgt: com.ted.android.view.activity.SearchActivity
+eventSeq: 
+	<com.ted.android.view.activity.TedActivity$1: void onClick(android.view.View)>->virtualinvoke $r4.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.ted.android.view.activity.TedActivity: android.widget.ImageView setIcon(android.view.MenuItem,int,android.view.LayoutInflater)>:2130903064
+	<com.ted.android.view.activity.TalkDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.TalkDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362089
+
+
+src: com.ted.android.view.activity.MainActivity
+tgt: com.ted.android.view.activity.SearchActivity
+eventSeq: 
+	<com.ted.android.view.activity.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362091
+	<com.ted.android.view.activity.MainActivity: boolean onSearchRequested()>->virtualinvoke $r0.<com.ted.android.view.activity.MainActivity: void startActivity(android.content.Intent)>($r1)in<com.ted.android.view.activity.MainActivity: boolean onSearchRequested()>:null
+
+
+src: com.ted.android.view.activity.BucketListInfoActivity
+tgt: com.ted.android.view.activity.SearchActivity
+eventSeq: 
+	<com.ted.android.view.activity.BucketListInfoActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.BucketListInfoActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362089
+
+
+src: com.ted.android.view.activity.MainActivity
+tgt: com.ted.android.view.activity.PlaylistDetailActivity
+eventSeq: 
+	<com.ted.android.view.fragment.ArchivesFragment$1: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r8)in<com.ted.android.view.fragment.ArchivesFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>:2131361873
+
+
+src: com.ted.android.view.activity.TalkDetailActivity
+tgt: com.ted.android.view.activity.SettingsFragmentActivity
+eventSeq: 
+	<com.ted.android.view.activity.TedActivity$1: void onClick(android.view.View)>->virtualinvoke $r4.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.ted.android.view.activity.TedActivity: android.widget.ImageView setIcon(android.view.MenuItem,int,android.view.LayoutInflater)>:2130903064
+
+
+src: com.ted.android.view.activity.MainActivity
+tgt: com.ted.android.view.activity.SettingsFragmentActivity
+eventSeq: 
+	<com.ted.android.view.activity.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.ted.android.view.activity.MainActivity: void startActivityForResult(android.content.Intent,int)>($r2, 1)in<com.ted.android.view.activity.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362090
+	<com.ted.android.view.activity.MainActivity: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.ted.android.view.activity.MainActivity: void startActivityForResult(android.content.Intent,int)>($r13, 1)in<com.ted.android.view.activity.MainActivity: void onCreate(android.os.Bundle)>:null
+
+
+src: com.ted.android.view.activity.MainActivity
+tgt: com.ted.android.view.activity.InspireMeActivity
+eventSeq: 
+	<com.ted.android.view.fragment.InspireMeFragment$ItemClick: void onClick(android.view.View)>->virtualinvoke $r16.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r17)in<com.ted.android.view.fragment.InspireMeFragment$1$1: void run()>:2131361939
+
+
+src: com.pushio.manager.PushIOActivityLauncher
+tgt: com.ted.android.view.activity.SplashScreenActivity
+eventSeq: 
+	<com.pushio.manager.PushIOActivityLauncher: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.pushio.manager.PushIOActivityLauncher: void startActivity(android.content.Intent)>($r2)in<com.pushio.manager.PushIOActivityLauncher: void onCreate(android.os.Bundle)>:null
+
+
+src: com.ted.android.view.activity.SearchActivity
+tgt: com.ted.android.view.activity.SettingsFragmentActivity
+eventSeq: 
+	<com.ted.android.view.activity.SearchActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.ted.android.view.activity.SearchActivity: void startActivityForResult(android.content.Intent,int)>($r2, 1)in<com.ted.android.view.activity.SearchActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362090
+
+
+src: com.ted.android.view.activity.PlaylistDetailActivity
+tgt: com.ted.android.view.activity.TalkDetailActivity
+eventSeq: 
+	<com.ted.android.view.activity.PlaylistDetailActivity$PlaylistClickListener: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r25.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r15)in<com.ted.android.view.activity.PlaylistDetailActivity: void setupViews(boolean)>:2131361993
+	<com.ted.android.cast.MiniControllerActivityDelegate$2: void onClick(android.view.View)>->virtualinvoke $r3.<com.ted.android.view.widget.CastMiniController: void setOnClickListener(android.view.View$OnClickListener)>($r5)in<com.ted.android.cast.MiniControllerActivityDelegate: void onCreate()>:2131361883
+	<com.ted.android.view.activity.PlaylistDetailActivity$PlaylistClickListener: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r11.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r15)in<com.ted.android.view.activity.PlaylistDetailActivity: void setupViews(boolean)>:2131361993
+	<com.ted.android.view.activity.PlaylistDetailActivity$PlaylistClickListener: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r25.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r15)in<com.ted.android.view.activity.PlaylistDetailActivity: void setupViews(boolean)>:2131361993
+
+
+src: com.ted.android.view.activity.MainActivity
+tgt: com.ted.android.view.activity.BucketListInfoActivity
+eventSeq: 
+	<com.ted.android.view.fragment.ArchivesFragment$8: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r1.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r11)in<com.ted.android.view.fragment.ArchivesFragment: android.widget.ListView getCurrentBucketList()>:null
+
+
+src: com.ted.android.view.activity.SplashScreenActivity
+tgt: com.ted.android.view.activity.MainActivity
+eventSeq: 
+	<com.ted.android.view.activity.SplashScreenActivity: void onResume()>->specialinvoke $r0.<com.ted.android.view.activity.SplashScreenActivity: void startApp()>()in<com.ted.android.view.activity.SplashScreenActivity: void onResume()>:null
+	<com.ted.android.view.activity.SplashScreenActivity$4: void onDismiss(android.content.DialogInterface)>->virtualinvoke $r14.<android.app.Dialog: void setOnDismissListener(android.content.DialogInterface$OnDismissListener)>($r20)in<com.ted.android.view.activity.SplashScreenActivity: void showUseLanguagePopUp(java.lang.String)>:null<com.ted.android.view.activity.SplashScreenActivity$5: void onDismiss(android.content.DialogInterface)>->virtualinvoke $r6.<android.app.Dialog: void setOnDismissListener(android.content.DialogInterface$OnDismissListener)>($r8)in<com.ted.android.view.activity.SplashScreenActivity: void showLanguageSetPopUp()>:null
+	<com.ted.android.view.activity.SplashScreenActivity$9: void onDismiss(android.content.DialogInterface)>->virtualinvoke $r6.<android.app.Dialog: void setOnDismissListener(android.content.DialogInterface$OnDismissListener)>($r11)in<com.ted.android.view.activity.SplashScreenActivity: void showNotificationsPopUp()>:null
+
+
+src: com.ted.android.view.activity.InspireMeActivity
+tgt: com.ted.android.view.activity.TalkDetailActivity
+eventSeq: 
+	<com.ted.android.view.fragment.InspireMeResultsFragment$2$2$2: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.InspireMeResultsFragment$2$2: void run()>:2131361949
+
+
+src: com.ted.android.view.activity.TalkDetailActivity
+tgt: com.ted.android.view.activity.TalkDetailActivity
+eventSeq: 
+	<com.ted.android.cast.MiniControllerActivityDelegate$2: void onClick(android.view.View)>->virtualinvoke $r3.<com.ted.android.view.widget.CastMiniController: void setOnClickListener(android.view.View$OnClickListener)>($r5)in<com.ted.android.cast.MiniControllerActivityDelegate: void onCreate()>:2131361883
+	<com.ted.android.view.fragment.TalkDetailFragment$7: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r20.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r22)in<com.ted.android.view.fragment.TalkDetailFragment: void setupTabbedSwitch()>:2131362042
+	<com.ted.android.view.fragment.TalkDetailFragment$6: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<com.ted.android.view.widget.ExpandedListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r14)in<com.ted.android.view.fragment.TalkDetailFragment: void setupTabbedSwitch()>:2131362042
+
+
+src: com.ted.android.view.activity.InspireMeActivity
+tgt: com.ted.android.view.activity.VideoActivity
+eventSeq: 
+	<com.ted.android.view.fragment.InspireMeResultsFragment$2$2$2: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.ted.android.view.fragment.InspireMeResultsFragment$2$2: void run()>:2131361949
+
+
+src: com.ted.android.view.activity.BucketListInfoActivity
+tgt: com.ted.android.view.activity.PlaylistDetailActivity
+eventSeq: 
+	<com.ted.android.view.activity.BucketListInfoActivity$1$1$1: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r4.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r7)in<com.ted.android.view.activity.BucketListInfoActivity$1$1: void run()>:2131361884
+
+
+src: com.ted.android.view.activity.BucketListInfoActivity
+tgt: com.ted.android.view.activity.MainActivity
+eventSeq: 
+	<com.ted.android.view.activity.BucketListInfoActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.BucketListInfoActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:16908332
+	<com.ted.android.view.activity.BucketListInfoActivity: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.ted.android.view.activity.BucketListInfoActivity: void startActivity(android.content.Intent)>($r3)in<com.ted.android.view.activity.BucketListInfoActivity: void onCreate(android.os.Bundle)>:null
+
+
+src: com.ted.android.view.activity.SearchActivity
+tgt: com.ted.android.view.activity.MainActivity
+eventSeq: 
+	<com.ted.android.view.activity.SearchActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.SearchActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:16908332
+
+
+src: com.ted.android.view.activity.TalkDetailActivity
+tgt: com.ted.android.view.activity.MainActivity
+eventSeq: 
+	<com.ted.android.view.activity.TedActivity$1: void onClick(android.view.View)>->virtualinvoke $r4.<android.widget.ImageView: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.ted.android.view.activity.TedActivity: android.widget.ImageView setIcon(android.view.MenuItem,int,android.view.LayoutInflater)>:2130903064
+	<com.ted.android.view.activity.TalkDetailActivity: void setupSourceInfo()>->virtualinvoke $r0.<com.ted.android.view.activity.TalkDetailActivity: void startActivity(android.content.Intent)>($r2)in<com.ted.android.view.activity.TalkDetailActivity: void setupSourceInfo()>:null
+	<com.ted.android.view.activity.TalkDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.TalkDetailActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:16908332
+
+
+src: com.ted.android.view.activity.MainActivity
+tgt: com.ted.android.view.activity.MainActivity
+eventSeq: 
+	<com.ted.android.view.activity.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->$z0 = specialinvoke $r0.<com.ted.android.view.activity.TedActivity: boolean onOptionsItemSelected(android.view.MenuItem)>($r1)in<com.ted.android.view.activity.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131362091
+
+
+src: com.ted.android.view.activity.SearchActivity
+tgt: com.ted.android.view.activity.TalkDetailActivity
+eventSeq: 
+	<com.ted.android.cast.MiniControllerActivityDelegate$2: void onClick(android.view.View)>->virtualinvoke $r3.<com.ted.android.view.widget.CastMiniController: void setOnClickListener(android.view.View$OnClickListener)>($r5)in<com.ted.android.cast.MiniControllerActivityDelegate: void onCreate()>:2131361883
+	<com.ted.android.view.activity.SearchActivity$1$1$1: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r10.<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r12)in<com.ted.android.view.activity.SearchActivity$1$1: void run()>:2131362005
+
+

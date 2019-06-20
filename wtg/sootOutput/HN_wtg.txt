@@ -1,0 +1,112 @@
+launcherActivity: com.manuelmaly.hn.MainActivity_
+current Node: com.manuelmaly.hn.MainActivity_
+Number of in edges: 4
+Number of out edges: 0
+current Node: com.manuelmaly.hn.MainActivity
+Number of in edges: 0
+Number of out edges: 5
+current Node: com.manuelmaly.hn.ExternalIntentActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.manuelmaly.hn.CommentsActivity
+Number of in edges: 0
+Number of out edges: 3
+current Node: com.manuelmaly.hn.ArticleReaderActivity_
+Number of in edges: 2
+Number of out edges: 0
+current Node: com.manuelmaly.hn.SettingsActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.manuelmaly.hn.login.LoginActivity_
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.manuelmaly.hn.ArticleReaderActivity
+Number of in edges: 0
+Number of out edges: 3
+current Node: com.manuelmaly.hn.util.SpotlightActivity
+Number of in edges: 2
+Number of out edges: 0
+current Node: com.manuelmaly.hn.CommentsActivity_
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.manuelmaly.hn.AboutActivity_
+Number of in edges: 1
+Number of out edges: 0
+src: com.manuelmaly.hn.MainActivity
+tgt: com.manuelmaly.hn.ExternalIntentActivity
+eventSeq: 
+	<com.manuelmaly.hn.MainActivity: void openURLInBrowser(java.lang.String,android.app.Activity)>->nullin<com.manuelmaly.hn.MainActivity: void openURLInBrowser(java.lang.String,android.app.Activity)>:null
+
+
+src: com.manuelmaly.hn.ExternalIntentActivity
+tgt: com.manuelmaly.hn.MainActivity_
+eventSeq: 
+	<com.manuelmaly.hn.ExternalIntentActivity: void onCreate(android.os.Bundle)>->nullin<com.manuelmaly.hn.ExternalIntentActivity: void onCreate(android.os.Bundle)>:null
+
+
+src: com.manuelmaly.hn.CommentsActivity
+tgt: com.manuelmaly.hn.ArticleReaderActivity_
+eventSeq: 
+	<com.manuelmaly.hn.CommentsActivity: void openArticleReader()>->nullin<com.manuelmaly.hn.CommentsActivity: void openArticleReader()>:null
+
+
+src: com.manuelmaly.hn.SettingsActivity
+tgt: com.manuelmaly.hn.login.LoginActivity_
+eventSeq: 
+	<com.manuelmaly.hn.SettingsActivity$1: boolean onPreferenceClick(android.preference.Preference)>->virtualinvoke $r3.<android.preference.Preference: void setOnPreferenceClickListener(android.preference.Preference$OnPreferenceClickListener)>($r6)in<com.manuelmaly.hn.SettingsActivity: void onCreate(android.os.Bundle)>:null
+
+
+src: com.manuelmaly.hn.ArticleReaderActivity
+tgt: com.manuelmaly.hn.util.SpotlightActivity
+eventSeq: 
+	<com.manuelmaly.hn.ArticleReaderActivity: void onResume()>->virtualinvoke $r1.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r7, 250L)in<com.manuelmaly.hn.ArticleReaderActivity: void onResume()>:null
+
+
+src: com.manuelmaly.hn.CommentsActivity
+tgt: com.manuelmaly.hn.util.SpotlightActivity
+eventSeq: 
+	<com.manuelmaly.hn.CommentsActivity: void onResume()>->virtualinvoke $r1.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r6, 250L)in<com.manuelmaly.hn.CommentsActivity: void onResume()>:null
+
+
+src: com.manuelmaly.hn.MainActivity
+tgt: com.manuelmaly.hn.ArticleReaderActivity_
+eventSeq: 
+	<com.manuelmaly.hn.MainActivity: void openPostInApp(com.manuelmaly.hn.model.HNPost,java.lang.String,android.app.Activity)>->nullin<com.manuelmaly.hn.MainActivity: void openPostInApp(com.manuelmaly.hn.model.HNPost,java.lang.String,android.app.Activity)>:null
+
+
+src: com.manuelmaly.hn.MainActivity
+tgt: com.manuelmaly.hn.MainActivity_
+eventSeq: 
+	<com.manuelmaly.hn.MainActivity: void shareUrl(com.manuelmaly.hn.model.HNPost,android.app.Activity)>->nullin<com.manuelmaly.hn.MainActivity: void shareUrl(com.manuelmaly.hn.model.HNPost,android.app.Activity)>:null
+
+
+src: com.manuelmaly.hn.ArticleReaderActivity
+tgt: com.manuelmaly.hn.CommentsActivity_
+eventSeq: 
+	<com.manuelmaly.hn.ArticleReaderActivity: void launchCommentsActivity()>->nullin<com.manuelmaly.hn.ArticleReaderActivity: void launchCommentsActivity()>:null
+
+
+src: com.manuelmaly.hn.MainActivity
+tgt: com.manuelmaly.hn.SettingsActivity
+eventSeq: 
+	<com.manuelmaly.hn.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.manuelmaly.hn.MainActivity: void startActivity(android.content.Intent)>($r2)in<com.manuelmaly.hn.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131492970
+
+
+src: com.manuelmaly.hn.ArticleReaderActivity
+tgt: com.manuelmaly.hn.MainActivity_
+eventSeq: 
+	<com.manuelmaly.hn.ArticleReaderActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.manuelmaly.hn.ArticleReaderActivity: void startActivity(android.content.Intent)>($r2)in<com.manuelmaly.hn.ArticleReaderActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131492972
+
+
+src: com.manuelmaly.hn.CommentsActivity
+tgt: com.manuelmaly.hn.MainActivity_
+eventSeq: 
+	<com.manuelmaly.hn.CommentsActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.manuelmaly.hn.CommentsActivity: void startActivity(android.content.Intent)>($r2)in<com.manuelmaly.hn.CommentsActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131492972
+
+
+src: com.manuelmaly.hn.MainActivity
+tgt: com.manuelmaly.hn.AboutActivity_
+eventSeq: 
+	<com.manuelmaly.hn.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>->virtualinvoke $r0.<com.manuelmaly.hn.MainActivity: void startActivity(android.content.Intent)>($r2)in<com.manuelmaly.hn.MainActivity: boolean onOptionsItemSelected(android.view.MenuItem)>:2131492971
+
+

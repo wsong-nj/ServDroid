@@ -1,0 +1,6 @@
+
+<android.preference.PreferenceManager: android.preference.Preference findPreference(java.lang.CharSequence)> -> _SOURCE_
+
+<android.preference.Preference: void setOnPreferenceClickListener(android.preference.Preference$OnPreferenceClickListener)> -> _SINK_
+
+

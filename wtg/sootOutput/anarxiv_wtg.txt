@@ -1,0 +1,52 @@
+launcherActivity: com.nephoapp.anarxiv.anarxiv
+current Node: com.nephoapp.anarxiv.anarxiv
+Number of in edges: 0
+Number of out edges: 3
+current Node: com.nephoapp.anarxiv.PaperListWnd
+Number of in edges: 2
+Number of out edges: 1
+current Node: com.nephoapp.anarxiv.SubCategoryWnd
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.nephoapp.anarxiv.PaperDetailWnd
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.nephoapp.anarxiv.PaperDetailWnd_2
+Number of in edges: 1
+Number of out edges: 0
+src: com.nephoapp.anarxiv.anarxiv
+tgt: com.nephoapp.anarxiv.PaperListWnd
+eventSeq: 
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649
+
+
+src: com.nephoapp.anarxiv.SubCategoryWnd
+tgt: com.nephoapp.anarxiv.PaperListWnd
+eventSeq: 
+	<com.nephoapp.anarxiv.SubCategoryWnd: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.SubCategoryWnd: void onCreate(android.os.Bundle)>:2131099666
+
+
+src: com.nephoapp.anarxiv.PaperListWnd
+tgt: com.nephoapp.anarxiv.PaperDetailWnd
+eventSeq: 
+	<com.nephoapp.anarxiv.PaperListWnd: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.PaperListWnd: void onCreate(android.os.Bundle)>:2131099659
+
+
+src: com.nephoapp.anarxiv.anarxiv
+tgt: com.nephoapp.anarxiv.SubCategoryWnd
+eventSeq: 
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649
+
+
+src: com.nephoapp.anarxiv.anarxiv
+tgt: com.nephoapp.anarxiv.PaperDetailWnd_2
+eventSeq: 
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649
+
+

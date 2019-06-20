@@ -1,0 +1,152 @@
+launcherActivity: com.soundcloud.android.main.LauncherActivity
+current Node: com.soundcloud.android.main.LauncherActivity
+Number of in edges: 0
+Number of out edges: 0
+current Node: awm
+Number of in edges: 0
+Number of out edges: 1
+current Node: com.soundcloud.android.deeplinks.ResolveActivity
+Number of in edges: 6
+Number of out edges: 0
+current Node: com.facebook.CustomTabActivity
+Number of in edges: 0
+Number of out edges: 1
+current Node: com.facebook.CustomTabMainActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.soundcloud.android.accounts.LogoutActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: bow
+Number of in edges: 0
+Number of out edges: 1
+current Node: com.soundcloud.android.onboarding.OnboardActivity
+Number of in edges: 0
+Number of out edges: 3
+current Node: com.soundcloud.android.main.MainActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.soundcloud.android.onboarding.auth.LegacyRecoverActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.appboy.ui.activities.AppboyBaseActivity
+Number of in edges: 0
+Number of out edges: 3
+current Node: com.appboy.ui.AppboyWebViewActivity
+Number of in edges: 2
+Number of out edges: 0
+current Node: com.appboy.ui.activities.AppboyBaseFragmentActivity
+Number of in edges: 0
+Number of out edges: 3
+current Node: com.soundcloud.android.settings.p
+Number of in edges: 0
+Number of out edges: 1
+current Node: com.soundcloud.android.settings.ChangeStorageLocationActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.appboy.ui.activities.AppboyFeedActivity
+Number of in edges: 2
+Number of out edges: 0
+src: awm
+tgt: com.soundcloud.android.deeplinks.ResolveActivity
+eventSeq: 
+	<awm: void b()>->virtualinvoke $r4.<android.support.v4.app.FragmentActivity: void startActivity(android.content.Intent)>($r2)in<awm: void b()>:null
+	<awm: void b()>->virtualinvoke $r4.<android.support.v4.app.FragmentActivity: void startActivity(android.content.Intent)>($r2)in<awm: void b()>:null
+
+
+src: com.facebook.CustomTabActivity
+tgt: com.facebook.CustomTabMainActivity
+eventSeq: 
+	<com.facebook.CustomTabActivity: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.facebook.CustomTabActivity: void startActivityForResult(android.content.Intent,int)>($r2, 2)in<com.facebook.CustomTabActivity: void onCreate(android.os.Bundle)>:null
+
+
+src: com.soundcloud.android.accounts.LogoutActivity
+tgt: com.soundcloud.android.accounts.LogoutActivity
+eventSeq: 
+	<com.soundcloud.android.accounts.LogoutActivity: void a(android.content.Context)>->virtualinvoke $r0.<android.content.Context: void startActivity(android.content.Intent)>($r1)in<com.soundcloud.android.accounts.LogoutActivity: void a(android.content.Context)>:null
+
+
+src: bow
+tgt: com.soundcloud.android.deeplinks.ResolveActivity
+eventSeq: 
+	<bow: void a()>->virtualinvoke $r1.<android.app.Activity: void startActivity(android.content.Intent)>($r2)in<bow: void a()>:null
+
+
+src: com.soundcloud.android.onboarding.OnboardActivity
+tgt: com.soundcloud.android.main.MainActivity
+eventSeq: 
+	<com.soundcloud.android.onboarding.OnboardActivity: void a(com.soundcloud.api.mobileapps.protos.Representations$MobileUser,com.soundcloud.android.onboarding.auth.ae,boolean)>->virtualinvoke $r0.<com.soundcloud.android.onboarding.OnboardActivity: void startActivity(android.content.Intent)>($r17)in<com.soundcloud.android.onboarding.OnboardActivity: void a(com.soundcloud.api.mobileapps.protos.Representations$MobileUser,com.soundcloud.android.onboarding.auth.ae,boolean)>:null
+
+
+src: com.soundcloud.android.onboarding.OnboardActivity
+tgt: com.soundcloud.android.deeplinks.ResolveActivity
+eventSeq: 
+	<com.soundcloud.android.onboarding.OnboardActivity$3: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r2)in<com.soundcloud.android.onboarding.OnboardActivity: void z()>:$i0
+	<com.soundcloud.android.onboarding.OnboardActivity: void m()>->virtualinvoke $r0.<com.soundcloud.android.onboarding.OnboardActivity: void startActivity(android.content.Intent)>($r1)in<com.soundcloud.android.onboarding.OnboardActivity: void m()>:null
+	<com.soundcloud.android.onboarding.OnboardActivity: void l()>->virtualinvoke $r0.<com.soundcloud.android.onboarding.OnboardActivity: void startActivity(android.content.Intent)>($r1)in<com.soundcloud.android.onboarding.OnboardActivity: void l()>:null
+	<com.soundcloud.android.onboarding.'-$$Lambda$OnboardActivity$JjKH92lsgHEE20tXkXmvv45jqf4': void onClick(android.content.DialogInterface,int)>->$r1 = virtualinvoke $r1.<android.support.v7.app.AlertDialog$Builder: android.support.v7.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>($i0, $r2)in<com.soundcloud.android.onboarding.OnboardActivity: void s()>:null
+	<com.soundcloud.android.onboarding.i: void onClick(android.content.DialogInterface,int)>->$r3 = virtualinvoke $r3.<android.support.v7.app.AlertDialog$Builder: android.support.v7.app.AlertDialog$Builder setPositiveButton(java.lang.CharSequence,android.content.DialogInterface$OnClickListener)>($r4, $r1)in<com.soundcloud.android.onboarding.OnboardActivity: void r()>:null
+	<com.soundcloud.android.onboarding.OnboardActivity: void k()>->virtualinvoke $r0.<com.soundcloud.android.onboarding.OnboardActivity: void startActivity(android.content.Intent)>($r1)in<com.soundcloud.android.onboarding.OnboardActivity: void k()>:null
+
+
+src: com.soundcloud.android.onboarding.OnboardActivity
+tgt: com.soundcloud.android.onboarding.auth.LegacyRecoverActivity
+eventSeq: 
+	<com.soundcloud.android.onboarding.OnboardActivity: void a(java.lang.String)>->virtualinvoke $r0.<com.soundcloud.android.onboarding.OnboardActivity: void startActivityForResult(android.content.Intent,int)>($r1, 8002)in<com.soundcloud.android.onboarding.OnboardActivity: void a(java.lang.String)>:null
+
+
+src: com.appboy.ui.activities.AppboyBaseActivity
+tgt: com.appboy.ui.AppboyWebViewActivity
+eventSeq: 
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View)>:null
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$3: void onClick(android.view.View)>->virtualinvoke $r6.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View,java.util.List,android.view.View)>:null
+
+
+src: com.appboy.ui.activities.AppboyBaseFragmentActivity
+tgt: com.appboy.ui.AppboyWebViewActivity
+eventSeq: 
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View)>:null
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$3: void onClick(android.view.View)>->virtualinvoke $r6.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View,java.util.List,android.view.View)>:null
+
+
+src: com.appboy.ui.activities.AppboyBaseActivity
+tgt: com.soundcloud.android.deeplinks.ResolveActivity
+eventSeq: 
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View)>:null
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$3: void onClick(android.view.View)>->virtualinvoke $r6.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View,java.util.List,android.view.View)>:null
+
+
+src: com.appboy.ui.activities.AppboyBaseFragmentActivity
+tgt: com.soundcloud.android.deeplinks.ResolveActivity
+eventSeq: 
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View)>:null
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$3: void onClick(android.view.View)>->virtualinvoke $r6.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View,java.util.List,android.view.View)>:null
+
+
+src: com.soundcloud.android.settings.p
+tgt: com.soundcloud.android.settings.ChangeStorageLocationActivity
+eventSeq: 
+	<com.soundcloud.android.settings.p: void a(android.content.DialogInterface,int)>->virtualinvoke $r0.<com.soundcloud.android.settings.p: void startActivity(android.content.Intent)>($r3)in<com.soundcloud.android.settings.p: void a(android.content.DialogInterface,int)>:null
+
+
+src: com.soundcloud.android.main.MainActivity
+tgt: com.soundcloud.android.deeplinks.ResolveActivity
+eventSeq: 
+	<com.soundcloud.android.main.MainActivity: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.soundcloud.android.main.MainActivity: void a(android.content.Intent)>($r1)in<com.soundcloud.android.main.MainActivity: void onNewIntent(android.content.Intent)>:null
+	<com.soundcloud.android.main.MainActivity: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.soundcloud.android.main.MainActivity: void a(android.content.Intent)>($r2)in<com.soundcloud.android.main.MainActivity: void onCreate(android.os.Bundle)>:null
+
+
+src: com.appboy.ui.activities.AppboyBaseActivity
+tgt: com.appboy.ui.activities.AppboyFeedActivity
+eventSeq: 
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View)>:null
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$3: void onClick(android.view.View)>->virtualinvoke $r6.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View,java.util.List,android.view.View)>:null
+
+
+src: com.appboy.ui.activities.AppboyBaseFragmentActivity
+tgt: com.appboy.ui.activities.AppboyFeedActivity
+eventSeq: 
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View)>:null
+	<com.appboy.ui.inappmessage.InAppMessageViewWrapper$3: void onClick(android.view.View)>->virtualinvoke $r6.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.appboy.ui.inappmessage.InAppMessageViewWrapper: void <init>(android.view.View,bi,com.appboy.ui.inappmessage.listeners.IInAppMessageViewLifecycleListener,android.view.animation.Animation,android.view.animation.Animation,android.view.View,java.util.List,android.view.View)>:null
+
+

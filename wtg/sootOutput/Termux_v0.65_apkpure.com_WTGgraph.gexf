@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:viz="http://www.gexf.net/1.2draft/viz" version="1.2">
+ <meta>
+  <creator>liu3237</creator>
+  <description>App method invoke graph</description>
+ </meta>
+ <graph defaultedgetype="directed" idtype="string" mode="static">
+  <attributes class="node" mode="static">
+   <attribute id="0" title="codeArray" type="string"/>
+  </attributes>
+  <nodes count="4">
+   <node id="com.termux.app.TermuxActivity" label="com.termux.app.TermuxActivity">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+   <node id="com.termux.filepicker.TermuxFileReceiverActivity" label="com.termux.filepicker.TermuxFileReceiverActivity">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+   <node id="com.termux.styling.TermuxStyleActivity" label="com.termux.styling.TermuxStyleActivity">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+   <node id="com.termux.app.TermuxHelpActivity" label="com.termux.app.TermuxHelpActivity">
+    <attvalues>
+     <attvalue for="0" value=""/>
+    </attvalues>
+    <viz:size value="20.0"/>
+   </node>
+  </nodes>
+  <edges count="4">
+   <edge id="com.termux.app.TermuxActivity-->[&lt;com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>->virtualinvoke $r0.&lt;com.termux.app.TermuxActivity: void startActivity(android.content.Intent)>($r5)in&lt;com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null][&lt;com.termux.app.TermuxActivity$7: void onShow(android.content.DialogInterface)>->virtualinvoke $r11.&lt;android.app.AlertDialog: void setOnShowListener(android.content.DialogInterface$OnShowListener)>($r12)in&lt;com.termux.app.TermuxActivity: void h()>:null, &lt;com.termux.app.TermuxActivity$7$1: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r2.&lt;android.widget.ListView: void setOnItemLongClickListener(android.widget.AdapterView$OnItemLongClickListener)>($r1)in&lt;com.termux.app.TermuxActivity$7: void onShow(android.content.DialogInterface)>:null][&lt;com.termux.app.TermuxActivity$9: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.&lt;android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131427366, $r7)in&lt;com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null]-->com.termux.filepicker.TermuxFileReceiverActivity" source="com.termux.app.TermuxActivity" target="com.termux.filepicker.TermuxFileReceiverActivity" type="directed" label=""/>
+   <edge id="com.termux.app.TermuxActivity-->[&lt;com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>->virtualinvoke $r0.&lt;com.termux.app.TermuxActivity: void startActivity(android.content.Intent)>($r5)in&lt;com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null]-->com.termux.styling.TermuxStyleActivity" source="com.termux.app.TermuxActivity" target="com.termux.styling.TermuxStyleActivity" type="directed" label=""/>
+   <edge id="com.termux.app.TermuxActivity-->[&lt;com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>->virtualinvoke $r0.&lt;com.termux.app.TermuxActivity: void startActivity(android.content.Intent)>($r5)in&lt;com.termux.app.TermuxActivity: boolean onContextItemSelected(android.view.MenuItem)>:null]-->com.termux.app.TermuxHelpActivity" source="com.termux.app.TermuxActivity" target="com.termux.app.TermuxHelpActivity" type="directed" label=""/>
+   <edge id="com.termux.filepicker.TermuxFileReceiverActivity-->[&lt;com.termux.app.TermuxService: int onStartCommand(android.content.Intent,int,int)>->virtualinvoke $r0.&lt;com.termux.filepicker.TermuxFileReceiverActivity: android.content.ComponentName startService(android.content.Intent)>($r5)in&lt;com.termux.filepicker.TermuxFileReceiverActivity: void b(java.lang.String)>:null][&lt;com.termux.app.b$1: boolean onEditorAction(android.widget.TextView,int,android.view.KeyEvent)>->virtualinvoke $r6.&lt;android.widget.EditText: void setOnEditorActionListener(android.widget.TextView$OnEditorActionListener)>($r10)in&lt;com.termux.app.b: void a(android.app.Activity,int,java.lang.String,int,com.termux.app.b$a,int,com.termux.app.b$a,int,com.termux.app.b$a,android.content.DialogInterface$OnDismissListener)>:null, &lt;com.termux.app.TermuxService: int onStartCommand(android.content.Intent,int,int)>->virtualinvoke $r2.&lt;com.termux.filepicker.TermuxFileReceiverActivity: android.content.ComponentName startService(android.content.Intent)>($r8)in&lt;com.termux.filepicker.TermuxFileReceiverActivity$3: void a(java.lang.String)>:null][&lt;com.termux.app.b$2: void onClick(android.content.DialogInterface,int)>->$r14 = virtualinvoke $r14.&lt;android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>($i1, $r15)in&lt;com.termux.app.b: void a(android.app.Activity,int,java.lang.String,int,com.termux.app.b$a,int,com.termux.app.b$a,int,com.termux.app.b$a,android.content.DialogInterface$OnDismissListener)>:null, &lt;com.termux.app.TermuxService: int onStartCommand(android.content.Intent,int,int)>->virtualinvoke $r2.&lt;com.termux.filepicker.TermuxFileReceiverActivity: android.content.ComponentName startService(android.content.Intent)>($r8)in&lt;com.termux.filepicker.TermuxFileReceiverActivity$3: void a(java.lang.String)>:null]-->com.termux.app.TermuxActivity" source="com.termux.filepicker.TermuxFileReceiverActivity" target="com.termux.app.TermuxActivity" type="directed" label=""/>
+  </edges>
+ </graph>
+</gexf>

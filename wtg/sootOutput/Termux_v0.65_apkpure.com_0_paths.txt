@@ -1,0 +1,1 @@
+<com.termux.app.TermuxActivity: void onCreate(android.os.Bundle)>

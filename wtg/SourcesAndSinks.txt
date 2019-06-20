@@ -1,0 +1,48 @@
+<android.view.View: android.view.View findViewById(int)> -> _SOURCE_
+<android.app.Activity: android.view.View findViewById(int)> -> _SOURCE_
+<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup)> -> _SOURCE_
+<android.view.LayoutInflater: android.view.View inflate(int,android.view.ViewGroup,boolean)> -> _SOURCE_
+
+<android.view.View: void setOnClickListener(android.view.View$OnClickListener)> -> _SINK_
+<android.view.View: void setOnKeyListener(android.view.View$OnKeyListener)> -> _SINK_
+<android.view.View: void setOnKeyListener(android.view.View$OnKeyListener)> -> _SINK_
+<android.view.View: void setOnTouchListener(android.view.View$OnTouchListener)> -> _SINK_
+<android.view.View: void setOnHoverListener(android.view.View$OnHoverListener)> -> _SINK_
+<android.view.View: void setOnGenericMotionListener(android.view.View$OnGenericMotionListener)> -> _SINK_
+<android.view.View: void setOnLongClickListener(android.view.View$OnLongClickListener)> -> _SINK_
+<android.view.View: void setOnDragListener(android.view.View$OnDragListener)> -> _SINK_
+<android.view.View: void setOnFocusChangeListener(android.view.View$OnFocusChangeListener)> -> _SINK_
+<android.view.View: void setOnCreateContextMenuListener(android.view.View$OnCreateContextMenuListener)> -> _SINK_
+<android.view.View: void setOnSystemUiVisibilityChangeListener(android.view.View$OnSystemUiVisibilityChangeListener)> -> _SINK_
+<android.view.ViewGroup: void setOnHierarchyChangeListener(android.view.ViewGroup$OnHierarchyChangeListener)> -> _SINK_
+<android.view.ViewStub: void setOnInflateListener(android.view.ViewStub$OnInflateListener)> -> _SINK_
+
+<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)> -> _SINK_
+<android.widget.AdapterView: void setOnItemLongClickListener(android.widget.AdapterView$OnItemLongClickListener)> -> _SINK_
+<android.widget.AdapterView: void setOnItemSelectedListener(android.widget.AdapterView$OnItemSelectedListener)> -> _SINK_
+<android.widget.TextView: void setOnEditorActionListener(android.widget.TextView$OnEditorActionListener)> -> _SINK_
+<android.widget.SeekBar: void setOnSeekBarChangeListener(android.widget.SeekBar$OnSeekBarChangeListener)> -> _SINK_
+<android.widget.CompoundButton: void setOnCheckedChangeListener(android.widget.CompoundButton$OnCheckedChangeListener)> -> _SINK_
+<android.widget.RatingBar: void setOnRatingBarChangeListener(android.widget.RatingBar$OnRatingBarChangeListener)> -> _SINK_
+<android.widget.NumberPicker: void setOnScrollListener(android.widget.NumberPicker$OnScrollListener)> -> _SINK_
+<android.widget.NumberPicker: void setOnValueChangeListener(android.widget.NumberPicker$OnValueChangeListener)> -> _SINK_
+<android.widget.AbsListView: void setOnScrollListener(android.widget.AbsListView$OnScrollListener)> -> _SINK_
+
+<android.widget.SearchView: void setOnQueryTextListener(android.widget.SearchView$OnQueryTextListener)> -> _SINK_
+<android.widget.SearchView: void setOnCloseListener(android.widget.SearchView$OnCloseListener)> -> _SINK_
+<android.widget.SearchView: void setOnSuggestionListener(android.widget.SearchView$OnSuggestionListener)> -> _SINK_
+
+<android.preference.Preference: void setOnPreferenceClickListener(android.preference.Preference$OnPreferenceClickListener)> -> _SINK_
+
+<android.content.DialogInterface: void setOnCancelListener(android.content.DialogInterface$OnCancelListener)> -> _SINK_
+<android.content.DialogInterface: void setOnDismissListener(android.content.DialogInterface$OnDismissListener)> -> _SINK_
+<android.content.DialogInterface: void setOnShowListener(android.content.DialogInterface$OnShowListener)> -> _SINK_
+<android.content.DialogInterface: void setOnClickListener(android.content.DialogInterface$OnClickListener)> -> _SINK_
+<android.content.DialogInterface: void setOnMultiChoiceClickListener(android.content.DialogInterface$OnMultiChoiceClickListener)> -> _SINK_
+<android.content.DialogInterface: void setOnKeyListener(android.content.DialogInterface$OnKeyListener)> -> _SINK_
+
+
+%<android.support.v4.view.ViewPager: void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)> -> _SINK_
+%<android.media.AudioManager: int requestAudioFocus(android.media.AudioManager$OnAudioFocusChangeListener,int,int)> -> _SINK_
+%<android.location.GpsStatus: boolean addNmeaListener(android.location.GpsStatus$NmeaListener)> -> _SINK_
+

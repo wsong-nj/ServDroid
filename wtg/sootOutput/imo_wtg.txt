@@ -1,0 +1,763 @@
+launcherActivity: com.imo.android.imoim.activities.Home
+current Node: com.imo.android.imoim.activities.Home
+Number of in edges: 10
+Number of out edges: 12
+current Node: com.imo.android.imoim.camera.CameraActivity2
+Number of in edges: 2
+Number of out edges: 2
+current Node: com.imo.android.imoim.activities.StreamActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.imo.android.imoim.l.j
+Number of in edges: 0
+Number of out edges: 5
+current Node: com.imo.android.imoim.av.ui.AudioActivity
+Number of in edges: 5
+Number of out edges: 5
+current Node: com.facebook.ads.AudienceNetworkActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.IMActivity
+Number of in edges: 2
+Number of out edges: 8
+current Node: com.imo.android.imoim.activities.PhoneGalleryActivity
+Number of in edges: 1
+Number of out edges: 4
+current Node: com.imo.android.imoim.views.AccountPreferencesView
+Number of in edges: 1
+Number of out edges: 3
+current Node: com.imo.android.imoim.views.DeleteAccountView
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.SharingActivity
+Number of in edges: 4
+Number of out edges: 2
+current Node: com.imo.android.imoim.activities.BeastShareActivity2
+Number of in edges: 3
+Number of out edges: 0
+current Node: ndroid.net.Ur
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.SuggestInvite
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.imo.android.imoim.activities.Inviter2
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.AddFriendsActivity
+Number of in edges: 1
+Number of out edges: 3
+current Node: com.imo.android.imoim.activities.UnblockActivity
+Number of in edges: 2
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.ManageSpaceActivity
+Number of in edges: 0
+Number of out edges: 2
+current Node: com.imo.android.imoim.activities.OwnProfileActivity
+Number of in edges: 8
+Number of out edges: 4
+current Node: com.imo.android.imoim.activities.Searchable
+Number of in edges: 1
+Number of out edges: 3
+current Node: com.imo.android.imoim.activities.WebViewActivity
+Number of in edges: 4
+Number of out edges: 1
+current Node: com.imo.android.imoim.activities.FullScreenProfileActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.BurgerActivity
+Number of in edges: 1
+Number of out edges: 4
+current Node: com.imo.android.imoim.activities.e
+Number of in edges: 0
+Number of out edges: 1
+current Node: com.imo.android.imoim.views.PhotosGalleryView
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.imo.android.imoim.av.ui.AVActivity
+Number of in edges: 5
+Number of out edges: 4
+current Node: com.imo.android.imoim.activities.BeastCreateGroup
+Number of in edges: 1
+Number of out edges: 4
+current Node: com.imo.android.imoim.av.ui.AVActivity2
+Number of in edges: 5
+Number of out edges: 4
+current Node: com.imo.android.imoim.views.UpdateActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.imo.android.imoim.views.About
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.facebook.ads.InterstitialAdActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.PhotosGridView
+Number of in edges: 3
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.FullScreenPhoto
+Number of in edges: 0
+Number of out edges: 1
+current Node: com.imo.android.imoim.activities.CameraActivity
+Number of in edges: 1
+Number of out edges: 2
+current Node: com.imo.android.imoim.activities.PopupScreen
+Number of in edges: 3
+Number of out edges: 0
+current Node: com.imo.android.imoim.av.ui.GroupAVActivity
+Number of in edges: 3
+Number of out edges: 4
+current Node: com.imo.android.imoim.activities.AddPhoneActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.views.AccountRequestNameChangeView
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.GroupInfo
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.Panda
+Number of in edges: 1
+Number of out edges: 2
+current Node: com.imo.android.imoim.activities.SelectBuddiesActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.TextActivity
+Number of in edges: 0
+Number of out edges: 2
+current Node: com.imo.android.imoim.activities.StrangerProfileWrapper
+Number of in edges: 2
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.ReverseFriendsActivity
+Number of in edges: 1
+Number of out edges: 1
+current Node: com.imo.android.imoim.activities.SignupActivity2
+Number of in edges: 1
+Number of out edges: 2
+current Node: com.imo.android.imoim.activities.PhoneActivationActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.NameAgeActivity
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.SuperAVAdd
+Number of in edges: 1
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.Sharer
+Number of in edges: 2
+Number of out edges: 0
+current Node: com.imo.android.imoim.activities.SuggestShare
+Number of in edges: 0
+Number of out edges: 1
+src: com.imo.android.imoim.camera.CameraActivity2
+tgt: com.imo.android.imoim.activities.StreamActivity
+eventSeq: 
+	<com.imo.android.imoim.camera.CameraActivity2$1: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r20.<com.imo.android.imoim.views.HorizontalListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r22)in<com.imo.android.imoim.camera.CameraActivity2: void onCreate(android.os.Bundle)>:2131493123
+
+
+src: com.imo.android.imoim.l.j
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r19)in<com.imo.android.imoim.l.j: void b()>:2131493524<com.imo.android.imoim.l.j$8: void onClick(android.content.DialogInterface,int)>->virtualinvoke $r4.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165321, $r8)in<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>:null
+	<com.imo.android.imoim.l.j$13: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.imo.android.imoim.l.j: void b()>:2131493136
+	<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.l.j: void b()>:2131493525<com.imo.android.imoim.l.j$12: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r7)in<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>:null<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r19)in<com.imo.android.imoim.l.j: void b()>:2131493524<com.imo.android.imoim.l.j$8: void onClick(android.content.DialogInterface,int)>->virtualinvoke $r4.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165321, $r8)in<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>:null
+	<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.l.j: void b()>:2131493525<com.imo.android.imoim.l.j$12: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r7)in<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>:null<com.imo.android.imoim.l.j$13: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.imo.android.imoim.l.j: void b()>:2131493136
+
+
+src: com.imo.android.imoim.av.ui.AudioActivity
+tgt: com.facebook.ads.AudienceNetworkActivity
+eventSeq: 
+	<com.facebook.ads.b$1: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r0.<com.facebook.ads.b: void setOnTouchListener(android.view.View$OnTouchListener)>($r10)in<com.facebook.ads.b: void <init>(android.content.Context,com.facebook.ads.k)>:null
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.activities.PhoneGalleryActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity$16: void onClick(android.view.View)>->virtualinvoke $r37.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r38)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493558
+
+
+src: com.imo.android.imoim.views.AccountPreferencesView
+tgt: com.imo.android.imoim.views.DeleteAccountView
+eventSeq: 
+	<com.imo.android.imoim.views.AccountPreferencesView$3: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r1)in<com.imo.android.imoim.views.AccountPreferencesView: void a(int,android.view.View$OnClickListener)>:2130903067
+
+
+src: com.imo.android.imoim.activities.PhoneGalleryActivity
+tgt: com.imo.android.imoim.activities.SharingActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.PhoneGalleryActivity$3: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.activities.PhoneGalleryActivity: void onCreate(android.os.Bundle)>:2131493396
+
+
+src: com.imo.android.imoim.activities.PhoneGalleryActivity
+tgt: com.imo.android.imoim.activities.BeastShareActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.PhoneGalleryActivity$3: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.activities.PhoneGalleryActivity: void onCreate(android.os.Bundle)>:2131493396
+
+
+src: com.imo.android.imoim.av.ui.AudioActivity
+tgt: ndroid.net.Ur
+eventSeq: 
+	<com.imo.android.imoim.b.j$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r15)in<com.imo.android.imoim.b.j: boolean a(android.view.ViewGroup,boolean)>:2131493188
+	<com.imo.android.imoim.b.j$3: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.imo.android.imoim.b.j: boolean a(android.view.ViewGroup,boolean)>:2131493188
+	<com.facebook.ads.b$1: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r0.<com.facebook.ads.b: void setOnTouchListener(android.view.View$OnTouchListener)>($r10)in<com.facebook.ads.b: void <init>(android.content.Context,com.facebook.ads.k)>:null
+
+
+src: com.imo.android.imoim.activities.SuggestInvite
+tgt: com.imo.android.imoim.activities.Inviter2
+eventSeq: 
+	<com.imo.android.imoim.activities.SuggestInvite$1: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r3)in<com.imo.android.imoim.activities.SuggestInvite: void onCreate(android.os.Bundle)>:2131493545
+
+
+src: com.imo.android.imoim.activities.AddFriendsActivity
+tgt: com.imo.android.imoim.activities.UnblockActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.AddFriendsActivity$4: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.imo.android.imoim.activities.AddFriendsActivity: void onCreate(android.os.Bundle)>:2131493000
+
+
+src: com.imo.android.imoim.activities.ManageSpaceActivity
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.ManageSpaceActivity$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.imo.android.imoim.activities.ManageSpaceActivity: void onCreate(android.os.Bundle)>:2131493296<com.imo.android.imoim.activities.ManageSpaceActivity$6: void onClick(android.content.DialogInterface,int)>->$r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r3)in<com.imo.android.imoim.activities.ManageSpaceActivity: void a(com.imo.android.imoim.activities.ManageSpaceActivity)>:null
+	<com.imo.android.imoim.activities.ManageSpaceActivity$9: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r4)in<com.imo.android.imoim.activities.ManageSpaceActivity: void onCreate(android.os.Bundle)>:2131493288
+
+
+src: com.imo.android.imoim.activities.Searchable
+tgt: com.imo.android.imoim.activities.WebViewActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Searchable: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r3.<se.emilsjolander.stickylistheaders.StickyListHeadersListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.imo.android.imoim.activities.Searchable: void onCreate(android.os.Bundle)>:2131493165
+
+
+src: com.imo.android.imoim.l.j
+tgt: com.imo.android.imoim.activities.FullScreenProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.l.j$3: void onClick(android.view.View)>->virtualinvoke $r5.<com.imo.android.imoim.views.ProfileImageView: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.imo.android.imoim.l.j: void b()>:2131493252
+	<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.l.j: void b()>:2131493525<com.imo.android.imoim.l.j$12: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r7)in<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>:null<com.imo.android.imoim.l.j$3: void onClick(android.view.View)>->virtualinvoke $r5.<com.imo.android.imoim.views.ProfileImageView: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.imo.android.imoim.l.j: void b()>:2131493252
+
+
+src: com.imo.android.imoim.activities.PhoneGalleryActivity
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.activities.PhoneGalleryActivity$3: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.activities.PhoneGalleryActivity: void onCreate(android.os.Bundle)>:2131493396
+
+
+src: com.imo.android.imoim.activities.OwnProfileActivity
+tgt: com.imo.android.imoim.activities.WebViewActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.OwnProfileActivity$7: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r10)in<com.imo.android.imoim.activities.OwnProfileActivity: void a()>:2131493373
+
+
+src: com.imo.android.imoim.activities.BurgerActivity
+tgt: com.imo.android.imoim.activities.AddFriendsActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.BurgerActivity$3: void onClick(android.view.View)>->virtualinvoke $r9.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r27)in<com.imo.android.imoim.activities.BurgerActivity: void onCreate(android.os.Bundle)>:2131493237
+
+
+src: com.imo.android.imoim.activities.e
+tgt: com.imo.android.imoim.views.PhotosGalleryView
+eventSeq: 
+	<com.imo.android.imoim.activities.e: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r8.<android.widget.GridView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.imo.android.imoim.activities.e: android.view.View a(android.view.LayoutInflater,android.view.ViewGroup)>:2131493416
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.av.ui.AVActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity$28: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.imo.android.imoim.activities.IMActivity: void d()>:2131493251
+	<com.imo.android.imoim.activities.IMActivity$2: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r51)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493265
+	<com.imo.android.imoim.activities.IMActivity$3: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r52)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493261
+	<com.imo.android.imoim.activities.IMActivity$30: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r29)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2130903180<com.imo.android.imoim.activities.IMActivity$28: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.imo.android.imoim.activities.IMActivity: void d()>:2131493251
+
+
+src: com.imo.android.imoim.av.ui.AVActivity
+tgt: com.imo.android.imoim.av.ui.AVActivity
+eventSeq: 
+	<com.imo.android.imoim.av.services.a$2: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r10.<android.widget.RelativeLayout: void setOnTouchListener(android.view.View$OnTouchListener)>($r26)in<com.imo.android.imoim.av.ui.AVActivity: void b(com.imo.android.imoim.av.h)>:2130903261
+
+
+src: com.imo.android.imoim.activities.BeastCreateGroup
+tgt: com.imo.android.imoim.av.ui.AVActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.BeastCreateGroup$6: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.activities.BeastCreateGroup: void onCreate(android.os.Bundle)>:2131493009
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.av.ui.AVActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Home$7: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r3)in<com.imo.android.imoim.activities.Home: void c()>:2131493224
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.av.ui.AVActivity2
+tgt: com.imo.android.imoim.av.ui.AVActivity
+eventSeq: 
+	<com.imo.android.imoim.av.services.d$1: void onClick(android.view.View)>->virtualinvoke $r4.<android.widget.RelativeLayout: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.imo.android.imoim.av.macaw.H264Handler: void onPause()>:null
+
+
+src: com.imo.android.imoim.av.ui.AudioActivity
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.av.ui.AudioActivity: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.imo.android.imoim.av.ui.AudioActivity: void a(com.imo.android.imoim.av.h)>($r18)in<com.imo.android.imoim.av.ui.AudioActivity: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.av.ui.AudioActivity: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.av.ui.AudioActivity: void h()>()in<com.imo.android.imoim.av.ui.AudioActivity: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.av.ui.AudioActivity: void onUnreadMsgButtonClick(android.view.View)>->virtualinvoke $r0.<com.imo.android.imoim.av.ui.AudioActivity: void startActivity(android.content.Intent)>($r2)in<com.imo.android.imoim.av.ui.AudioActivity: void onUnreadMsgButtonClick(android.view.View)>:null
+	<com.imo.android.imoim.av.ui.AudioActivity: void onEndCallButtonClick(android.view.View)>->specialinvoke $r0.<com.imo.android.imoim.av.ui.AudioActivity: void h()>()in<com.imo.android.imoim.av.ui.AudioActivity: void onEndCallButtonClick(android.view.View)>:null
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onBackPressed()>->virtualinvoke $r0.<com.imo.android.imoim.activities.Home: void startActivity(android.content.Intent)>($r2)in<com.imo.android.imoim.activities.Home: void onBackPressed()>:null
+
+
+src: com.imo.android.imoim.av.ui.AVActivity2
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.av.ui.AVActivity2: void onEndCallButtonClick(android.view.View)>->staticinvoke <com.imo.android.imoim.util.bw: void j(android.content.Context)>($r0)in<com.imo.android.imoim.av.ui.AVActivity2: void onEndCallButtonClick(android.view.View)>:null
+	<com.imo.android.imoim.av.ui.AVActivity2: void onUnreadMsgButtonClick(android.view.View)>->virtualinvoke $r0.<com.imo.android.imoim.av.ui.AVActivity2: void startActivity(android.content.Intent)>($r2)in<com.imo.android.imoim.av.ui.AVActivity2: void onUnreadMsgButtonClick(android.view.View)>:null
+
+
+src: com.imo.android.imoim.views.AccountPreferencesView
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.views.AccountPreferencesView$2: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r1)in<com.imo.android.imoim.views.AccountPreferencesView: void a(int,android.view.View$OnClickListener)>:2130903067
+
+
+src: com.imo.android.imoim.views.UpdateActivity
+tgt: com.imo.android.imoim.activities.WebViewActivity
+eventSeq: 
+	<com.imo.android.imoim.views.UpdateActivity$1: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r5)in<com.imo.android.imoim.views.UpdateActivity: void onCreate(android.os.Bundle)>:2131493566
+
+
+src: com.imo.android.imoim.views.About
+tgt: com.imo.android.imoim.activities.WebViewActivity
+eventSeq: 
+	<com.imo.android.imoim.views.About$4: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r1)in<com.imo.android.imoim.views.About: void a(int,android.view.View$OnClickListener)>:2130903067
+	<com.imo.android.imoim.views.About$3: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r1)in<com.imo.android.imoim.views.About: void a(int,android.view.View$OnClickListener)>:2130903067
+	<com.imo.android.imoim.views.About$2: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r1)in<com.imo.android.imoim.views.About: void a(int,android.view.View$OnClickListener)>:2130903067
+	<com.imo.android.imoim.views.About$5: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r1)in<com.imo.android.imoim.views.About: void a(int,android.view.View$OnClickListener)>:2130903067
+
+
+src: com.imo.android.imoim.av.ui.AudioActivity
+tgt: com.facebook.ads.InterstitialAdActivity
+eventSeq: 
+	<com.facebook.ads.b$1: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r0.<com.facebook.ads.b: void setOnTouchListener(android.view.View$OnTouchListener)>($r10)in<com.facebook.ads.b: void <init>(android.content.Context,com.facebook.ads.k)>:null
+
+
+src: com.imo.android.imoim.activities.BurgerActivity
+tgt: com.imo.android.imoim.activities.BeastCreateGroup
+eventSeq: 
+	<com.imo.android.imoim.activities.BurgerActivity$5: void onClick(android.view.View)>->virtualinvoke $r9.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r25)in<com.imo.android.imoim.activities.BurgerActivity: void onCreate(android.os.Bundle)>:2131493161
+
+
+src: com.imo.android.imoim.activities.BeastCreateGroup
+tgt: com.imo.android.imoim.activities.IMActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.BeastCreateGroup$6: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.activities.BeastCreateGroup: void onCreate(android.os.Bundle)>:2131493009
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.activities.IMActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.activities.OwnProfileActivity
+tgt: com.imo.android.imoim.views.About
+eventSeq: 
+	<com.imo.android.imoim.activities.OwnProfileActivity$5: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r8)in<com.imo.android.imoim.activities.OwnProfileActivity: void a()>:2131493372
+
+
+src: com.imo.android.imoim.views.PhotosGalleryView
+tgt: com.imo.android.imoim.activities.PhotosGridView
+eventSeq: 
+	<com.imo.android.imoim.views.BasePhotosGalleryView$4: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r8)in<com.imo.android.imoim.views.BasePhotosGalleryView: void onCreate(android.os.Bundle)>:2131493410<com.imo.android.imoim.views.BasePhotosGalleryView$9: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.views.BasePhotosGalleryView: void d(com.imo.android.imoim.views.BasePhotosGalleryView)>:2131493433
+
+
+src: com.imo.android.imoim.l.j
+tgt: com.imo.android.imoim.activities.PhotosGridView
+eventSeq: 
+	<com.imo.android.imoim.l.j$16: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r17)in<com.imo.android.imoim.l.j: void b()>:2131493523
+	<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.l.j: void b()>:2131493525<com.imo.android.imoim.l.j$12: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r7)in<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>:null<com.imo.android.imoim.l.j$16: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r17)in<com.imo.android.imoim.l.j: void b()>:2131493523
+
+
+src: com.imo.android.imoim.activities.FullScreenPhoto
+tgt: com.imo.android.imoim.activities.PhotosGridView
+eventSeq: 
+	<com.imo.android.imoim.views.BasePhotosGalleryView$4: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r8)in<com.imo.android.imoim.views.BasePhotosGalleryView: void onCreate(android.os.Bundle)>:2131493410<com.imo.android.imoim.views.BasePhotosGalleryView$9: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.views.BasePhotosGalleryView: void d(com.imo.android.imoim.views.BasePhotosGalleryView)>:2131493433
+
+
+src: com.imo.android.imoim.activities.PhoneGalleryActivity
+tgt: com.imo.android.imoim.activities.CameraActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.PhoneGalleryActivity$1: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.imo.android.imoim.activities.PhoneGalleryActivity: void onCreate(android.os.Bundle)>:2131493395
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.activities.PopupScreen
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity: void onUserInteraction()>->virtualinvoke $r3.<com.imo.android.imoim.q.aa: void g(java.lang.String)>($r1)in<com.imo.android.imoim.activities.IMActivity: void onUserInteraction()>:null
+	<com.imo.android.imoim.activities.IMActivity$25: void onClick(android.view.View)>->virtualinvoke $r10.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.activities.IMActivity: void c()>:2131492990<com.imo.android.imoim.activities.IMActivity$27: void onClick(android.content.DialogInterface,int)>->$r5 = virtualinvoke $r5.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r6)in<com.imo.android.imoim.activities.IMActivity: void a(com.imo.android.imoim.activities.IMActivity,java.lang.String,java.lang.String,java.lang.String)>:null
+
+
+src: com.imo.android.imoim.av.ui.GroupAVActivity
+tgt: com.imo.android.imoim.activities.PopupScreen
+eventSeq: 
+	<com.imo.android.imoim.av.ui.GroupAVActivity: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.av.ui.GroupAVActivity: void j()>()in<com.imo.android.imoim.av.ui.GroupAVActivity: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.av.ui.GroupAVActivity: void onEndCallButtonClick(android.view.View)>->virtualinvoke $r2.<com.imo.android.imoim.av.k: void a(java.lang.String)>("end_call")in<com.imo.android.imoim.av.ui.GroupAVActivity: void onEndCallButtonClick(android.view.View)>:null
+	<com.imo.android.imoim.av.ui.GroupAVActivity: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.av.ui.GroupAVActivity: void j()>()in<com.imo.android.imoim.av.ui.GroupAVActivity: void onNewIntent(android.content.Intent)>:null
+	<com.imo.android.imoim.av.services.b$2: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r10.<android.view.View: void setOnTouchListener(android.view.View$OnTouchListener)>($r23)in<com.imo.android.imoim.av.ui.GroupAVActivity: void onStop()>:2130903263
+	<com.imo.android.imoim.av.ui.GroupAVActivity: void onAcceptButtonClick(android.view.View)>->specialinvoke $r0.<com.imo.android.imoim.av.ui.GroupAVActivity: void k()>()in<com.imo.android.imoim.av.ui.GroupAVActivity: void onAcceptButtonClick(android.view.View)>:null
+	<com.imo.android.imoim.av.ui.GroupAVActivity: void onDeclineButtonClick(android.view.View)>->virtualinvoke $r2.<com.imo.android.imoim.av.k: void a(java.lang.String)>("decline")in<com.imo.android.imoim.av.ui.GroupAVActivity: void onDeclineButtonClick(android.view.View)>:null
+
+
+src: com.imo.android.imoim.l.j
+tgt: com.imo.android.imoim.activities.PopupScreen
+eventSeq: 
+	<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r19)in<com.imo.android.imoim.l.j: void b()>:2131493524<com.imo.android.imoim.l.j$8: void onClick(android.content.DialogInterface,int)>->virtualinvoke $r4.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165321, $r8)in<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>:null
+	<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.l.j: void b()>:2131493525<com.imo.android.imoim.l.j$12: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r7)in<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>:null<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r19)in<com.imo.android.imoim.l.j: void b()>:2131493524<com.imo.android.imoim.l.j$8: void onClick(android.content.DialogInterface,int)>->virtualinvoke $r4.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165321, $r8)in<com.imo.android.imoim.l.j$17: void onClick(android.view.View)>:null
+	<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.l.j: void b()>:2131493525<com.imo.android.imoim.l.j$12: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r7)in<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>:null
+
+
+src: com.imo.android.imoim.av.ui.AVActivity
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.av.ui.AVActivity: void onCreate(android.os.Bundle)>->virtualinvoke $r0.<com.imo.android.imoim.av.ui.AVActivity: void a(com.imo.android.imoim.av.h)>($r13)in<com.imo.android.imoim.av.ui.AVActivity: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.av.ui.AVActivity: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.av.ui.AVActivity: void j()>()in<com.imo.android.imoim.av.ui.AVActivity: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.av.ui.AVActivity: void onEndCallButtonClick(android.view.View)>->staticinvoke <com.imo.android.imoim.util.bw: void j(android.content.Context)>($r0)in<com.imo.android.imoim.av.ui.AVActivity: void onEndCallButtonClick(android.view.View)>:null
+	<com.imo.android.imoim.av.ui.AVActivity: void onUnreadMsgButtonClick(android.view.View)>->virtualinvoke $r0.<com.imo.android.imoim.av.ui.AVActivity: void startActivity(android.content.Intent)>($r2)in<com.imo.android.imoim.av.ui.AVActivity: void onUnreadMsgButtonClick(android.view.View)>:null
+
+
+src: com.imo.android.imoim.activities.AddFriendsActivity
+tgt: com.imo.android.imoim.activities.AddPhoneActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.AddFriendsActivity$2: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r4)in<com.imo.android.imoim.activities.AddFriendsActivity: void onCreate(android.os.Bundle)>:2131492998
+
+
+src: com.imo.android.imoim.views.AccountPreferencesView
+tgt: com.imo.android.imoim.views.AccountRequestNameChangeView
+eventSeq: 
+	<com.imo.android.imoim.views.AccountPreferencesView$4: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r1)in<com.imo.android.imoim.views.AccountPreferencesView: void a(int,android.view.View$OnClickListener)>:2130903067
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.activities.GroupInfo
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity$33: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r23)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493257
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.views.UpdateActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.camera.CameraActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.activities.OwnProfileActivity
+tgt: com.imo.android.imoim.views.AccountPreferencesView
+eventSeq: 
+	<com.imo.android.imoim.activities.OwnProfileActivity$4: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r7)in<com.imo.android.imoim.activities.OwnProfileActivity: void a()>:2131493370
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.activities.BurgerActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Home$2: void onClick(android.view.View)>->virtualinvoke $r8.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r20)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:2131493152
+
+
+src: com.imo.android.imoim.activities.Panda
+tgt: com.imo.android.imoim.activities.Panda
+eventSeq: 
+	<com.imo.android.imoim.activities.Panda: void a(android.content.Context)>->virtualinvoke $r0.<android.content.Context: void startActivity(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Panda: void a(android.content.Context)>:null
+
+
+src: com.imo.android.imoim.activities.WebViewActivity
+tgt: com.imo.android.imoim.activities.SharingActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.WebViewActivity$2: void onClick(android.view.View)>->virtualinvoke $r7.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.activities.WebViewActivity: void onCreate(android.os.Bundle)>:2131493149
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.av.ui.GroupAVActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity$21: void onClick(android.view.View)>->virtualinvoke $r5.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.imo.android.imoim.activities.IMActivity: void a(com.imo.android.imoim.data.e)>:2131493224
+	<com.imo.android.imoim.activities.IMActivity$34: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r26)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493265
+	<com.imo.android.imoim.activities.IMActivity$1: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r27)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493263
+
+
+src: com.imo.android.imoim.av.ui.GroupAVActivity
+tgt: com.imo.android.imoim.av.ui.GroupAVActivity
+eventSeq: 
+	<com.imo.android.imoim.av.ui.GroupAVActivity: void onAcceptButtonClick(android.view.View)>->virtualinvoke $r2.<com.imo.android.imoim.av.k: void a(android.content.Context,java.lang.String,java.lang.String,boolean)>($r0, $r3, "ringing", $z0)in<com.imo.android.imoim.av.ui.GroupAVActivity: void onAcceptButtonClick(android.view.View)>:null
+	<com.imo.android.imoim.av.services.b$2: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r10.<android.view.View: void setOnTouchListener(android.view.View$OnTouchListener)>($r23)in<com.imo.android.imoim.av.ui.GroupAVActivity: void onStop()>:2130903263
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.av.ui.GroupAVActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.activities.OwnProfileActivity
+tgt: com.imo.android.imoim.activities.UnblockActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.OwnProfileActivity$14: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r17)in<com.imo.android.imoim.activities.OwnProfileActivity: void a()>:2131493371
+
+
+src: com.imo.android.imoim.activities.StreamActivity
+tgt: com.imo.android.imoim.camera.CameraActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.StreamActivity: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.StreamActivity: void a()>()in<com.imo.android.imoim.activities.StreamActivity: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.StreamActivity$2: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r7.<android.widget.VideoView: void setOnTouchListener(android.view.View$OnTouchListener)>($r6)in<com.imo.android.imoim.activities.StreamActivity: void onCreate(android.os.Bundle)>:2131493539
+	<com.imo.android.imoim.activities.StreamActivity$2: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r8.<com.imo.android.imoim.views.ResizeableImageView: void setOnTouchListener(android.view.View$OnTouchListener)>($r6)in<com.imo.android.imoim.activities.StreamActivity: void onCreate(android.os.Bundle)>:2131493540
+	<com.imo.android.imoim.activities.StreamActivity$3: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r21)in<com.imo.android.imoim.activities.StreamActivity: void onCreate(android.os.Bundle)>:2131492997
+	<com.imo.android.imoim.activities.StreamActivity: void onCompletion(android.media.MediaPlayer)>->specialinvoke $r0.<com.imo.android.imoim.activities.StreamActivity: void a()>()in<com.imo.android.imoim.activities.StreamActivity: void onCompletion(android.media.MediaPlayer)>:null
+
+
+src: com.imo.android.imoim.camera.CameraActivity2
+tgt: com.imo.android.imoim.activities.SelectBuddiesActivity
+eventSeq: 
+	<com.imo.android.imoim.camera.CameraActivity2$10: void onClick(android.view.View)>->virtualinvoke $r5.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r16)in<com.imo.android.imoim.camera.CameraActivity2: void onCreate(android.os.Bundle)>:2131493128
+
+
+src: com.imo.android.imoim.activities.BurgerActivity
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.BurgerActivity$6: void onClick(android.view.View)>->virtualinvoke $r10.<com.android.volley.toolbox.NetworkImageView: void setOnClickListener(android.view.View$OnClickListener)>($r21)in<com.imo.android.imoim.activities.BurgerActivity: void onCreate(android.os.Bundle)>:2131493231
+	<com.imo.android.imoim.activities.BurgerActivity$4: void onClick(android.view.View)>->virtualinvoke $r9.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r23)in<com.imo.android.imoim.activities.BurgerActivity: void onCreate(android.os.Bundle)>:2131493235
+	<com.imo.android.imoim.activities.BurgerActivity$7: void onClick(android.view.View)>->virtualinvoke $r10.<com.android.volley.toolbox.NetworkImageView: void setOnClickListener(android.view.View$OnClickListener)>($r22)in<com.imo.android.imoim.activities.BurgerActivity: void onCreate(android.os.Bundle)>:2131493233
+
+
+src: com.imo.android.imoim.activities.TextActivity
+tgt: com.imo.android.imoim.activities.SharingActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.TextActivity$1: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r2)in<com.imo.android.imoim.activities.TextActivity: void onCreate(android.os.Bundle)>:2131493128
+
+
+src: com.imo.android.imoim.activities.TextActivity
+tgt: com.imo.android.imoim.activities.BeastShareActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.TextActivity$1: void onClick(android.view.View)>->virtualinvoke $r3.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r2)in<com.imo.android.imoim.activities.TextActivity: void onCreate(android.os.Bundle)>:2131493128
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.activities.StrangerProfileWrapper
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity$33: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r23)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493257
+
+
+src: com.imo.android.imoim.activities.ReverseFriendsActivity
+tgt: com.imo.android.imoim.activities.StrangerProfileWrapper
+eventSeq: 
+	<com.imo.android.imoim.activities.ReverseFriendsActivity$3: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r7)in<com.imo.android.imoim.activities.ReverseFriendsActivity: void onCreate(android.os.Bundle)>:2131493069
+
+
+src: com.imo.android.imoim.activities.SignupActivity2
+tgt: com.imo.android.imoim.activities.PhoneActivationActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.SignupActivity2: void a(java.lang.String,java.lang.String,java.lang.String,int,boolean)>->virtualinvoke $r0.<com.imo.android.imoim.activities.SignupActivity2: void startActivity(android.content.Intent)>($r4)in<com.imo.android.imoim.activities.SignupActivity2: void a(java.lang.String,java.lang.String,java.lang.String,int,boolean)>:null
+
+
+src: com.imo.android.imoim.activities.SignupActivity2
+tgt: com.imo.android.imoim.activities.NameAgeActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.SignupActivity2: void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>->virtualinvoke $r6.<com.imo.android.imoim.IMO: void startActivity(android.content.Intent)>($r5)in<com.imo.android.imoim.activities.SignupActivity2: void a(java.lang.String,java.lang.String,java.lang.String,java.lang.String)>:null
+
+
+src: com.imo.android.imoim.av.ui.AudioActivity
+tgt: com.imo.android.imoim.activities.SuperAVAdd
+eventSeq: 
+	<com.imo.android.imoim.av.ui.AudioActivity$5: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r2)in<com.imo.android.imoim.av.ui.AudioActivity: void e()>:2131493028
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.activities.SignupActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->$z0 = specialinvoke $r0.<com.imo.android.imoim.activities.Home: boolean b()>()in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->$z0 = specialinvoke $r0.<com.imo.android.imoim.activities.Home: boolean b()>()in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.activities.CameraActivity
+tgt: com.imo.android.imoim.activities.SharingActivity
+eventSeq: 
+	<com.imo.android.imoim.views.e$2: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r28)in<com.imo.android.imoim.views.e: void <init>(android.content.Context,android.view.View,boolean,java.lang.String)>:2131493110
+	<com.imo.android.imoim.views.e$3: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r11)in<com.imo.android.imoim.views.e: void <init>(android.content.Context,android.view.View,boolean,java.lang.String)>:2131493104
+
+
+src: com.imo.android.imoim.activities.CameraActivity
+tgt: com.imo.android.imoim.activities.BeastShareActivity2
+eventSeq: 
+	<com.imo.android.imoim.views.e$2: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r28)in<com.imo.android.imoim.views.e: void <init>(android.content.Context,android.view.View,boolean,java.lang.String)>:2131493110
+	<com.imo.android.imoim.views.e$3: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r11)in<com.imo.android.imoim.views.e: void <init>(android.content.Context,android.view.View,boolean,java.lang.String)>:2131493104
+
+
+src: com.imo.android.imoim.activities.Searchable
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Searchable: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r3.<se.emilsjolander.stickylistheaders.StickyListHeadersListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.imo.android.imoim.activities.Searchable: void onCreate(android.os.Bundle)>:2131493165
+	<com.imo.android.imoim.activities.Searchable: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Searchable: void showResult(android.net.Uri)>($r4)in<com.imo.android.imoim.activities.Searchable: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.activities.Searchable
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.activities.Searchable: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r3.<se.emilsjolander.stickylistheaders.StickyListHeadersListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.imo.android.imoim.activities.Searchable: void onCreate(android.os.Bundle)>:2131493165
+	<com.imo.android.imoim.activities.Searchable: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Searchable: void showResult(android.net.Uri)>($r4)in<com.imo.android.imoim.activities.Searchable: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.av.ui.GroupAVActivity
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.av.o$1: void onClick(android.view.View)>->virtualinvoke $r11.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.av.o: void a(android.content.Context,int)>:2131493070
+
+
+src: com.imo.android.imoim.av.ui.GroupAVActivity
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.av.ui.GroupAVActivity: void onUnreadMsgButtonClick(android.view.View)>->virtualinvoke $r0.<com.imo.android.imoim.av.ui.GroupAVActivity: void startActivity(android.content.Intent)>($r5)in<com.imo.android.imoim.av.ui.GroupAVActivity: void onUnreadMsgButtonClick(android.view.View)>:null
+	<com.imo.android.imoim.av.o$1: void onClick(android.view.View)>->virtualinvoke $r11.<android.widget.TextView: void setOnClickListener(android.view.View$OnClickListener)>($r12)in<com.imo.android.imoim.av.o: void a(android.content.Context,int)>:2131493070
+
+
+src: com.imo.android.imoim.activities.SharingActivity
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.SharingActivity$2: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r3)in<com.imo.android.imoim.activities.SharingActivity: void onCreate(android.os.Bundle)>:2131493149
+
+
+src: com.imo.android.imoim.activities.SharingActivity
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.activities.SharingActivity$2: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r3)in<com.imo.android.imoim.activities.SharingActivity: void onCreate(android.os.Bundle)>:2131493149
+
+
+src: com.imo.android.imoim.l.j
+tgt: com.imo.android.imoim.activities.OwnProfileActivity
+eventSeq: 
+	<com.imo.android.imoim.l.j$13: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.imo.android.imoim.l.j: void b()>:2131493136
+	<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>->virtualinvoke $r14.<android.widget.LinearLayout: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.l.j: void b()>:2131493525<com.imo.android.imoim.l.j$12: void onClick(android.content.DialogInterface,int)>->$r6 = virtualinvoke $r6.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r7)in<com.imo.android.imoim.l.j$18: void onClick(android.view.View)>:null<com.imo.android.imoim.l.j$13: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r13)in<com.imo.android.imoim.l.j: void b()>:2131493136
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.av.ui.AudioActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity$28: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.imo.android.imoim.activities.IMActivity: void d()>:2131493251
+	<com.imo.android.imoim.activities.IMActivity$2: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r51)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493265
+	<com.imo.android.imoim.activities.IMActivity$3: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r52)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493261
+	<com.imo.android.imoim.activities.IMActivity$30: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r29)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2130903180<com.imo.android.imoim.activities.IMActivity$28: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.imo.android.imoim.activities.IMActivity: void d()>:2131493251
+
+
+src: com.imo.android.imoim.av.ui.AVActivity
+tgt: com.imo.android.imoim.av.ui.AudioActivity
+eventSeq: 
+	<com.imo.android.imoim.av.services.a$2: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r10.<android.widget.RelativeLayout: void setOnTouchListener(android.view.View$OnTouchListener)>($r26)in<com.imo.android.imoim.av.ui.AVActivity: void b(com.imo.android.imoim.av.h)>:2130903261
+
+
+src: com.imo.android.imoim.activities.BeastCreateGroup
+tgt: com.imo.android.imoim.av.ui.AudioActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.BeastCreateGroup$6: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.activities.BeastCreateGroup: void onCreate(android.os.Bundle)>:2131493009
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.av.ui.AudioActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.Home$7: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r3)in<com.imo.android.imoim.activities.Home: void c()>:2131493224
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.av.ui.AVActivity2
+tgt: com.imo.android.imoim.av.ui.AudioActivity
+eventSeq: 
+	<com.imo.android.imoim.av.services.d$1: void onClick(android.view.View)>->virtualinvoke $r4.<android.widget.RelativeLayout: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.imo.android.imoim.av.macaw.H264Handler: void onPause()>:null
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.activities.SuggestInvite
+eventSeq: 
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.activities.AddFriendsActivity
+tgt: com.imo.android.imoim.activities.ReverseFriendsActivity
+eventSeq: 
+	<com.imo.android.imoim.activities.AddFriendsActivity$3: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r5)in<com.imo.android.imoim.activities.AddFriendsActivity: void onCreate(android.os.Bundle)>:2131492999
+
+
+src: com.imo.android.imoim.activities.Panda
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.activities.Panda: void onCreate(android.os.Bundle)>->virtualinvoke $r3.<android.os.Handler: boolean postDelayed(java.lang.Runnable,long)>($r2, 10000L)in<com.imo.android.imoim.activities.Panda: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Panda: void onBackPressed()>->staticinvoke <com.imo.android.imoim.util.bw: void j(android.content.Context)>($r0)in<com.imo.android.imoim.activities.Panda: void onBackPressed()>:null
+	<com.imo.android.imoim.activities.Panda: void onCreate(android.os.Bundle)>->staticinvoke <com.imo.android.imoim.util.bw: void j(android.content.Context)>($r0)in<com.imo.android.imoim.activities.Panda: void onCreate(android.os.Bundle)>:null
+
+
+src: com.imo.android.imoim.activities.ManageSpaceActivity
+tgt: com.imo.android.imoim.activities.Home
+eventSeq: 
+	<com.imo.android.imoim.activities.ManageSpaceActivity$2: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r9)in<com.imo.android.imoim.activities.ManageSpaceActivity: void onCreate(android.os.Bundle)>:2131493296<com.imo.android.imoim.activities.ManageSpaceActivity$6: void onClick(android.content.DialogInterface,int)>->$r2 = virtualinvoke $r2.<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setPositiveButton(int,android.content.DialogInterface$OnClickListener)>(2131165608, $r3)in<com.imo.android.imoim.activities.ManageSpaceActivity: void a(com.imo.android.imoim.activities.ManageSpaceActivity)>:null
+	<com.imo.android.imoim.activities.ManageSpaceActivity$9: void onClick(android.view.View)>->virtualinvoke $r3.<android.widget.Button: void setOnClickListener(android.view.View$OnClickListener)>($r4)in<com.imo.android.imoim.activities.ManageSpaceActivity: void onCreate(android.os.Bundle)>:2131493288
+
+
+src: com.imo.android.imoim.activities.BurgerActivity
+tgt: com.imo.android.imoim.activities.Sharer
+eventSeq: 
+	<com.imo.android.imoim.activities.BurgerActivity$2: void onClick(android.view.View)>->virtualinvoke $r9.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r24)in<com.imo.android.imoim.activities.BurgerActivity: void onCreate(android.os.Bundle)>:2131493236
+
+
+src: com.imo.android.imoim.activities.SuggestShare
+tgt: com.imo.android.imoim.activities.Sharer
+eventSeq: 
+	<com.imo.android.imoim.activities.SuggestShare$1: void onClick(android.view.View)>->virtualinvoke $r2.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r3)in<com.imo.android.imoim.activities.SuggestShare: void onCreate(android.os.Bundle)>:2131493548
+
+
+src: com.imo.android.imoim.activities.IMActivity
+tgt: com.imo.android.imoim.av.ui.AVActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.IMActivity$28: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.imo.android.imoim.activities.IMActivity: void d()>:2131493251
+	<com.imo.android.imoim.activities.IMActivity$2: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r51)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493265
+	<com.imo.android.imoim.activities.IMActivity$3: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r52)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2131493261
+	<com.imo.android.imoim.activities.IMActivity$30: void onClick(android.view.View)>->virtualinvoke $r13.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r29)in<com.imo.android.imoim.activities.IMActivity: void onCreate(android.os.Bundle)>:2130903180<com.imo.android.imoim.activities.IMActivity$28: void onClick(android.view.View)>->virtualinvoke $r7.<android.widget.FrameLayout: void setOnClickListener(android.view.View$OnClickListener)>($r14)in<com.imo.android.imoim.activities.IMActivity: void d()>:2131493251
+
+
+src: com.imo.android.imoim.av.ui.AVActivity
+tgt: com.imo.android.imoim.av.ui.AVActivity2
+eventSeq: 
+	<com.imo.android.imoim.av.services.a$2: boolean onTouch(android.view.View,android.view.MotionEvent)>->virtualinvoke $r10.<android.widget.RelativeLayout: void setOnTouchListener(android.view.View$OnTouchListener)>($r26)in<com.imo.android.imoim.av.ui.AVActivity: void b(com.imo.android.imoim.av.h)>:2130903261
+
+
+src: com.imo.android.imoim.activities.BeastCreateGroup
+tgt: com.imo.android.imoim.av.ui.AVActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.BeastCreateGroup$6: void onClick(android.view.View)>->virtualinvoke $r4.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r18)in<com.imo.android.imoim.activities.BeastCreateGroup: void onCreate(android.os.Bundle)>:2131493009
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.av.ui.AVActivity2
+eventSeq: 
+	<com.imo.android.imoim.activities.Home$7: void onClick(android.view.View)>->virtualinvoke $r1.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r3)in<com.imo.android.imoim.activities.Home: void c()>:2131493224
+	<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r24)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:null
+	<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>->specialinvoke $r0.<com.imo.android.imoim.activities.Home: void a(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: void onNewIntent(android.content.Intent)>:null
+
+
+src: com.imo.android.imoim.av.ui.AVActivity2
+tgt: com.imo.android.imoim.av.ui.AVActivity2
+eventSeq: 
+	<com.imo.android.imoim.av.services.d$1: void onClick(android.view.View)>->virtualinvoke $r4.<android.widget.RelativeLayout: void setOnClickListener(android.view.View$OnClickListener)>($r6)in<com.imo.android.imoim.av.macaw.H264Handler: void onPause()>:null
+
+
+src: com.imo.android.imoim.activities.Home
+tgt: com.imo.android.imoim.activities.Searchable
+eventSeq: 
+	<com.imo.android.imoim.activities.Home$1: void onClick(android.view.View)>->virtualinvoke $r8.<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>($r19)in<com.imo.android.imoim.activities.Home: void onCreate(android.os.Bundle)>:2131493137
+	<com.imo.android.imoim.activities.Home: boolean onSearchRequested()>->virtualinvoke $r0.<com.imo.android.imoim.activities.Home: void startActivity(android.content.Intent)>($r1)in<com.imo.android.imoim.activities.Home: boolean onSearchRequested()>:null
+
+

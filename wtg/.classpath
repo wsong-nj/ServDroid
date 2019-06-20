@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="lib/android.jar"/>
+	<classpathentry kind="lib" path="lib/axml-2.0.jar"/>
+	<classpathentry kind="lib" path="lib/AXMLPrinter2.jar"/>
+	<classpathentry kind="lib" path="lib/baksmali-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/jce.jar"/>
+	<classpathentry kind="lib" path="lib/rt.jar"/>
+	<classpathentry kind="lib" path="lib/sootclasses-trunk-sources (1).jar"/>
+	<classpathentry kind="lib" path="lib/tools.jar"/>
+	<classpathentry kind="lib" path="lib/sootclasses-trunk-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="lib/sootclasses-trunk.jar"/>
+	<classpathentry kind="lib" path="lib/soot-infoflow-android1.jar"/>
+	<classpathentry kind="lib" path="lib/soot-infoflow1.jar"/>
+	<classpathentry kind="lib" path="lib/gexf4j-1.0.0.jar" sourcepath="C:/Users/dell/AppData/Local/Temp/.org.sf.feeling.decompiler1540102903712/source/gexf4j-1.0.0-sources.jar"/>
+	<classpathentry kind="lib" path="lib/woodstox-core-asl-4.4.0.jar"/>
+	<classpathentry kind="lib" path="lib/stax2-api-3.1.4.jar"/>
+	<classpathentry kind="lib" path="lib/substance.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

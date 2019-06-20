@@ -1,0 +1,31 @@
+path1
+targetActivity: com.nephoapp.anarxiv.PaperListWnd
+targetMethod: <com.nephoapp.anarxiv.PaperListWnd: void onScroll(android.widget.AbsListView,int,int,int)>
+src: com.nephoapp.anarxiv.anarxiv
+tgt: com.nephoapp.anarxiv.PaperListWnd
+eventSeq: 
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649
+
+eventHandlers: 
+	<com.nephoapp.anarxiv.PaperListWnd: void onScroll(android.widget.AbsListView,int,int,int)>->virtualinvoke $r7.<android.widget.ListView: void setOnScrollListener(android.widget.AbsListView$OnScrollListener)>($r0)in<com.nephoapp.anarxiv.PaperListWnd: void onCreate(android.os.Bundle)>:2131099659
+=================================
+path2
+targetActivity: com.nephoapp.anarxiv.PaperListWnd
+targetMethod: <com.nephoapp.anarxiv.PaperListWnd: void onScroll(android.widget.AbsListView,int,int,int)>
+src: com.nephoapp.anarxiv.anarxiv
+tgt: com.nephoapp.anarxiv.SubCategoryWnd
+eventSeq: 
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099650
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099651
+	<com.nephoapp.anarxiv.anarxiv: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r6.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.anarxiv: void onCreate(android.os.Bundle)>:2131099649
+
+src: com.nephoapp.anarxiv.SubCategoryWnd
+tgt: com.nephoapp.anarxiv.PaperListWnd
+eventSeq: 
+	<com.nephoapp.anarxiv.SubCategoryWnd: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>->virtualinvoke $r7.<android.widget.ListView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>($r0)in<com.nephoapp.anarxiv.SubCategoryWnd: void onCreate(android.os.Bundle)>:2131099666
+
+eventHandlers: 
+	<com.nephoapp.anarxiv.PaperListWnd: void onScroll(android.widget.AbsListView,int,int,int)>->virtualinvoke $r7.<android.widget.ListView: void setOnScrollListener(android.widget.AbsListView$OnScrollListener)>($r0)in<com.nephoapp.anarxiv.PaperListWnd: void onCreate(android.os.Bundle)>:2131099659
+=================================
