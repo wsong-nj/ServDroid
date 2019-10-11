@@ -75,18 +75,12 @@ public class InterMethodAnalysis {
 			if(!u.equals(unit)) {
 				Stmt stmt = (Stmt)unit;
 				if((stmt instanceof InvokeStmt || stmt instanceof AssignStmt) && stmt.containsInvokeExpr()) {					
-					Set<SootMethod> ms = new HashSet<SootMethod>();
-					ms.addAll(info.getCalleesOfCallAt(unit));
-					//System.out.println(ms.size());
-					for(Iterator<SootMethod> iter = ms.iterator();iter.hasNext();) {
-						SootMethod s = iter.next();
-						//System.out.println("callee method:"+sm.getSignature());
-						Set<String> ignoredMethods = new HashSet<String>();
-						ignoredMethods.add(s.getSignature());
-						List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
-						if(appendpds!=null)
-							pds.addAll(appendpds);
-					}
+					SootMethod s = stmt.getInvokeExpr().getMethod();
+					Set<String> ignoredMethods = new HashSet<String>();
+					ignoredMethods.add(s.getSignature());
+					List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
+					if(appendpds!=null)
+						pds.addAll(appendpds);
 				}
 			}
 		}
@@ -112,16 +106,12 @@ public class InterMethodAnalysis {
 			if(!u.equals(unit)) {
 				Stmt stmt = (Stmt)unit;
 				if((stmt instanceof InvokeStmt || stmt instanceof AssignStmt) && stmt.containsInvokeExpr()) {					
-					Set<SootMethod> ms = new HashSet<SootMethod>();
-					ms.addAll(info.getCalleesOfCallAt(unit));
-					for(Iterator<SootMethod> iter = ms.iterator();iter.hasNext();) {
-						SootMethod s = iter.next();
-						Set<String> ignoredMethods = new HashSet<String>();
-						ignoredMethods.add(s.getSignature());
-						List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
-						if(appendpds!=null)
-							doms.addAll(appendpds);
-					}
+					SootMethod s = stmt.getInvokeExpr().getMethod();
+					Set<String> ignoredMethods = new HashSet<String>();
+					ignoredMethods.add(s.getSignature());
+					List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
+					if(appendpds!=null)
+						doms.addAll(appendpds);
 				}
 			}
 		}
@@ -155,17 +145,14 @@ public class InterMethodAnalysis {
 			Unit unit = tmp.get(i);
 			Stmt stmt = (Stmt)unit;
 			if((stmt instanceof InvokeStmt || stmt instanceof AssignStmt) && stmt.containsInvokeExpr()) {
-				Set<SootMethod> ms = new HashSet<SootMethod>();
-				ms.addAll(info.getCalleesOfCallAt(unit));
-				for(Iterator<SootMethod> iter = ms.iterator();iter.hasNext();) {
-					SootMethod s = iter.next();
-					if(ignoredMethods.contains(s.getSignature()))
-						return null;
-					ignoredMethods.add(s.getSignature());
-					List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
-					if(appendpds!=null)
-						pds.addAll(appendpds);
-				}
+				SootMethod s = stmt.getInvokeExpr().getMethod();
+				if(ignoredMethods.contains(s.getSignature()))
+					return null;
+				ignoredMethods.add(s.getSignature());
+				List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
+				if(appendpds!=null)
+					pds.addAll(appendpds);
+				
 			}
 		}
 		return pds;
