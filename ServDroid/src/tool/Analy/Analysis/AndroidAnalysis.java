@@ -291,7 +291,7 @@ public class AndroidAnalysis extends BasicAnalysis {
 													List<SootMethod> methods = new ArrayList<>();
 													List<EventHandler> eventList = new ArrayList<>();
 													Map<String, Set<List<EventHandler>>> activities = new HashMap<>();
-													SootMethod method = Scene.v().getMethod("startService");
+													SootMethod method = Scene.v().getMethod("<android.content.Context: android.content.ComponentName startService(android.content.Intent)>");
 													try {
 														InterAnalysis.dfs(method, null, callGraph, methods, eventList,
 																activities);
@@ -305,10 +305,18 @@ public class AndroidAnalysis extends BasicAnalysis {
 													System.out.println("the caller is : " + set);
 
 												}
-												if (EntryForAll.info.getPostdominatorOf(unit).getUnit() != null
-														&& EntryForAll.info.getPostdominatorOf(unit).getUnit()
-																.toString().contains("stopService")) {
-													stopServicelist.addAll(list);
+												
+												InterMethodAnalysis IA = new InterMethodAnalysis(EntryForAll.info,EntryForAll.callGraph);
+												List<Unit> pds = IA.getAllPostDominatorsOfUnit(sm, unit);
+												if(pds != null) {
+													for(int k=0;k<pds.size();k++) {
+														Unit tu = pds.get(k);
+														Stmt tstmt = (Stmt)tu;
+														if(tstmt.containsInvokeExpr()) {
+															if(tstmt.getInvokeExpr().getMethod().getName().equals("stopService"))
+																stopServicelist.addAll(list);
+														}
+													}
 												}
 											}
 											System.out.println();
@@ -472,7 +480,7 @@ public class AndroidAnalysis extends BasicAnalysis {
 													List<SootMethod> methods = new ArrayList<>();
 													List<EventHandler> eventList = new ArrayList<>();
 													Map<String, Set<List<EventHandler>>> activities = new HashMap<>();
-													SootMethod method = Scene.v().getMethod("startService");
+													SootMethod method = Scene.v().getMethod("<android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>");
 													try {
 														InterAnalysis.dfs(method, null, callGraph, methods, eventList,
 																activities);
@@ -486,10 +494,18 @@ public class AndroidAnalysis extends BasicAnalysis {
 													System.out.println("the caller is : " + set);
 
 												}
-												if (EntryForAll.info.getPostdominatorOf(unit).getUnit() != null
-														&& EntryForAll.info.getPostdominatorOf(unit).getUnit()
-																.toString().contains("unbindService")) {
-													unboundServiceList.addAll(list);
+
+												InterMethodAnalysis IA = new InterMethodAnalysis(EntryForAll.info,EntryForAll.callGraph);
+												List<Unit> pds = IA.getAllPostDominatorsOfUnit(sm, unit);
+												if(pds != null) {
+													for(int k=0;k<pds.size();k++) {
+														Unit tu = pds.get(k);
+														Stmt tstmt = (Stmt)tu;
+														if(tstmt.containsInvokeExpr()) {
+															if(tstmt.getInvokeExpr().getMethod().getName().equals("unbindService"))
+																unboundServiceList.addAll(list);
+														}
+													}
 												}
 											}
 										}

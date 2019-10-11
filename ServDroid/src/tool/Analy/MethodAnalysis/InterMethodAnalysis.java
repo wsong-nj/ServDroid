@@ -13,6 +13,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import android.R.integer;
 
 import heros.InterproceduralCFG;
+import soot.Body;
 import soot.Local;
 import soot.MethodOrMethodContext;
 import soot.PackManager;
@@ -21,6 +22,8 @@ import soot.SootClass;
 import soot.SootMethod;
 import soot.Unit;
 import soot.ValueBox;
+import soot.jimple.AssignStmt;
+import soot.jimple.InvokeStmt;
 import soot.jimple.Stmt;
 import soot.jimple.infoflow.android.SetupApplication;
 import soot.jimple.infoflow.solver.cfg.InfoflowCFG;
@@ -32,6 +35,9 @@ import soot.jimple.toolkits.callgraph.Targets;
 import soot.jimple.toolkits.ide.icfg.JimpleBasedInterproceduralCFG;
 import soot.options.Options;
 import soot.toolkits.graph.BriefBlockGraph;
+import soot.toolkits.graph.BriefUnitGraph;
+import soot.toolkits.graph.MHGDominatorsFinder;
+import soot.toolkits.graph.MHGPostDominatorsFinder;
 import soot.toolkits.graph.UnitGraph;
 import soot.util.Chain;
 import tool.Analy.tags.MethodTag;
@@ -39,43 +45,130 @@ import tool.Analy.util.LocalAnalysis;
 
 public class InterMethodAnalysis {
 
-	public final static String jarPath = "E:\\360安全浏览器下载\\android-sdk-windows\\platforms";
+	//public final static String jarPath = "E:\\360安全浏览器下载\\android-sdk-windows\\platforms";
 	static CallGraph callGraph;
-	SootMethod m;
+	//SootMethod m;
 	static List<SootMethod> allMethods = new ArrayList<SootMethod>();
-	public static List<SootClass> classesChain;
+	//public static List<SootClass> classesChain;
 	public InfoflowCFG info;
 
-	public InterMethodAnalysis(String apk) {
+	public InterMethodAnalysis(InfoflowCFG info,CallGraph cg) {
+		this.info = info;
+		callGraph = cg;
+	}
+	
+	/**
+	 * get all post-dominators of an unit in the InfoflowCFG
+	 * @param sm  SootMethod of the unit
+	 * @param u  unit
+	 * @return
+	 */
+	public List<Unit> getAllPostDominatorsOfUnit(SootMethod sm,Unit u){
+		List<Unit> pds = new ArrayList<Unit>();
+		Body b = sm.retrieveActiveBody();
+		UnitGraph unitGraph = new BriefUnitGraph(b);  //don't consider exception edges
+		MHGPostDominatorsFinder<Unit> pdFinder = new MHGPostDominatorsFinder<Unit>(unitGraph);
+		List<Unit> tmp = pdFinder.getDominators(u);
+		pds.addAll(tmp);
+		for(int i=0;i<tmp.size();i++) {
+			Unit unit = tmp.get(i);
+			if(!u.equals(unit)) {
+				Stmt stmt = (Stmt)unit;
+				if((stmt instanceof InvokeStmt || stmt instanceof AssignStmt) && stmt.containsInvokeExpr()) {					
+					Set<SootMethod> ms = new HashSet<SootMethod>();
+					ms.addAll(info.getCalleesOfCallAt(unit));
+					//System.out.println(ms.size());
+					for(Iterator<SootMethod> iter = ms.iterator();iter.hasNext();) {
+						SootMethod s = iter.next();
+						//System.out.println("callee method:"+sm.getSignature());
+						Set<String> ignoredMethods = new HashSet<String>();
+						ignoredMethods.add(s.getSignature());
+						List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
+						if(appendpds!=null)
+							pds.addAll(appendpds);
+					}
+				}
+			}
+		}
+		
+		return pds;
+	}
+	
+	/**
+	 * get all dominators of an unit in the InfoflowCFG
+	 * @param sm  SootMethod of the unit
+	 * @param u  unit
+	 * @return
+	 */
+	public List<Unit> getAllDominatorsOfUnit(SootMethod sm,Unit u){
+		List<Unit> doms = new ArrayList<Unit>();
+		Body b = sm.retrieveActiveBody();
+		UnitGraph unitGraph = new BriefUnitGraph(b);  //don't consider exception edges
+		MHGDominatorsFinder<Unit> domFinder = new MHGDominatorsFinder<Unit>(unitGraph);
+		List<Unit> tmp = domFinder.getDominators(u);
+		doms.addAll(tmp);
+		for(int i=0;i<tmp.size();i++) {
+			Unit unit = tmp.get(i);
+			if(!u.equals(unit)) {
+				Stmt stmt = (Stmt)unit;
+				if((stmt instanceof InvokeStmt || stmt instanceof AssignStmt) && stmt.containsInvokeExpr()) {					
+					Set<SootMethod> ms = new HashSet<SootMethod>();
+					ms.addAll(info.getCalleesOfCallAt(unit));
+					for(Iterator<SootMethod> iter = ms.iterator();iter.hasNext();) {
+						SootMethod s = iter.next();
+						Set<String> ignoredMethods = new HashSet<String>();
+						ignoredMethods.add(s.getSignature());
+						List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
+						if(appendpds!=null)
+							doms.addAll(appendpds);
+					}
+				}
+			}
+		}
+		
+		return doms;
+	}
+	
+	/**
+	 * Recursively get units that must be executed through getting post-dominators of the first unit in the sm
+	 * @param sm SootMethod 
+	 * @param ignoredMethods the signatures of methods that don't need to search.
+	 * @return
+	 */
+	public List<Unit> getMBEUnit(SootMethod sm,Set<String> ignoredMethods){
+		if(sm == null || !sm.isConcrete())
+			return null;
+		if(sm.getDeclaringClass().getName().startsWith("java")   //usually don't need units in these classes
+				|| sm.getDeclaringClass().getName().startsWith("android"))
+			return null;
 
-//		SetupApplication app = new SetupApplication(jarPath, apk);
-//		soot.G.reset();
-//		app.setCallbackFile("./AndroidCallbacks.txt");
-//		try {
-//			app.constructCallgraph();
-//		} catch (Exception e) {
-//		}
-//
-//		Options.v().whole_program();
-		Options.v().set_src_prec(Options.src_prec_apk);
-		Options.v().set_output_format(Options.output_format_jimple);
-		Options.v().set_process_multiple_dex(true);
-		Options.v().set_output_dir("JimpleOutput");
-		Options.v().set_keep_line_number(true);
-		Options.v().set_prepend_classpath(true);
-	    Options.v().set_allow_phantom_refs(true);
-    	Options.v().set_android_jars(jarPath);
-	    Options.v().set_process_dir(Collections.singletonList(apk));
-	    Options.v().set_whole_program(true);
-		Options.v().set_force_overwrite(true); 
-		Scene.v().loadNecessaryClasses();	// Load necessary classes
-        CHATransformer.v().transform(); //Call graph
-        callGraph=Scene.v().getCallGraph();
-
-		callGraph = Scene.v().getCallGraph();
-		JimpleBasedInterproceduralCFG icfg = new JimpleBasedInterproceduralCFG();
-		info = new InfoflowCFG(icfg);
-
+		List<Unit> pds = new ArrayList<Unit>();
+		List<Unit> tmp = null;
+		Body b = sm.retrieveActiveBody();
+		UnitGraph unitGraph = new BriefUnitGraph(b);  //don't consider exception edges
+		MHGPostDominatorsFinder<Unit> pdFinder = new MHGPostDominatorsFinder<Unit>(unitGraph);
+		unitGraph = null;
+		Unit firstUnit = b.getUnits().getFirst();
+		tmp = pdFinder.getDominators(firstUnit);
+		pds.addAll(tmp);
+		for(int i=0;i<tmp.size();i++) {
+			Unit unit = tmp.get(i);
+			Stmt stmt = (Stmt)unit;
+			if((stmt instanceof InvokeStmt || stmt instanceof AssignStmt) && stmt.containsInvokeExpr()) {
+				Set<SootMethod> ms = new HashSet<SootMethod>();
+				ms.addAll(info.getCalleesOfCallAt(unit));
+				for(Iterator<SootMethod> iter = ms.iterator();iter.hasNext();) {
+					SootMethod s = iter.next();
+					if(ignoredMethods.contains(s.getSignature()))
+						return null;
+					ignoredMethods.add(s.getSignature());
+					List<Unit> appendpds = getMBEUnit(s,ignoredMethods);
+					if(appendpds!=null)
+						pds.addAll(appendpds);
+				}
+			}
+		}
+		return pds;
 	}
 
 	/**

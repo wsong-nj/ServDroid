@@ -1,0 +1,1022 @@
+the apk:E:\qcs\qcs\top45\books.apk
+com.google.android.nfcprovision.IOwnedService.BINDis bound service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.apps.books.gcm.BooksInstanceIDServiceis started service and exist leak
+com.google.android.apps.books.gcm.BooksInstanceIDServiceis started service and exist leak
+com.google.android.apps.books.gcm.BooksInstanceIDServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:6
+total:6
+startService PDBs,LDBs,SLBs:0,0,5
+bindService PCBs,LDBs,SLBs:0,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\candycrushsaga.apk
+com.king.core.GCMIntentServiceis bind service and late destroy
+com.android.vending.billing.InAppBillingService.BINDis bind service and late destroy
+com.android.vending.billing.InAppBillingService.BINDis bind service and late destroy
+PCBs:0
+PDBs:0
+LDBs:3
+SLBs:0
+total:3
+startService PDBs,LDBs,SLBs:0,0,0
+bindService PCBs,LDBs,SLBs:0,3,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\chrome.apk
+com.google.android.gms.feedback.LegacyBugReportServiceis bound service and exist leak
+com.google.android.nfcprovision.SchoolOwnedServiceis bound service and exist leak
+com.google.android.nfcprovision.IOwnedService.BINDis bound service and exist leak
+org.chromium.chrome.browser.media.MediaCaptureNotificationServiceis started service and premature destroy
+org.chromium.chrome.browser.media.ui.MediaNotificationManager$PlaybackListenerServiceis started service and late destroy
+org.chromium.chrome.browser.media.ui.MediaNotificationManager$PresentationListenerServiceis started service and late destroy
+org.chromium.chrome.browser.media.ui.MediaNotificationManager$CastListenerServiceis started service and late destroy
+com.android.vending.details.IDetailsService.BINDis bind service and pre create
+org.chromium.chrome.browser.download.DownloadNotificationServiceis hybrid service and pre create
+PCBs:2
+PDBs:1
+LDBs:3
+SLBs:3
+total:9
+startService PDBs,LDBs,SLBs:1,3,0
+bindService PCBs,LDBs,SLBs:1,0,3
+hybridService PCBs,PDBs,LDBs,SLBs:1,0,0,0
+the apk:E:\qcs\qcs\top45\CleanMaster.apk
+com.cmcm.rtstub.RTApiServiceis bound service and exist leak
+com.cmcm.rtstub.RTApiServiceis bound service and exist leak
+ks.cm.antivirus.api.CMSecurityAPIServiceis bound service and exist leak
+com.cleanmaster.ncmanager.core.NotificationManagerServiceis bound service and exist leak
+com.cleanmaster.ncmanager.core.NotificationManagerServiceis bound service and exist leak
+com.cmcm.vpn.LocalVPNServiceis bound service and exist leak
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.cleanmaster.applocklib.core.service.AppLockServiceis started service and exist leak
+com.cleanmaster.applocklib.core.service.AppLockServiceis started service and exist leak
+com.cleanmaster.applocklib.core.service.AppLockServiceis started service and exist leak
+com.cleanmaster.ui.app.provider.download.DownloadServiceis started service and exist leak
+com.cleanmaster.boost.acc.ui.SavePowerServiceis started service and exist leak
+com.cleanmaster.boost.acc.service.AccessibilityKillServiceis started service and exist leak
+com.cleanmaster.boost.acc.service.AccessibilityKillServiceis started service and exist leak
+com.cleanmaster.boost.acc.service.AccessibilityKillServiceis started service and exist leak
+com.screenlocker.service.LockScreenServiceis started service and exist leak
+com.cleanmaster.optimize.WorkerMurderis started service and exist leak
+com.ijinshan.screensavernew4.weather.ScreenSaverWeatherServiceis started service and exist leak
+com.cleanmaster.service.BgScanServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.cleanmaster.ui.app.provider.download.DownloadServiceis started service and exist leak
+com.cleanmaster.service.WorkerServiceis started service and exist leak
+com.cleanmaster.ui.app.provider.download.DownloadServiceis started service and exist leak
+com.cleanmaster.ui.app.provider.download.DownloadServiceis started service and exist leak
+com.cleanmaster.ui.app.provider.download.DownloadServiceis started service and exist leak
+com.cleanmaster.ui.app.provider.download.DownloadServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.cleanmaster.service.PermanentService is hybrid service and exist leak
+com.cleanmaster.service.PermanentService is hybrid service and exist leak
+com.cleanmaster.service.PermanentService is hybrid service and exist leak
+com.cleanmaster.service.PermanentService is hybrid service and exist leak
+com.cleanmaster.service.PermanentService is hybrid service and exist leak
+com.lock.service.chargingdetector.ChargingDetectorService is hybrid service and exist leak
+com.lock.service.chargingdetector.ChargingDetectorService is hybrid service and exist leak
+com.cleanmaster.securitywifi.service.SWGManagerService is hybrid service and exist leak
+com.cleanmaster.securitywifi.service.SWGManagerService is hybrid service and exist leak
+com.cleanmaster.securitywifi.service.SWGManagerService is hybrid service and exist leak
+com.cleanmaster.service.PermanentService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.service.LocalService is hybrid service and exist leak
+com.cleanmaster.appwidget.WidgetServiceis started service and late destroy
+com.cmcm.swiper.SwiperServiceis started service and premature destroy
+com.cleanmaster.intruder.core.CameraManServiceis started service and premature destroy
+com.lock.sideslip.SlideSlipServiceis started service and late destroy
+com.cleanmaster.service.FloatServiceis started service and late destroy
+com.cleanmaster.junk.accessibility.AccessibilityRemoteServiceis bind service and late destroy
+com.cleanmaster.junk.engine.JunkAccServiceis bind service and late destroy
+com.cleanmaster.junk.accessibility.AccessibilityRemoteServiceis bind service and late destroy
+com.cleanmaster.boost.acc.service.AccServiceis bind service and late destroy
+com.cleanmaster.ncmanager.core.NotificationTranstionServiceis bind service and pre create
+com.cleanmaster.screensave.workernotification.ScreenSaverNCServiceis bind service and late destroy
+com.cleanmaster.security.scan.sdcard.SdcardScanServiceis bind service and late destroy
+android.service.theme.ManagerServiceis bind service and pre create
+com.cleanmaster.security.scan.sdcard.SdcardScanServiceis bind service and late destroy
+com.cleanmaster.screensave.workernotification.WorkerNotificationCtrlServiceis hybrid service and pre create
+PCBs:3
+PDBs:2
+LDBs:10
+SLBs:58
+total:73
+startService PDBs,LDBs,SLBs:2,3,21
+bindService PCBs,LDBs,SLBs:2,7,7
+hybridService PCBs,PDBs,LDBs,SLBs:1,0,0,30
+the apk:E:\qcs\qcs\top45\com.dropbox.android.apk
+com.dropbox.android.service.WatcherServiceis started service and exist leak
+com.dropbox.core.crashes.CrashUploadServiceis started service and exist leak
+com.dropbox.core.crashes.CrashUploadServiceis started service and exist leak
+com.dropbox.android.service.CameraUploadServiceis started service and premature destroy
+com.android.vending.billing.InAppBillingService.BINDis bind service and pre create
+PCBs:1
+PDBs:1
+LDBs:0
+SLBs:3
+total:5
+startService PDBs,LDBs,SLBs:1,0,3
+bindService PCBs,LDBs,SLBs:1,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.facebook.katana.apk
+com.facebook.appupdate.AppUpdateServiceis started service and exist leak
+com.facebook.fbservice.service.DefaultBlueServiceis started service and exist leak
+com.facebook.push.gcmv3.InstanceIDListenerServiceis started service and exist leak
+com.facebook.push.gcmv3.InstanceIDListenerServiceis started service and exist leak
+com.facebook.push.gcmv3.InstanceIDListenerServiceis started service and exist leak
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncServiceis started service and exist leak
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncServiceis started service and exist leak
+com.facebook.common.dextricks.DexOptimization$Serviceis started service and premature destroy
+com.facebook.video.vps.VideoPlayerServiceis started service and late destroy
+PCBs:0
+PDBs:1
+LDBs:1
+SLBs:7
+total:9
+startService PDBs,LDBs,SLBs:1,1,7
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.google.android.apps.cloudprint.apk
+com.google.android.gms.measurement.AppMeasurementServiceis started service and exist leak
+com.google.android.apps.cloudprint.printdialog.services.LocalDiscoveryServiceis bind service and late destroy
+com.google.android.apps.cloudprint.printdialog.services.LocalDiscoveryServiceis bind service and late destroy
+PCBs:0
+PDBs:0
+LDBs:2
+SLBs:1
+total:3
+startService PDBs,LDBs,SLBs:0,0,1
+bindService PCBs,LDBs,SLBs:0,2,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.google.android.apps.photos.apk
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.apps.photos.cameraassistant.CameraAssistantServiceis started service and exist leak
+com.google.android.apps.photos.slideshow.SlideshowServiceis started service and exist leak
+com.google.android.apps.photos.slideshow.SlideshowServiceis started service and exist leak
+com.google.android.apps.photos.slideshow.SlideshowServiceis started service and exist leak
+com.google.android.apps.photos.camerashortcut.ForegroundServiceImplis started service and exist leak
+com.google.android.libraries.social.ingest.IngestServiceis bind service and pre create
+android.media.MediaRouteProviderServiceis bind service and late destroy
+PCBs:2
+PDBs:0
+LDBs:1
+SLBs:6
+total:9
+startService PDBs,LDBs,SLBs:0,0,6
+bindService PCBs,LDBs,SLBs:1,1,0
+hybridService PCBs,PDBs,LDBs,SLBs:1,0,0,0
+the apk:E:\qcs\qcs\top45\com.google.android.apps.plus.apk
+android.support.customtabs.action.CustomTabsServiceis bound service and exist leak
+com.google.android.libraries.social.networkqueue.impl.NetworkQueueServiceis started service and exist leak
+com.google.android.libraries.social.networkqueue.impl.NetworkQueueServiceis started service and exist leak
+com.google.android.libraries.social.networkqueue.impl.NetworkQueueServiceis started service and exist leak
+com.google.android.apps.plus.service.SlideshowServiceis started service and exist leak
+com.google.android.apps.plus.service.SlideshowServiceis started service and exist leak
+com.google.android.apps.plus.service.SlideshowServiceis started service and exist leak
+com.google.android.apps.plus.service.SlideshowServiceis started service and exist leak
+com.google.android.apps.plus.service.SlideshowServiceis started service and exist leak
+com.google.android.apps.plus.service.SkyjamPlaybackServiceis started service and exist leak
+com.google.android.gms.people.pub.PeopleSyncRawContactServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.measurement.AppMeasurementServiceis started service and exist leak
+com.google.android.libraries.social.networkqueue.impl.NetworkQueueServiceis started service and exist leak
+com.google.android.apps.plus.service.SkyjamPlaybackServiceis started service and exist leak
+edcis started service and exist leak
+edcis started service and exist leak
+com.google.android.libraries.social.notifications.service.GunsServiceis started service and exist leak
+com.google.android.libraries.social.notifications.service.GunsServiceis started service and exist leak
+android.media.MediaRouteProviderServiceis bind service and late destroy
+com.google.android.libraries.social.ingest.IngestServiceis bind service and pre create
+PCBs:1
+PDBs:0
+LDBs:1
+SLBs:19
+total:21
+startService PDBs,LDBs,SLBs:0,0,18
+bindService PCBs,LDBs,SLBs:1,1,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.google.android.gm.apk
+com.google.android.calendar.timely.CalendarOobeServiceis bound service and exist leak
+com.android.exchange.service.EasServiceis started service and exist leak
+com.android.mail.compose.EmptyServiceis started service and late destroy
+android.support.customtabs.action.CustomTabsServiceis bind service and pre create
+com.google.android.gms.analytics.service.AnalyticsServiceis bind service and pre create
+PCBs:2
+PDBs:0
+LDBs:1
+SLBs:2
+total:5
+startService PDBs,LDBs,SLBs:0,1,1
+bindService PCBs,LDBs,SLBs:2,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.google.android.street.apk
+com.google.android.apps.dragonfly.notifications.GCMInstanceIDListenerServiceis started service and exist leak
+com.google.android.apps.dragonfly.notifications.GCMInstanceIDListenerServiceis started service and exist leak
+com.google.android.apps.dragonfly.notifications.GCMInstanceIDListenerServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.apps.dragonfly.viewsservice.ViewsServiceImpl is hybrid service and exist leak
+com.google.android.apps.dragonfly.viewsservice.ViewsServiceImpl is hybrid service and exist leak
+com.google.android.libraries.geophotouploader.UploadService is hybrid service and exist leak
+com.google.android.libraries.geophotouploader.UploadService is hybrid service and exist leak
+com.google.android.apps.lightcycle.panorama.StitchingServiceis started service and late destroy
+PCBs:0
+PDBs:0
+LDBs:1
+SLBs:10
+total:11
+startService PDBs,LDBs,SLBs:0,1,6
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,4
+the apk:E:\qcs\qcs\top45\com.google.android.tts.apk
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.tts.local.voicepack.lorry.UnpackVoicePackServiceis started service and exist leak
+fiis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:4
+total:4
+startService PDBs,LDBs,SLBs:0,0,4
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.google.android.videos.apk
+com.android.vending.contentfilters.IContentFiltersService.BINDis bound service and exist leak
+com.google.android.videos.service.pinning.TransferServiceis started service and exist leak
+com.google.android.videos.service.pinning.TransferServiceis started service and exist leak
+com.google.android.videos.service.pinning.TransferServiceis started service and exist leak
+com.google.android.videos.service.pinning.TransferServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:5
+total:5
+startService PDBs,LDBs,SLBs:0,0,4
+bindService PCBs,LDBs,SLBs:0,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.google.android.webview.apk
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:0
+total:0
+startService PDBs,LDBs,SLBs:0,0,0
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.hp.android.printservice.apk
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.hp.android.printservice.enterpriseextension.wprintconnection.wPrintBroadcastServiceis started service and exist leak
+com.hp.android.printservice.sharetoprint.ServiceShareToPrint is hybrid service and exist leak
+com.hp.mobileprint.printservice.WPrintService is hybrid service and exist leak
+hp.enterprise.print.services.ExtensionServiceis bind service and pre create
+PCBs:1
+PDBs:0
+LDBs:0
+SLBs:6
+total:7
+startService PDBs,LDBs,SLBs:0,0,4
+bindService PCBs,LDBs,SLBs:1,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,2
+the apk:E:\qcs\qcs\top45\com.instagram.android.apk
+com.instagram.exoplayer.service.api.ExoPlayerServiceDelegateis bound service and exist leak
+com.instagram.callbackservice.CallbackServiceForSecondaryProcessesis bound service and exist leak
+com.instagram.watchandmore.ipc.WatchAndMoreMessengeris bound service and exist leak
+com.instagram.creation.pendingmedia.service.uploadretrypolicy.UploadRetryServiceis started service and exist leak
+com.instagram.creation.pendingmedia.service.uploadretrypolicy.UploadRetryServiceis started service and exist leak
+com.instagram.creation.pendingmedia.service.uploadretrypolicy.UploadRetryServiceis started service and exist leak
+com.instagram.creation.pendingmedia.service.uploadretrypolicy.UploadRetryServiceis started service and exist leak
+com.instagram.creation.pendingmedia.service.uploadretrypolicy.UploadRetryServiceis started service and exist leak
+com.instagram.creation.pendingmedia.service.uploadretrypolicy.UploadRetryServiceis started service and exist leak
+com.instagram.util.offline.BackgroundWifiPrefetcherWorkerServiceis started service and exist leak
+com.instagram.util.offline.BackgroundWifiPrefetcherWorkerServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:11
+total:11
+startService PDBs,LDBs,SLBs:0,0,8
+bindService PCBs,LDBs,SLBs:0,0,3
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.kiloo.subwaysurf.apk
+com.facebook.katana.platform.TokenRefreshServiceis bound service and exist leak
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:2
+total:2
+startService PDBs,LDBs,SLBs:0,0,0
+bindService PCBs,LDBs,SLBs:0,0,2
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\com.sec.app.samsungprintservice.apk
+com.sec.print.mobileprint.dm.DeviceManagerServiceis bound service and exist leak
+org.mopria.printservice.WPrintService is hybrid service and exist leak
+com.sec.android.ngen.common.lib.auth.services.AuthenticationServiceis started service and late destroy
+com.sec.print.mobileprint.df.MFPDiscoveryServiceis bind service and pre create
+PCBs:1
+PDBs:0
+LDBs:1
+SLBs:2
+total:4
+startService PDBs,LDBs,SLBs:0,1,0
+bindService PCBs,LDBs,SLBs:1,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,1
+the apk:E:\qcs\qcs\top45\com.snapchat.android.apk
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.snapchat.videochat.v2.BackgroundServiceis started service and exist leak
+com.snapchat.android.app.core.stickyservice.ScStickyServiceis started service and exist leak
+com.mapbox.services.android.telemetry.service.TelemetryServiceis started service and late destroy
+com.snapchat.android.framework.network.upload.internal.UploadServiceis started service and late destroy
+com.snapchat.android.app.feature.messaging.chat.SecureChatServiceis hybrid service and pre create
+PCBs:1
+PDBs:0
+LDBs:2
+SLBs:3
+total:6
+startService PDBs,LDBs,SLBs:0,2,2
+bindService PCBs,LDBs,SLBs:0,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:1,0,0,0
+the apk:E:\qcs\qcs\top45\com.surpax.ledflashlight.panel.apk
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.apptracker.android.re.AppBootReceiverServiceis started service and exist leak
+com.apptracker.android.re.AppReEngagementServiceis started service and exist leak
+com.apptracker.android.track.AppAutoServiceis started service and exist leak
+com.google.android.gms.measurement.AppMeasurementServiceis started service and exist leak
+com.surpax.ledflashlight.PermanentService is hybrid service and exist leak
+com.appnext.core.DownloadServiceis hybrid service and pre create
+PCBs:1
+PDBs:0
+LDBs:0
+SLBs:6
+total:7
+startService PDBs,LDBs,SLBs:0,0,4
+bindService PCBs,LDBs,SLBs:0,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:1,0,0,1
+the apk:E:\qcs\qcs\top45\com.twitter.android.apk
+com.twitter.media.service.core.MediaServiceis bound service and exist leak
+com.twitter.network.bucket.OverlayServiceis started service and exist leak
+com.twitter.twitteroemhelper.OemHelperServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:3
+total:3
+startService PDBs,LDBs,SLBs:0,0,2
+bindService PCBs,LDBs,SLBs:0,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\FacebookLite.apk
+android.support.customtabs.action.CustomTabsServiceis bound service and exist leak
+com.facebook.lite.ForegroundServiceis bound service and exist leak
+com.facebook.appupdate.AppUpdateServiceis started service and exist leak
+com.facebook.lite.service.AppInitServiceis started service and late destroy
+PCBs:0
+PDBs:0
+LDBs:1
+SLBs:3
+total:4
+startService PDBs,LDBs,SLBs:0,1,1
+bindService PCBs,LDBs,SLBs:0,0,2
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\flipboard.apk
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:3
+total:3
+startService PDBs,LDBs,SLBs:0,0,3
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\Gboard.apk
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.apps.inputmethod.libs.framework.core.FirebaseJobDispatcherImpl$TaskRunnerJobServiceis bind service and late destroy
+PCBs:0
+PDBs:0
+LDBs:1
+SLBs:2
+total:3
+startService PDBs,LDBs,SLBs:0,0,2
+bindService PCBs,LDBs,SLBs:0,1,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\gms.apk
+android.support.customtabs.action.CustomTabsServiceis bound service and exist leak
+com.google.android.gms.security.snet.SafeBrowsingUpdateTaskServiceis started service and exist leak
+com.google.android.gms.icing.service.IndexWorkerServiceis started service and exist leak
+com.google.android.gms.chimera.GmsIntentOperationServiceis started service and exist leak
+com.google.android.chimera.container.IntentOperationService.KEEPALIVEis started service and exist leak
+com.google.android.gms.ads.identifier.service.AdvertisingIdNotificationServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.service.RefreshEnabledStateServiceis started service and exist leak
+com.google.android.gms.analytics.service.RefreshEnabledStateServiceis started service and exist leak
+com.google.android.gms.analytics.service.PlayLogMonitorIntervalServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.chimera.GmsIntentOperationServiceis started service and exist leak
+com.google.android.gms.chimera.UiIntentOperationServiceis started service and exist leak
+com.google.android.gms.chimera.GmsIntentOperationServiceis started service and exist leak
+com.google.android.gms.auth.account.be.channelid.ChannelBindingStateIntentServiceis started service and exist leak
+com.google.android.gms.chromesync.sync.SyncReceiverServiceis started service and exist leak
+com.google.android.gms.auth.authzen.GcmReceiverServiceis started service and exist leak
+com.google.android.gms.auth.authzen.GcmReceiverServiceis started service and exist leak
+com.google.android.gms.auth.easyunlock.authorization.InitializerIntentServiceis started service and exist leak
+com.google.android.gms.auth.easyunlock.authorization.InitializerIntentServiceis started service and exist leak
+com.google.android.gms.auth.easyunlock.authorization.InitializerIntentServiceis started service and exist leak
+com.google.android.gms.auth.proximity.BluetoothInitiatorServiceis started service and exist leak
+com.google.android.gms.auth.proximity.BluetoothInitiatorServiceis started service and exist leak
+com.google.android.gms.auth.proximity.BlePeripheralServiceis started service and exist leak
+com.google.android.gms.auth.proximity.BluetoothInitiatorServiceis started service and exist leak
+com.google.android.gms.auth.proximity.BlePeripheralServiceis started service and exist leak
+com.google.android.gms.auth.proximity.BleCentralServiceis started service and exist leak
+com.google.android.gms.auth.setup.devicesignals.LockScreenServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdatePostAccountSetupStatusIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdateHideDmNotificationsIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdatePostAccountSetupStatusIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdateHideDmNotificationsIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdatePostAccountSetupStatusIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdateHideDmNotificationsIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdatePostAccountSetupStatusIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdateHideDmNotificationsIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.RemoveAccountIntentServiceis started service and exist leak
+com.google.android.gms.backup.BackupTransportMigratorServiceis started service and exist leak
+com.google.android.gms.backup.BackupAccountNotifierServiceis started service and exist leak
+com.google.android.gms.backup.BackupAccountNotifierServiceis started service and exist leak
+com.google.android.gms.backup.BackupAccountNotifierServiceis started service and exist leak
+com.google.android.gms.backup.BackupAccountNotifierServiceis started service and exist leak
+com.google.android.gms.backup.GmsBackupAccountManagerServiceis started service and exist leak
+com.google.android.gms.backup.BackupAccountNotifierServiceis started service and exist leak
+com.google.android.gms.backup.BackupTransportMigratorServiceis started service and exist leak
+com.google.android.gms.backup.BackupTransportMigratorServiceis started service and exist leak
+com.google.android.gms.car.diagnostics.CrashReporterService2is started service and exist leak
+com.google.android.gms.cast.service.CastOperationServiceis started service and exist leak
+com.google.android.gms.chimera.GmsIntentOperationServiceis started service and exist leak
+com.google.android.gms.chimera.GmsIntentOperationServiceis started service and exist leak
+com.google.android.gms.chimera.GmsIntentOperationServiceis started service and exist leak
+com.google.android.gms.security.snet.SafeBrowsingUpdateTaskServiceis started service and exist leak
+com.google.android.gms.clearcut.uploader.QosUploaderServiceis started service and exist leak
+com.google.android.gms.common.images.ImageAsyncServiceis started service and exist leak
+com.google.android.gms.config.ConfigServiceis started service and exist leak
+com.google.android.gms.deviceconnection.service.DeviceConnectionWatcherServiceis started service and exist leak
+com.google.android.gms.auth.account.be.RemoveAccountIntentServiceis started service and exist leak
+com.google.android.gms.auth.account.be.channelid.ChannelBindingStateIntentServiceis started service and exist leak
+com.google.android.gms.auth.api.credentials.ui.AutoSignInWarmWelcomeServiceis started service and exist leak
+com.google.android.gms.auth.api.credentials.ui.AutoSignInWarmWelcomeServiceis started service and exist leak
+com.google.android.gms.auth.api.credentials.ui.AutoSignInSnackbarServiceis started service and exist leak
+com.google.android.gms.auth.api.credentials.ui.AutoSaveSnackbarServiceis started service and exist leak
+com.google.android.gms.auth.setup.devicesignals.LockScreenServiceis started service and exist leak
+com.google.android.gms.auth.account.be.UpdateHideDmNotificationsIntentServiceis started service and exist leak
+com.google.android.gms.drive.api.ApiServiceis started service and exist leak
+com.google.android.gms.drive.api.ApiServiceis started service and exist leak
+com.google.location.nearby.direct.service.NearbyDirectServiceis started service and exist leak
+com.google.android.gms.thunderbird.EmergencyLocationServiceis started service and exist leak
+com.google.android.gms.trustagent.trustlet.GeofenceLogsServiceis started service and exist leak
+com.google.android.gms.update.SystemUpdateServiceis started service and exist leak
+com.google.android.gms.update.SystemUpdateServiceis started service and exist leak
+com.google.android.gms.update.SystemUpdateServiceis started service and exist leak
+com.google.android.gms.update.SystemUpdateServiceis started service and exist leak
+com.google.android.gms.update.SystemUpdateServiceis started service and exist leak
+com.google.android.gms.update.SystemUpdateServiceis started service and exist leak
+com.google.android.gms.vision.VisionDependencyIntentServiceProxyis started service and exist leak
+com.google.android.gms.matchstick.net.MessagingServiceis started service and exist leak
+com.google.android.gms.matchstick.net.MessagingServiceis started service and exist leak
+com.google.android.gms.matchstick.net.MessagingServiceis started service and exist leak
+com.google.android.location.internal.GoogleLocationManagerServiceis started service and exist leak
+com.google.android.location.wearable.WearableLocationServiceis started service and exist leak
+com.google.android.gms.location.places.PlaceDetectionAsyncServiceis started service and exist leak
+com.google.android.gms.plus.service.DefaultIntentServiceis started service and exist leak
+com.google.android.gms.statementservice.IntentFilterIntentServiceis started service and exist leak
+com.google.android.gms.stats.service.DropBoxEntryAddedServiceis started service and exist leak
+com.google.android.gms.security.snet.SafeBrowsingUpdateTaskServiceis started service and exist leak
+com.google.commerce.tapandpay.android.clientconfig.sync.ClientConfigSyncServiceis started service and exist leak
+com.google.android.gms.tron.CollectionServiceis started service and exist leak
+com.google.android.gms.tron.CollectionServiceis started service and exist leak
+com.google.android.gms.update.SystemUpdateServiceis started service and exist leak
+com.google.android.gms.wearable.service.WearableControlServiceis started service and exist leak
+com.google.android.gms.wearable.service.WearableControlServiceis started service and exist leak
+com.google.android.libraries.social.autobackup.AutobackupTaskServiceis started service and exist leak
+com.google.android.location.internal.AnalyticsUploadIntentServiceis started service and exist leak
+com.google.android.location.internal.GoogleLocationManagerServiceis started service and exist leak
+com.google.android.location.internal.GoogleLocationManagerServiceis started service and exist leak
+com.google.android.location.places.PlacesLoggingServiceis started service and exist leak
+com.google.android.gms.location.places.PlaceDetectionAsyncServiceis started service and exist leak
+com.google.android.gms.plus.service.ImageIntentServiceis started service and exist leak
+com.google.android.gms.droidguard.DroidGuardServiceis started service and exist leak
+com.google.android.gms.feedback.FeedbackAsyncServiceis started service and exist leak
+com.google.android.gms.feedback.SendServiceis started service and exist leak
+com.google.android.gms.fitness.wearables.WearableSyncServiceis started service and exist leak
+com.google.android.gms.fitness.wearables.WearableSyncServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.mdm.services.GcmReceiverServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.gcm.GcmServiceis started service and exist leak
+com.google.android.gms.icing.service.IndexWorkerServiceis started service and exist leak
+com.google.android.gms.icing.service.IndexWorkerServiceis started service and exist leak
+com.google.android.gms.icing.service.IndexWorkerServiceis started service and exist leak
+com.google.android.gms.icing.service.IndexWorkerServiceis started service and exist leak
+com.google.android.gms.instantapps.routing.DomainFilterUpdateServiceis started service and exist leak
+com.google.android.gms.locationsharing.service.GcmReceiverServiceis started service and exist leak
+com.google.android.gms.lockbox.LockboxServiceis started service and exist leak
+com.google.android.gms.magictether.host.TetherListenerServiceis started service and exist leak
+com.google.android.gms.magictether.host.TetherListenerServiceis started service and exist leak
+com.google.android.gms.magictether.host.TetherListenerServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.notifications.GunsServiceis started service and exist leak
+com.google.android.gms.perfprofile.uploader.PerfProfileCollectionServiceis started service and exist leak
+com.google.android.gms.security.snet.SafeBrowsingUpdateTaskServiceis started service and exist leak
+com.google.android.gms.feedback.SendServiceis started service and exist leak
+com.google.android.gms.feedback.SendServiceis started service and exist leak
+com.google.android.gms.fitness.service.recording.FitRecordingBrokeris started service and exist leak
+com.google.android.gms.fitness.wearables.WearableSyncServiceis started service and exist leak
+com.google.android.gms.fitness.wearables.WearableSyncServiceis started service and exist leak
+com.google.android.gms.security.snet.SafeBrowsingUpdateTaskServiceis started service and exist leak
+com.google.android.gms.chimera.GmsIntentOperationServiceis started service and exist leak
+com.google.android.gms.magictether.host.TetherListenerServiceis started service and exist leak
+com.google.android.gms.magictether.host.TetherListenerServiceis started service and exist leak
+com.google.android.gms.magictether.host.TetherListenerServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.discovery.service.DiscoveryServiceis started service and exist leak
+com.google.android.gms.nearby.messages.service.NearbyMessagesServiceis started service and exist leak
+com.google.android.gms.nearby.messages.service.NearbyMessagesServiceis started service and exist leak
+com.google.android.gms.nearby.messages.service.NearbyMessagesServiceis started service and exist leak
+com.google.android.gms.nearby.messages.service.NearbyMessagesServiceis started service and exist leak
+com.google.android.gms.nearby.messages.service.NearbyMessagesServiceis started service and exist leak
+com.google.android.gms.notifications.service.GunsApiIntentServiceis started service and exist leak
+com.google.android.gms.people.sync.focus.delegation.ContactsSyncDelegateServiceis started service and exist leak
+com.google.android.gms.backup.component.D2dMigrateService is hybrid service and exist leak
+com.google.android.gms.backup.component.D2dSourceService is hybrid service and exist leak
+com.google.android.gms.backup.component.D2dSourceService is hybrid service and exist leak
+com.google.android.location.places.service.PlaceDetectionAsyncService is hybrid service and exist leak
+com.google.android.location.places.service.PlaceDetectionAsyncService is hybrid service and exist leak
+com.google.android.contextmanager.service.ContextManagerServiceis started service and late destroy
+com.google.android.gms.auth.proximity.BluetoothListenerServiceis started service and late destroy
+com.google.android.gms.cast.service.CastPersistentServiceis started service and late destroy
+com.google.android.gms.cast_mirroring.CastRemoteMirroringServiceis started service and late destroy
+com.google.android.gms.wearable.service.WearableServiceis started service and late destroy
+com.google.android.gms.cast.media.CastMediaRouteProviderServiceis bind service and late destroy
+android.media.MediaRouteProviderServiceis bind service and late destroy
+com.google.android.apps.appstreaming.androidcontroller.AuthTokenServiceis bind service and pre create
+com.google.atap.tango.TangoServiceis bind service and pre create
+PCBs:6
+PDBs:0
+LDBs:7
+SLBs:166
+total:179
+startService PDBs,LDBs,SLBs:0,5,160
+bindService PCBs,LDBs,SLBs:2,2,1
+hybridService PCBs,PDBs,LDBs,SLBs:4,0,0,5
+the apk:E:\qcs\qcs\top45\Google Driver.apk
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.google.android.apps.docs.sync.content.ContentSyncServiceis started service and exist leak
+hoois started service and exist leak
+hoois started service and exist leak
+hotis started service and exist leak
+com.google.android.apps.viewer.pdflib.PdfDocumentServiceis bind service and late destroy
+com.google.android.apps.viewer.viewer.audio.AudioServiceis bind service and late destroy
+com.google.android.apps.viewer.client.ProjectorClientServiceis bind service and pre create
+PCBs:1
+PDBs:0
+LDBs:2
+SLBs:5
+total:8
+startService PDBs,LDBs,SLBs:0,0,4
+bindService PCBs,LDBs,SLBs:1,2,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\Google Play Games.apk
+com.android.vending.contentfilters.IContentFiltersService.BINDis bound service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:2
+total:2
+startService PDBs,LDBs,SLBs:0,0,1
+bindService PCBs,LDBs,SLBs:0,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\Google.apk
+com.google.android.apps.gsa.hotword.benchmark.service.HotwordBenchmarkServiceImplis bound service and exist leak
+com.google.android.apps.photos.cameraassistant.CameraAssistantServiceis bound service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.apps.gsa.hotword.benchmark.controller.HotwordBenchmarkControlleris started service and late destroy
+com.google.android.hotword.service.HotwordServiceis bind service and pre create
+com.google.android.apps.gsa.velour.services.VelourServiceis bind service and pre create
+com.google.android.apps.gsa.sidekick.shared.remoteapi.INowServiceis bind service and pre create
+com.google.android.apps.gsa.sidekick.main.remoteservice.NowServiceis bind service and pre create
+com.google.android.hotword.service.HotwordServiceis bind service and pre create
+com.google.android.voiceinteraction.GsaVoiceInteractionServiceis bind service and pre create
+com.google.android.apps.gsa.search.core.service.SearchServiceis hybrid service and pre create
+PCBs:7
+PDBs:0
+LDBs:1
+SLBs:3
+total:11
+startService PDBs,LDBs,SLBs:0,1,1
+bindService PCBs,LDBs,SLBs:6,0,2
+hybridService PCBs,PDBs,LDBs,SLBs:1,0,0,0
+the apk:E:\qcs\qcs\top45\GooglePlayNewsstand.apk
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.gcm.NSInstanceIdListenerServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.gcm.NSInstanceIdListenerServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.gcm.NSInstanceIdListenerServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.appwidget.NewsWidgetServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.appwidget.NewsWidgetServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.audio.SpeechServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.audio.SpeechServiceis started service and exist leak
+com.google.apps.dots.android.newsstand.audio.AudioPlayerServiceis started service and premature destroy
+PCBs:0
+PDBs:1
+LDBs:0
+SLBs:9
+total:10
+startService PDBs,LDBs,SLBs:1,0,9
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\Hangouts.apk
+com.google.android.apps.tycho.IVoiceServiceis bound service and exist leak
+com.google.android.libraries.hangouts.video.internal.CallServiceis bound service and exist leak
+com.google.android.apps.hangouts.hangout.IncomingInviteServiceis started service and exist leak
+com.google.android.gms.measurement.AppMeasurementServiceis started service and exist leak
+com.google.android.apps.hangouts.requestwriter.RequestWriter is hybrid service and exist leak
+com.google.android.apps.hangouts.requestwriter.RequestWriter is hybrid service and exist leak
+com.google.android.apps.hangouts.requestwriter.RequestWriter is hybrid service and exist leak
+com.google.android.apps.hangouts.requestwriter.RequestWriter is hybrid service and exist leak
+com.google.android.libraries.matchstick.net.MessagingService is hybrid service and exist leak
+com.google.android.libraries.matchstick.net.MessagingService is hybrid service and exist leak
+com.google.android.libraries.matchstick.net.MessagingService is hybrid service and exist leak
+com.google.android.libraries.matchstick.net.MessagingService is hybrid service and exist leak
+com.google.android.libraries.matchstick.net.MessagingService is hybrid service and exist leak
+com.google.android.libraries.matchstick.net.MessagingService is hybrid service and exist leak
+com.google.android.apps.hangouts.phone.DebugActivity$RecordingService is hybrid service and exist leak
+com.google.android.apps.hangouts.phone.DebugActivity$RecordingService is hybrid service and exist leak
+com.google.android.apps.hangouts.requestwriter.RequestWriter is hybrid service and exist leak
+com.google.android.apps.hangouts.requestwriter.RequestWriter is hybrid service and exist leak
+com.google.android.apps.hangouts.service.AudioPlayerServiceis started service and premature destroy
+com.google.android.apps.hangouts.concurrent.impl.ConcurrentServiceis bind service and late destroy
+PCBs:0
+PDBs:1
+LDBs:1
+SLBs:18
+total:20
+startService PDBs,LDBs,SLBs:1,0,2
+bindService PCBs,LDBs,SLBs:0,1,2
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,14
+the apk:E:\qcs\qcs\top45\imo.apk
+com.imo.android.imoim.gcm.MyInstanceIDListenerServiceis started service and exist leak
+com.imo.android.imoim.DummyServiceis started service and exist leak
+com.imo.android.imoim.DummyServiceis started service and exist leak
+com.imo.android.imoim.DummyServiceis started service and exist leak
+com.imo.android.imoim.DummyServiceis started service and exist leak
+com.imo.android.imoim.SignupServiceis started service and premature destroy
+PCBs:0
+PDBs:1
+LDBs:0
+SLBs:5
+total:6
+startService PDBs,LDBs,SLBs:1,0,5
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\Line.apk
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+jp.naver.line.android.service.gcm.LineInstanceIdListenerServiceis started service and exist leak
+jp.naver.line.android.access.remote.LineAccessServiceForWatchis started service and exist leak
+jp.naver.line.android.access.remote.LineAccessServiceForWatchis started service and exist leak
+jp.naver.line.android.common.pip.VoipPipServiceis started service and exist leak
+jp.naver.line.android.service.gcm.LineInstanceIdListenerServiceis started service and exist leak
+jp.naver.line.android.service.gcm.LineInstanceIdListenerServiceis started service and exist leak
+jp.naver.myhome.android.activity.privacygroup.controller.PrivacyGroupSyncServiceis started service and exist leak
+jp.naver.line.android.common.access.remote.LineRemoteAccessService is hybrid service and exist leak
+jp.naver.line.android.obs.net.OBSApiService is hybrid service and exist leak
+jp.naver.linealbum.android.service.UploadService is hybrid service and exist leak
+jp.naver.linealbum.android.service.UploadService is hybrid service and exist leak
+com.linecorp.linekeep.uploadservice.KeepNetworkServiceis started service and late destroy
+jp.naver.android.npush.service.NPushMessageServiceis started service and late destroy
+jp.naver.gallery.android.GalleryServiceis started service and late destroy
+com.linecorp.multimedia.transcoding.VideoTranscodingServiceis bind service and pre create
+PCBs:1
+PDBs:0
+LDBs:3
+SLBs:15
+total:19
+startService PDBs,LDBs,SLBs:0,3,10
+bindService PCBs,LDBs,SLBs:1,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,4
+the apk:E:\qcs\qcs\top45\maps.apk
+com.google.android.gms.analytics.service.AnalyticsServiceis bound service and exist leak
+com.google.android.apps.gmm.offline.OfflineManualDownloadServiceis started service and exist leak
+com.google.android.apps.gmm.offline.OfflineManualDownloadServiceis started service and exist leak
+com.google.android.apps.gmm.offline.OfflineManualDownloadServiceis started service and exist leak
+com.google.android.apps.gmm.offline.OfflineManualDownloadServiceis started service and exist leak
+com.google.android.apps.gmm.offline.OfflineManualDownloadServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.libraries.geophotouploader.UploadService is hybrid service and exist leak
+com.google.android.libraries.geophotouploader.UploadService is hybrid service and exist leak
+com.google.android.apps.gmm.navigation.service.base.NavigationServiceis started service and premature destroy
+com.google.userfeedback.android.api.SendUserFeedbackServiceis started service and late destroy
+android.media.MediaRouteProviderServiceis bind service and late destroy
+android.support.customtabs.action.CustomTabsServiceis bind service and pre create
+com.google.android.apps.gmm.car.CarConnectionServiceis hybrid service and pre create
+com.google.android.apps.gmm.car.CarModeServiceis hybrid service and premature destroy
+PCBs:2
+PDBs:2
+LDBs:2
+SLBs:9
+total:15
+startService PDBs,LDBs,SLBs:1,1,6
+bindService PCBs,LDBs,SLBs:1,1,1
+hybridService PCBs,PDBs,LDBs,SLBs:1,1,0,2
+the apk:E:\qcs\qcs\top45\me.pou.app.apk
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.nokia.payment.iapenabler.InAppBillingService.BINDis bound service and exist leak
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.android.vending.billing.MarketBillingService.BINDis bound service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+me.pou.app.billing.google.v1.BillingServiceis started service and late destroy
+me.pou.app.NotificationsServiceis started service and late destroy
+PCBs:0
+PDBs:0
+LDBs:2
+SLBs:7
+total:9
+startService PDBs,LDBs,SLBs:0,2,3
+bindService PCBs,LDBs,SLBs:0,0,4
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\Messenger.apk
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncServiceis started service and exist leak
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncServiceis started service and exist leak
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncServiceis started service and exist leak
+com.facebook.messaging.chatheads.service.ChatHeadServiceis started service and exist leak
+com.facebook.messaging.chatheads.service.ChatHeadServiceis started service and exist leak
+com.facebook.appupdate.AppUpdateServiceis started service and exist leak
+com.facebook.messaging.prefs.notifications.NotificationPrefsSyncServiceis started service and exist leak
+com.facebook.push.gcmv3.InstanceIDListenerServiceis started service and exist leak
+com.facebook.push.gcmv3.InstanceIDListenerServiceis started service and exist leak
+com.facebook.push.gcmv3.InstanceIDListenerServiceis started service and exist leak
+com.facebook.fbservice.service.DefaultBlueServiceis started service and exist leak
+com.facebook.common.dextricks.DexOptimization$Serviceis started service and premature destroy
+com.facebook.video.vps.VideoPlayerServiceis started service and late destroy
+X.9Dgis started service and late destroy
+PCBs:0
+PDBs:1
+LDBs:2
+SLBs:11
+total:14
+startService PDBs,LDBs,SLBs:1,2,11
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\music.apk
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.android.vending.contentfilters.IContentFiltersService.BINDis bound service and exist leak
+com.google.android.music.download.artwork.ArtDownloadServiceis bound service and exist leak
+com.google.android.music.store.MediaStoreImportServiceis bound service and exist leak
+com.google.android.music.download.cache.TrackCacheServiceis bound service and exist leak
+com.google.android.music.store.MediaStoreImportServiceis bound service and exist leak
+com.google.android.music.playback2.MusicPlaybackServiceis started service and exist leak
+com.google.android.music.playback2.MusicPlaybackServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.music.sync.google.gcm.MusicInstanceIDServiceis started service and exist leak
+com.google.android.music.sync.google.gcm.MusicInstanceIDServiceis started service and exist leak
+com.google.android.music.sync.google.gcm.MusicInstanceIDServiceis started service and exist leak
+com.google.android.music.playback2.MusicPlaybackServiceis started service and exist leak
+com.google.android.music.download.cache.StorageMigrationServiceis started service and exist leak
+com.google.android.music.download.cache.StorageMigrationServiceis started service and exist leak
+com.google.android.music.playback2.MusicPlaybackServiceis started service and exist leak
+com.google.android.wearable.datatransfer.DataSyncServiceis started service and exist leak
+com.google.android.wearable.datatransfer.DataSyncServiceis started service and exist leak
+com.google.android.wearable.datatransfer.DataSyncServiceis started service and exist leak
+com.google.android.music.playback.MusicPlaybackService is hybrid service and exist leak
+com.google.android.music.playback.MusicPlaybackService is hybrid service and exist leak
+com.google.android.music.wear.WearDataTransferConnectionService is hybrid service and exist leak
+com.google.android.music.playback.MusicPlaybackService is hybrid service and exist leak
+com.google.android.music.playback.MusicPlaybackService is hybrid service and exist leak
+com.google.android.music.playback.MusicPlaybackService is hybrid service and exist leak
+com.google.android.music.playback.MusicPlaybackService is hybrid service and exist leak
+com.google.android.music.playback.MusicPlaybackService is hybrid service and exist leak
+com.google.android.music.download.keepon.KeeponSchedulingServiceis hybrid service and premature destroy
+PCBs:0
+PDBs:1
+LDBs:0
+SLBs:29
+total:30
+startService PDBs,LDBs,SLBs:0,0,15
+bindService PCBs,LDBs,SLBs:0,0,6
+hybridService PCBs,PDBs,LDBs,SLBs:0,1,0,8
+the apk:E:\qcs\qcs\top45\MyTalkingTom.apk
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.apptracker.android.track.AppTrackerServiceis started service and exist leak
+com.apptracker.android.re.AppBootReceiverServiceis started service and exist leak
+com.apptracker.android.re.AppReEngagementServiceis started service and exist leak
+com.apptracker.android.track.AppAutoServiceis started service and exist leak
+com.bee7.sdk.service.RewardingServiceis started service and exist leak
+com.bee7.sdk.service.RewardingServiceis started service and exist leak
+com.bee7.sdk.service.RewardingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.service.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.service.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.service.AnalyticsServiceis started service and exist leak
+PCBs:9
+PDBs:0
+LDBs:0
+SLBs:14
+total:23
+startService PDBs,LDBs,SLBs:0,0,13
+bindService PCBs,LDBs,SLBs:0,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:9,0,0,0
+the apk:E:\qcs\qcs\top45\push.apk
+com.sec.spp.push.dlc.writer.WriterServiceis bound service and exist leak
+com.sec.spp.push.dlc.sender.SenderServiceis started service and exist leak
+com.sec.spp.push.dlc.sender.SenderServiceis started service and exist leak
+com.sec.spp.push.dlc.sender.SenderServiceis started service and exist leak
+com.sec.spp.push.dlc.sender.SenderServiceis started service and exist leak
+com.sec.spp.push.dlc.sender.SenderServiceis started service and exist leak
+com.sec.spp.push.RequestServiceis started service and late destroy
+com.sec.spp.push.PushClientServiceis started service and late destroy
+com.sec.spp.push.notisvc.sa.SamsungAccountServiceis started service and late destroy
+com.msc.sa.service.RequestServiceis bind service and pre create
+PCBs:1
+PDBs:0
+LDBs:3
+SLBs:6
+total:10
+startService PDBs,LDBs,SLBs:0,3,5
+bindService PCBs,LDBs,SLBs:1,0,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\SecurityMaster.apk
+ks.cm.antivirus.neweng.service.ScanServiceis bound service and exist leak
+com.anchorfree.hydrasdk.vpnservice.AFVpnServiceis bound service and exist leak
+com.cmcm.rtstub.RTApiServiceis bound service and exist leak
+com.cmcm.rtstub.RTApiServiceis bound service and exist leak
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+com.android.vending.billing.InAppBillingService.BINDis bound service and exist leak
+ks.cm.antivirus.scan.packageStopper.accService.AccServiceis bound service and exist leak
+ks.cm.antivirus.applock.service.NotificationMonitorServiceis bound service and exist leak
+ks.cm.antivirus.ad.remote.InterstitialAdServiceis bound service and exist leak
+com.anchorfree.hydrasdk.reconnect.impl.StatusServiceis started service and exist leak
+com.anchorfree.hydrasdk.reconnect.impl.StatusServiceis started service and exist leak
+com.anchorfree.hydrasdk.vpnservice.UIStatusServiceis started service and exist leak
+com.anchorfree.hydrasdk.reconnect.impl.StatusServiceis started service and exist leak
+com.cmcm.onews.active.KeepLiveServiceis started service and exist leak
+com.ksmobile.launcher.defense.DefendIntentServiceis started service and exist leak
+com.cmcm.onews.active.KeepLiveServiceis started service and exist leak
+ks.cm.antivirus.applock.accessibility.AppLockAccessibilityServicePreJBis started service and exist leak
+ks.cm.antivirus.vpn.vpnservice.service.ConnectionServiceis started service and exist leak
+ks.cm.antivirus.screensaver.ScreenSaverServiceis started service and exist leak
+ks.cm.antivirus.screensaver.ScreenSaverServiceis started service and exist leak
+ks.cm.antivirus.common.ShortCutForegroundServiceis started service and exist leak
+ks.cm.antivirus.ransomwarekiller.DiamondKillerServiceis started service and exist leak
+ks.cm.antivirus.applock.service.AppLockServiceis started service and premature destroy
+com.txusballesteros.bubbles.BubblesServiceis bind service and late destroy
+ks.cm.antivirus.defend.DefendServiceis hybrid service and pre create
+com.lock.service.chargingdetector.ChargingDetectorServiceis hybrid service and pre create
+PCBs:2
+PDBs:1
+LDBs:1
+SLBs:22
+total:26
+startService PDBs,LDBs,SLBs:1,0,13
+bindService PCBs,LDBs,SLBs:0,1,9
+hybridService PCBs,PDBs,LDBs,SLBs:2,0,0,0
+the apk:E:\qcs\qcs\top45\Skype.apk
+com.microsoft.react.push.gcm.InstanceIDServiceis started service and exist leak
+com.microsoft.react.push.gcm.InstanceIDServiceis started service and exist leak
+com.microsoft.react.push.gcm.InstanceIDServiceis started service and exist leak
+com.microsoft.react.push.gcm.InstanceIDServiceis started service and exist leak
+com.skype.slimcore.calling.RNCallingServiceis started service and late destroy
+PCBs:0
+PDBs:0
+LDBs:1
+SLBs:4
+total:5
+startService PDBs,LDBs,SLBs:0,1,4
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\TalkBack.apk
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+PCBs:0
+PDBs:0
+LDBs:0
+SLBs:2
+total:2
+startService PDBs,LDBs,SLBs:0,0,2
+bindService PCBs,LDBs,SLBs:0,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\translate.apk
+com.google.android.libraries.translate.sync.PhraseSyncServiceis started service and exist leak
+com.google.android.apps.translate.copydrop.CopyDropServiceis started service and premature destroy
+com.google.userfeedback.android.api.SendUserFeedbackServiceis started service and late destroy
+com.google.android.gms.analytics.service.AnalyticsServiceis bind service and pre create
+PCBs:1
+PDBs:1
+LDBs:1
+SLBs:1
+total:4
+startService PDBs,LDBs,SLBs:1,1,1
+bindService PCBs,LDBs,SLBs:1,0,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\Viber.apk
+com.apptimize.ApptimizeServiceis bound service and exist leak
+com.appboy.services.AppboyWearableListenerServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.gms.analytics.CampaignTrackingServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+mp.MpServiceis started service and exist leak
+com.appboy.services.AppboyLocationServiceis started service and late destroy
+com.android.vending.billing.InAppBillingService.BINDis bind service and pre create
+com.android.vending.billing.InAppBillingService.BINDis bind service and pre create
+com.android.vending.billing.InAppBillingService.BINDis bind service and pre create
+com.sec.android.iap.service.iapServiceis bind service and late destroy
+PCBs:3
+PDBs:0
+LDBs:2
+SLBs:6
+total:11
+startService PDBs,LDBs,SLBs:0,1,5
+bindService PCBs,LDBs,SLBs:3,1,1
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\WhatsApp Messenger_v2.18.257_apkpure.com.apk
+com.whatsapp.gdrive.GoogleDriveServiceis bound service and exist leak
+com.whatsapp.gdrive.GoogleDriveServiceis bound service and exist leak
+com.whatsapp.gdrive.GoogleDriveServiceis bound service and exist leak
+com.whatsapp.messaging.MessageServiceis started service and exist leak
+com.whatsapp.messaging.MessageServiceis started service and exist leak
+com.whatsapp.service.VoiceFgService.STARTis started service and exist leak
+com.whatsapp.service.WebClientServiceis started service and premature destroy
+PCBs:0
+PDBs:1
+LDBs:0
+SLBs:6
+total:7
+startService PDBs,LDBs,SLBs:1,0,3
+bindService PCBs,LDBs,SLBs:0,0,3
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
+the apk:E:\qcs\qcs\top45\YouTube.apk
+com.google.android.apps.youtube.app.common.upload.MainAppUploadServiceis started service and exist leak
+com.google.android.gms.analytics.AnalyticsServiceis started service and exist leak
+com.google.android.apps.youtube.app.common.upload.MainAppUploadServiceis started service and exist leak
+com.google.android.moxie.common.MoxieServiceis bind service and pre create
+android.media.MediaRouteProviderServiceis bind service and late destroy
+com.google.android.libraries.youtube.mdx.background.MdxBackgroundScanJobServiceis bind service and late destroy
+com.google.android.libraries.youtube.mdx.mediaroute.RemotePlaybackControlsServiceis bind service and pre create
+PCBs:2
+PDBs:0
+LDBs:2
+SLBs:3
+total:7
+startService PDBs,LDBs,SLBs:0,0,3
+bindService PCBs,LDBs,SLBs:2,2,0
+hybridService PCBs,PDBs,LDBs,SLBs:0,0,0,0
